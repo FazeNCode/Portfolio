@@ -24,7 +24,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <div className="flex items-center  ">
+          <div className="flex items-center ">
             <img
               src={flogo}
               alt="logo"
@@ -32,17 +32,17 @@ const Navbar = () => {
             />
 
             <p className="text-white text-[34px] font-bold cursor-pointer">
-              <span className="sm:block hidden mx-[-24px] ">aisal</span>
+              <span className="sm:block hidden mx-[-24px]">aisal</span>
             </p>
           </div>
         </Link>
 
-        <ul className="list-none sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
               className={`${
-                active === link.title ? "text-red-400" : "text-secondary"
+                active === link.title ? "text-white" : "text-secondary"
               } hover:text-white text-[20px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
@@ -53,7 +53,7 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Navigation */}
-        <div className="sm:flex sm:bg-transparent md:hidden ">
+        <div className=" ">
           <img
             //  if toggle, then close : else show menu
             src={toggle ? close : menu}
