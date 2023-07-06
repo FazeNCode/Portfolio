@@ -15,23 +15,17 @@ const Computers = () => {
   return (
     // when using threejs with react, must start with a mesh tag,
 
-    <Canvas
-      frameloop="demand"
-       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
-       gl={{preserveDrawingBuffer: true}}
-    >
+
       <mesh>
-      <hemisphereLight intensity={1} groundColor="red" />
+      <hemisphereLight intensity={1} groundColor="black" />
       <pointLight intensity={1} />
       <spotLight position={[-20, 50, 10]}
       angle={0.12}
       penumbra={1}
       intensity={1}
       castShadow
-      shadow-mapSize={1024}
+      shadow-mapSize={1024} />
       
-       />
       <primitive object={computer.scene} 
       scale={0.75}
       position={[0, -1.25, -1.5]}
@@ -39,20 +33,6 @@ const Computers = () => {
      
       </mesh>
 
-  {/* SUSPENSE IS NOT WORKING, THIS IS TO ADD A LOADING PERCENTAGE WHEN LOADING SCENE */}
-  {/* COME BACK AND FIX THIS!! VIDEO TIME 53:20 */}
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          // PolarAngle makes it so it rotates as specified 
-          maxPoLarAngle={Math.PI / 2}
-          minPoLarAngle={Math.PI / 2}
-        />
-
-     
-      </Suspense>
-      
-    </Canvas>
   );
 };
 
@@ -62,29 +42,30 @@ const Computers = () => {
 
 const ComputersCanvas = () => {
   return (
-    <></>
+  
+        <Canvas frameLoop="demand"
+        shadows
+        camera={{position: [20, 3, 5], fov: 25}}
+        gl={{preserveDrawingBuffer: true}}
+        >
+    
+    {/*Used as a fall back component. In this component loading percentage will be displayed when rendering the gltf  */}
+    <Suspense fallback={<CanvasLoader/>} >
 
-    //     <Canvas frameLoop="demand"
-    //     shadows
-    //     camera={{position: [20, 3, 5], fov: 25}}
-    //     gl={{preserveDrawingBuffer: true}}
-    //     >
+    {/* enableZoom is used so users can't zoom in or out of the gltf scene.*/}
+    <OrbitControls enableZoom={false}
 
-    // <Suspense fallback={<CanvasLoader/>} >
+    // PolarAngle is used so users can't rotate the gltf scene freely.
+    maxPoLarAngle={Math.PI / 2}
+    minPoLarAngle={Math.PI / 2}
+    />
 
-    // {/* enableZoom will make it so the user can't zoom in or out of the gltf scene that we render */}
-    // <OrbitControls enableZoom={false}
-    // // below is so the user can't rotate the gltf scene freely, only rotate it a certain way
-    // maxPoLarAngle={Math.PI / 2}
-    // minPoLarAngle={Math.PI / 2}
-    // />
+    <Computers/>
+    </Suspense>
+    <Preload all />
 
-    // <Computers/>
-    // </Suspense>
-    // <Preload all />
-
-    // </Canvas>
+    </Canvas>
   );
 };
 
-export default Computers;
+export default ComputersCanvas;

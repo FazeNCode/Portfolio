@@ -11,6 +11,7 @@ const ServiceCard = ({index, title, icon}) => {
     // tilt component coming from react titlt 
     <Tilt className="xs:w-[250px] w-full">
       <motion.div variants={fadeIn("right", "spring", 0.1 * index, 0.75)}
+
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
         <div options={{
           max: 45,
@@ -20,11 +21,10 @@ const ServiceCard = ({index, title, icon}) => {
         className='bg-tertiary rounded-[2px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
         >
           <img src={icon} alt={title} className='w-16 h-16 object-contain' />
-          <h3 className='text-white  text-[20px] font-bold text-center'>{title}</h3>
-
+          <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
         </div>
-      </motion.div>
 
+      </motion.div>
     </Tilt>
    
   )
@@ -62,5 +62,6 @@ const About = () => {
 }
 
 
-
+// wrapping "About" component export with the Higher order component 
+//
 export default SectionWrapper(About, "about") 
