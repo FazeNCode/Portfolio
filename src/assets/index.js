@@ -7,6 +7,7 @@ import github from "./github.png";
 import menu from "./menu.png";
 import close from "./close.png";
 
+
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -45,4 +46,5 @@ export {
   tailwind,
   typescript,
   threejs,
+  
 };

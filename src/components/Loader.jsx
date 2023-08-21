@@ -14,8 +14,6 @@ const Loader = () => {
         fontWeight: 1000,
         marginTop: 40
       }}>{progress.toFixed(2)}%</p>
-       
-
     </Html>
   )
 }

@@ -1,6 +1,7 @@
 import {motion} from 'framer-motion';
 import {styles} from '../styles'
-import {ComputersCanvas} from './canvas';
+import {Cars, ComputersCanvas} from './canvas';
+
 
 const Hero = () => {
   return (
@@ -17,10 +18,38 @@ const Hero = () => {
         <h1 className={`${styles.heroHeadText} text-white`}>Hey  I'm <span className='text-red-800'>Faisal</span></h1>
         <p className={`${styles.heroSubText} mt-4 text-white-100`}> A linux administrator <br className='sm:block hidden'/>  & A Web Developer</p>
       </div>
-
-     
+      
     </div>
     <ComputersCanvas/>
+
+
+  
+
+    {/* Figure out why this car gltf file not being renderd */}
+    {/* <Cars/> */}
+    
+
+
+{/* The code below is for the scroll down animation */}
+    <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center '>
+      <a href="#about">
+      <div className='w-[35px] h-[60px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2' >
+        {/* Play around with this to your needs */}
+        <motion.dev 
+        animate={{
+          y: [0, 24, 0]
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: 'loop'
+        }}
+        className="w-3 h-3 rounded-full bg-secondary mb-1 "
+        
+        />
+       </div>
+      </a>
+    </div>
     </section>
    
    

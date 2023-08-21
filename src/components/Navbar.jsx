@@ -58,7 +58,7 @@ const Navbar = () => {
             //  if toggle, then close : else show menu
             src={toggle ? close : menu}
             alt="menu"
-            className="w-[40px] h-[40px] object-contain cursor-pointer "
+            className="w-[40px] h-[40px] object-contain cursor-pointer bg-white "
             onClick={() => setToggle(!toggle)}
           />
 

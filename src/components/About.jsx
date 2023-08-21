@@ -22,9 +22,11 @@ const ServiceCard = ({index, title, icon}) => {
         >
           <img src={icon} alt={title} className='w-16 h-16 object-contain' />
           <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
+
         </div>
 
       </motion.div>
+      
     </Tilt>
    
   )
@@ -50,13 +52,13 @@ const About = () => {
        Self-taught skilled and creative web developer Proficient in HTML, CSS, JavaScript, and various web development frameworks. such as React | Tailwindcss | Nodejs  Experienced in responsive design, cross-browser compatibility, and optimizing website performance.
     </motion.p>
 
-    <div className="mt-20 flex flex-wrap gap-10">
+    <div className="mt-20 flex flex-wrap gap-10 ">
       {services.map((service, index) => (
       <ServiceCard  key= {service.title} index= {index} {...service}/>
       ))}
    
-
     </div>
+    
     </>
   )
 }

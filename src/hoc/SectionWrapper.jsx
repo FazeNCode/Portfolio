@@ -5,6 +5,8 @@ import { staggerContainer } from '../utils/motion';
  
 //Higher order component
 
+// We are using the higher order component to act as a container for our about component
+
 const SectionWrapper = (Component, idName) => 
 function HOC(){
     return(

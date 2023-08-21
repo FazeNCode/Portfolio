@@ -16,6 +16,9 @@ import {
     figma,
     docker,
     threejs,
+   
+    
+
   } from "../assets";
   
   export const navLinks = [
@@ -35,7 +38,7 @@ import {
   
   const services = [
     {
-      title: "Linux Administrator",
+      title: "Linux Administrators",
       icon: web,
     },
     {
