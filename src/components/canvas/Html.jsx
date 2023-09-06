@@ -10,8 +10,8 @@ import { geometry } from "maath";
 
 
 
-const Linux = () => {
-const linux_loggo = useGLTF("./linux_scene/scene.gltf");
+const Html = () => {
+const html_loggo = useGLTF("./html_scene/scene.gltf");
   return (
     <mesh>
     <hemisphereLight intensity={0.4} groundColor="black" />
@@ -23,12 +23,12 @@ const linux_loggo = useGLTF("./linux_scene/scene.gltf");
     castShadow
     shadow-mapSize={1024} />
     <primitive 
-    object={linux_loggo.scene} 
+    object={html_loggo.scene} 
     // if it's mobile put scale to 0.7 :else: put scale to 0.75
     // The scale value changes how far or close the scene is being shown
-    scale= {0.03}
+    scale= {0.0099}
     // if it's mobile put position to a set of array :else: apply the second set of array.
-    position={[-0.5, -1, 1.5]}
+    position={[-0.1, -2, 4.5]}
     rotation={[-0.01, -0.2, -0.1]}/>
     </mesh>
 
@@ -42,14 +42,16 @@ const linux_loggo = useGLTF("./linux_scene/scene.gltf");
 
 
 
-const Linuxs = () => {
+const Htmls = () => {
     return (
-      <div className="h-[150px]">
+      <div className="h-[100px]">
           <Canvas frameloop="demand"
           shadows
           camera={{position: [10, 0.2, 2], fov: 25}}
           gl={{preserveDrawingBuffer: true}}
           >
+
+            
       
       {/* camera={{position: [20, 3, 5], fov: 25}} */}
       {/*Used as a fall back component. In this component loading percentage will be displayed when rendering the gltf  */}
@@ -64,7 +66,7 @@ const Linuxs = () => {
       />
   
   {/* We are passing the isMobile variable to the scene for smaller screens  */}
-      <Linux/>
+      <Html/>
       </Suspense>
       <Preload all />
   
@@ -73,5 +75,5 @@ const Linuxs = () => {
     );
   };
   
-  export default Linuxs;
+  export default Htmls;
   

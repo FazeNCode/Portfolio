@@ -66,10 +66,10 @@ const ComputersCanvas = () => {
   }, [])
   
   return (
-    <div className="h-[600px] bg-white">
+    <div className="">
 
     
-        <Canvas frameLoop="demand"
+        <Canvas frameloop="demand"
         shadows
         camera={{position: [20, 3, 5], fov: 25}}
         gl={{preserveDrawingBuffer: true}}

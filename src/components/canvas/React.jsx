@@ -10,11 +10,11 @@ import { geometry } from "maath";
 
 
 
-const Linux = () => {
-const linux_loggo = useGLTF("./linux_scene/scene.gltf");
+const React = () => {
+const react_loggo = useGLTF("./react_scene/scene.gltf");
   return (
     <mesh>
-    <hemisphereLight intensity={0.4} groundColor="black" />
+    <hemisphereLight intensity={0.4} groundColor="white" />
     <pointLight intensity={1} />
     <spotLight position={[-20, 50, 10]}
     angle={1}
@@ -23,10 +23,10 @@ const linux_loggo = useGLTF("./linux_scene/scene.gltf");
     castShadow
     shadow-mapSize={1024} />
     <primitive 
-    object={linux_loggo.scene} 
+    object={react_loggo.scene} 
     // if it's mobile put scale to 0.7 :else: put scale to 0.75
     // The scale value changes how far or close the scene is being shown
-    scale= {0.03}
+    scale= {0.5}
     // if it's mobile put position to a set of array :else: apply the second set of array.
     position={[-0.5, -1, 1.5]}
     rotation={[-0.01, -0.2, -0.1]}/>
@@ -42,9 +42,9 @@ const linux_loggo = useGLTF("./linux_scene/scene.gltf");
 
 
 
-const Linuxs = () => {
+const Reacts = () => {
     return (
-      <div className="h-[150px]">
+      <div className="h-[100px]">
           <Canvas frameloop="demand"
           shadows
           camera={{position: [10, 0.2, 2], fov: 25}}
@@ -64,7 +64,7 @@ const Linuxs = () => {
       />
   
   {/* We are passing the isMobile variable to the scene for smaller screens  */}
-      <Linux/>
+      <React/>
       </Suspense>
       <Preload all />
   
@@ -73,5 +73,5 @@ const Linuxs = () => {
     );
   };
   
-  export default Linuxs;
+  export default Reacts;
   

@@ -3,14 +3,16 @@ import {motion} from 'framer-motion';
 import { styles } from '../styles'
 import { staggerContainer } from '../utils/motion';
  
-//Higher order component
+// Higher order component, which is a function returning a function
 
-// We are using the higher order component to act as a container for our about component
+//The higher order component act as a container for our components and helps bring animation to other components.
+
 
 const SectionWrapper = (Component, idName) => 
 function HOC(){
     return(
         <motion.section
+        // animate the container
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
