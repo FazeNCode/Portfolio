@@ -10,8 +10,8 @@ import { geometry } from "maath";
 
 
 
-const Linux = () => {
-const linux_loggo = useGLTF("./linux_scene/scene.gltf");
+const Bird = () => {
+const birds = useGLTF("./birds_scene/scene.gltf");
   return (
     <mesh>
     <hemisphereLight intensity={0.4} groundColor="black" />
@@ -23,12 +23,12 @@ const linux_loggo = useGLTF("./linux_scene/scene.gltf");
     castShadow
     shadow-mapSize={1024} />
     <primitive 
-    object={linux_loggo.scene} 
+    object={birds.scene} 
     // if it's mobile put scale to 0.7 :else: put scale to 0.75
     // The scale value changes how far or close the scene is being shown
-    scale= {0.03}
+    scale= {20}
     // if it's mobile put position to a set of array :else: apply the second set of array.
-    position={[-0.5, -1, 1.5]}
+    position={[-50, -4, 1.5]}
     rotation={[-0.01, -0.2, -0.1]}/>
     </mesh>
 
@@ -42,9 +42,9 @@ const linux_loggo = useGLTF("./linux_scene/scene.gltf");
 
 
 
-const Linuxs = () => {
+const BirdCanvas = () => {
     return (
-      <div className="h-20 w-32">
+      <div className="h-[200px] ">
           <Canvas frameloop="demand"
           shadows
           camera={{position: [10, 0.2, 2], fov: 25}}
@@ -59,12 +59,12 @@ const Linuxs = () => {
       <OrbitControls enableZoom={false}
   
       // PolarAngle is used so users can't rotate the gltf scene freely.
-      maxPoLarAngle={Math.PI / 2}
-      minPoLarAngle={Math.PI / 2}
+      maxPoLarAngle={Math.PI / 1}
+      minPoLarAngle={Math.PI / 1}
       />
   
   {/* We are passing the isMobile variable to the scene for smaller screens  */}
-      <Linux/>
+      <Bird/>
       </Suspense>
       <Preload all />
   
@@ -73,5 +73,5 @@ const Linuxs = () => {
     );
   };
   
-  export default Linuxs;
+  export default BirdCanvas;
   

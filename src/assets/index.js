@@ -1,11 +1,12 @@
 import flogo from "./flogo.png";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.png";
 import close from "./close.png";
+import cloud from "./cloud.png";
+import react from "./react.png";
+import linux from "./linux.png";
+import youtube from "./youtube.png";
+
 
 
 import css from "./tech/css.png";
@@ -22,14 +23,14 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
+import Agio from "./company/Agio.png";
+import Texada from "./company/Texada.jpg";
+
+
 
 
 export {
   flogo,
-  backend,
-  creator,
-  mobile,
-  web,
   github,
   menu,
   close,
@@ -46,5 +47,13 @@ export {
   tailwind,
   typescript,
   threejs,
+  linux,
+  cloud,
+  react,
+  youtube,
+  Agio,
+  Texada
+
+  
   
 };

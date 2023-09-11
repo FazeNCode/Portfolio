@@ -6,5 +6,9 @@ import Linuxs from "./Linux";
 import Htmls from "./Html";
 import Csss from "./Css";
 import Reacts from "./React";
+import BirdCanvas from "./Bird";
+import CloudCanvas from "./Cloud";
+import CloudPolyCanvas from "./CloudPoly";
 
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, Linuxs, Htmls, Csss, Reacts};
+
+export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, Linuxs, Htmls, Csss, Reacts, BirdCanvas, CloudCanvas, CloudPolyCanvas};

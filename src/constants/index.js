@@ -1,8 +1,4 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -16,6 +12,13 @@ import {
   figma,
   docker,
   threejs,
+  cloud,
+  react,
+  linux,
+  youtube,
+  Texada,
+  Agio
+
 } from "../assets";
 
 export const navLinks = [
@@ -36,19 +39,19 @@ export const navLinks = [
 const services = [
   {
     title: "Linux Administrator",
-    icon: web,
+    icon: linux,
   },
   {
     title: "Cloud",
-    icon: web,
+    icon: cloud,
   },
   {
     title: "Web Developer",
-    icon: web,
+    icon: react,
   },
   {
     title: "Content Creator",
-    icon: creator,
+    icon: youtube,
   },
 ];
 
@@ -103,7 +106,7 @@ const experiences = [
   {
     title: "Linux Administrator",
     company_name: "TexadaSoftware",
-    //   icon: ,
+      icon: Texada,
     iconBg: "#383E56",
     date: "March 2018 - April 2020",
     points: [
@@ -117,7 +120,7 @@ const experiences = [
   {
     title: "Linux Engineer",
     company_name: "Agio",
-    //   icon: ,
+      icon: Agio,
     iconBg: "#383E56",
     date: "March 2021 - April 2022",
     points: [

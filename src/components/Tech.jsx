@@ -11,12 +11,7 @@ const Tech = () => {
 
    
         <div className="flex flex-1 mx-[200px] items-center bg-red-300 ">
-          <Linuxs />
-
-          <Htmls />
-
-          <Csss />
-          <Reacts />
+          
         </div>
      
     </>
