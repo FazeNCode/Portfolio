@@ -63,7 +63,7 @@ const ComputersCanvas = () => {
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
     }
   
-  }, [])
+  }, []);
   
   return (
     <div className="">

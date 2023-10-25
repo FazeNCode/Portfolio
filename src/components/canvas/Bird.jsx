@@ -1,17 +1,19 @@
-import { Suspense, useEffect, useState } from "react";
-
+import { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 
-// drei is a utility package for threejs that contains various tools that can be used to enchance threejs
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
+// drei is a utility package for threejs which contains various tools that can be used to enchance threejs
+import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 import { geometry } from "maath";
 
 
-
 const Bird = () => {
+  
 const birds = useGLTF("./birds_scene/scene.gltf");
+
+// console.log("Animations", birds.animations);
+
+
   return (
     <mesh>
     <hemisphereLight intensity={0.4} groundColor="black" />
@@ -26,7 +28,7 @@ const birds = useGLTF("./birds_scene/scene.gltf");
     object={birds.scene} 
     // if it's mobile put scale to 0.7 :else: put scale to 0.75
     // The scale value changes how far or close the scene is being shown
-    scale= {20}
+    scale= {14}
     // if it's mobile put position to a set of array :else: apply the second set of array.
     position={[-50, -4, 1.5]}
     rotation={[-0.01, -0.2, -0.1]}/>
@@ -37,21 +39,18 @@ const birds = useGLTF("./birds_scene/scene.gltf");
 // rotation={[-0.01, -0.2, -0.1]}/>
 );
 };
-  
-
-
-
+ 
 
 const BirdCanvas = () => {
     return (
-      <div className="h-[200px] ">
+      <div className="h-[500px] ">
           <Canvas frameloop="demand"
           shadows
-          camera={{position: [10, 0.2, 2], fov: 25}}
+          camera={{position: [10, 0.2, 0.2], fov: 50}}
           gl={{preserveDrawingBuffer: true}}
           >
       
-      {/* camera={{position: [20, 3, 5], fov: 25}} */}
+   
       {/*Used as a fall back component. In this component loading percentage will be displayed when rendering the gltf  */}
       <Suspense fallback={<CanvasLoader/>} >
   
@@ -72,6 +71,7 @@ const BirdCanvas = () => {
       </div>
     );
   };
-  
   export default BirdCanvas;
   
+
+
