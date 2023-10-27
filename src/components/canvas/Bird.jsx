@@ -46,7 +46,7 @@ const BirdCanvas = () => {
       <div className="h-[500px] ">
           <Canvas frameloop="demand"
           shadows
-          camera={{position: [10, 0.2, 0.2], fov: 50}}
+          camera={{position: [10, 0.2, 0.2], fov: 70}}
           gl={{preserveDrawingBuffer: true}}
           >
       
@@ -55,8 +55,10 @@ const BirdCanvas = () => {
       <Suspense fallback={<CanvasLoader/>} >
   
       {/* enableZoom is used so users can't zoom in or out of the gltf scene.*/}
-      <OrbitControls enableZoom={false}
-  
+      <OrbitControls
+      // autoRotate={true}
+      autoRotateSpeed={0.5}
+      enableZoom={false}
       // PolarAngle is used so users can't rotate the gltf scene freely.
       maxPoLarAngle={Math.PI / 1}
       minPoLarAngle={Math.PI / 1}

@@ -6,6 +6,7 @@ import cloud from "./cloud.png";
 import react from "./react.png";
 import linux from "./linux.png";
 import youtube from "./youtube.png";
+import profile from "./profile.jpg";
 
 
 
@@ -52,7 +53,8 @@ export {
   react,
   youtube,
   Agio,
-  Texada
+  Texada,
+  profile
 
   
   

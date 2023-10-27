@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion';
 import {styles} from '../styles'
-import {ComputersCanvas, BirdCanvas, CloudCanvas, CloudPolyCanvas} from './canvas';
+import {ComputersCanvas, BirdCanvas, CloudCanvas, CloudPolyCanvas, SunCanvas} from './canvas';
 
 
 const Hero = () => {
@@ -11,7 +11,7 @@ const Hero = () => {
 
 {/* Code below is for the point board */}
       {/* <div className='flex flex-col justify-center items-center mt-5'> 
-        <div className='w-80 h-40 rounded-full bg-[#c6c2cf]'/> 
+        <div className='w-20 h-20 rounded-full bg-[#c6c2cf]'/> 
         <div className='w-1 sm:h-96 h-80 violet-gradient' />
       </div> */}
 
@@ -28,7 +28,7 @@ const Hero = () => {
 <br/>
 <br/>
 
-
+<SunCanvas/>
 <CloudPolyCanvas/>
 
 </div>

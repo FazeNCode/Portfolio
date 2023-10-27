@@ -12,6 +12,22 @@ import { geometry } from "maath";
 
 const CloudPoly = () => {
 const cloudspoly = useGLTF("./cloud_poly_scene/scene.gltf");
+
+// const cloudspoly = useGLTF("./cloud_poly_scene/scene.gltf");
+// const cloudRef = useRef();
+
+// // Use state or useRef to control the animation
+// const [cloudPosition, setCloudPosition] = useState([-80, -1, 2]);
+
+// useFrame(() => {
+//   // Update the cloud's position in the animation loop
+//   cloudRef.current.position.x += 0.01; // Move the cloud to the right
+//   if (cloudRef.current.position.x > 20) {
+//     // Reset the cloud's position when it goes off screen
+//     cloudRef.current.position.x = -80;
+//   }
+// });
+
   return (
     <mesh>
     <hemisphereLight intensity={0.4} groundColor="black" />
@@ -56,8 +72,12 @@ const CloudPolyCanvas = () => {
       <Suspense fallback={<CanvasLoader/>} >
   
       {/* enableZoom is used so users can't zoom in or out of the gltf scene.*/}
-      <OrbitControls enableZoom={false}
+      <OrbitControls 
   
+      // autoRotate={true}
+      autoRotateSpeed={0.2}
+      enableZoom={false}
+    
       // PolarAngle is used so users can't rotate the gltf scene freely.
       maxPoLarAngle={Math.PI / 1}
       minPoLarAngle={Math.PI / 1}

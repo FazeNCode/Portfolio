@@ -42,11 +42,27 @@
   );
 }
 
-.green-pink-gradient {
+/* .green-pink-gradient {
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+} */
+
+.green-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #20201f 1.9%,  #a1a8a1 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #af8d4e 1.9%, #8b7f0c 97.5%);
 }
+
+
+/* .green-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #FFA500 1.9%,  #90EE90 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #FFA500 1.9%, #FFFF99 97.5%);
+} */
+
+
+
 
 .orange-text-gradient {
   background: #f12711; /* fallback for old browsers */

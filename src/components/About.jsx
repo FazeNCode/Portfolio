@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
-import { Linuxs, Htmls, Csss, Reacts } from "./canvas";
+import { Linuxs} from "./canvas";
 
 // import {Reacts} from './canvas';
 
