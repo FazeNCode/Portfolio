@@ -3,11 +3,12 @@ import BallCanvas from "./Ball";
 import ComputersCanvas from "./Computers";
 import StarsCanvas from "./Stars";
 import Linuxs from "./Linux";
-
 import BirdCanvas from "./Bird";
+import OrangeMushroomCanvas from "./OrangeMushroom";
 import CloudCanvas from "./Cloud";
 import CloudPolyCanvas from "./CloudPoly";
 import SunCanvas from "./Sun";
-
-
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, Linuxs, BirdCanvas, CloudCanvas, CloudPolyCanvas, SunCanvas};
+import StumpCanvas from "./Stump";
+import SlimeCanvas from "./Slime";
+import HornyMushroomCanvas from "./HornyMushroom";
+export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, Linuxs, BirdCanvas, CloudCanvas, CloudPolyCanvas, SunCanvas, OrangeMushroomCanvas, StumpCanvas, SlimeCanvas, HornyMushroomCanvas};

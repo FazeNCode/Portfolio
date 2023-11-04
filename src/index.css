@@ -42,17 +42,17 @@
   );
 }
 
-/* .green-pink-gradient {
+.green-pink-gradient {
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-} */
-
-.green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #20201f 1.9%,  #a1a8a1 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #af8d4e 1.9%, #8b7f0c 97.5%);
 }
+
+/* .green-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #d8d808 1.9%,  #a1a8a1 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #2e442b 1.9%, #a0790c 97.5%);
+} */
 
 
 /* .green-pink-gradient {
@@ -62,7 +62,22 @@
 } */
 
 
+.section-container {
+  transition: height 0.3s ease-in-out;  /* You can adjust the duration and timing function as needed */
+}
 
+/* Optional: You can add a max-height if you want to limit the expansion */
+.section-container.expanded {
+  max-height: 1200px;
+  max-width: 1200px;
+}
+
+
+.model-container {
+  width: 25%; /* Adjust the width as needed */
+  padding: 10px; /* Adjust the spacing between models */
+  overflow: auto;
+}
 
 .orange-text-gradient {
   background: #f12711; /* fallback for old browsers */

@@ -5,18 +5,28 @@ import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/d
 import CanvasLoader from '../Loader';
 
 
+
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
   return (
     <Float speed = {1.75} rotationIntensity={1} floatIntensity={1}>
-      <ambientLight intensity={0.2} />
+      <ambientLight intensity={0.1} />
       <directionalLight position={[0, 0, 0.05]}/>
       <mesh castShadow receiveShadow scale={3}>
+         {/* Front transparent sphere */}
         <icosahedronGeometry args={[1, 5, 10]} />
-        <meshStandardMaterial color="#fff8eb" 
+        <meshStandardMaterial
+        color="#fff8eb" 
         polygonOffset
         polygonOffsetFactor={-5}
-        flatShading/>
+        flatShading
+        opacity={0.1}
+        transparent={true}
+       
+   
+     
+        />
+      
 
         <Decal 
         position={[0, 0, 1]}
@@ -31,9 +41,10 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-   <Canvas frameloop="demand"
-    shadows
-    gl={{preserveDrawingBuffer: true}}
+   <Canvas  
+   frameloop="demand"
+   shadows
+   gl={{preserveDrawingBuffer: true}}
     >
 {/*Used as a fall back component. In this component loading percentage will be displayed when rendering the gltf  */}
 <Suspense fallback={<CanvasLoader/>} >

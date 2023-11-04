@@ -55,7 +55,5 @@ export {
   Agio,
   Texada,
   profile
-
-  
   
 };

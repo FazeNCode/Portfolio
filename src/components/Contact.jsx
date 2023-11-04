@@ -92,13 +92,13 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4"> You Name:</span>
+            <span className="text-white font-medium mb-4"> Your Name:</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What is your name:"
+              placeholder="Name:"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
@@ -110,13 +110,13 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What is your email:"
+              placeholder="Email:"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4"> Your Message:</span>
+            <span className="text-white font-medium mb-4">Message:</span>
             <textarea
               rows="7"
               name="message"

@@ -11,7 +11,8 @@ const Bird = () => {
   
 const birds = useGLTF("./birds_scene/scene.gltf");
 
-// console.log("Animations", birds.animations);
+console.log(birds.animations);
+
 
 
   return (
@@ -43,21 +44,21 @@ const birds = useGLTF("./birds_scene/scene.gltf");
 
 const BirdCanvas = () => {
     return (
-      <div className="h-[500px] ">
+      <div className="h-full">
           <Canvas frameloop="demand"
           shadows
           camera={{position: [10, 0.2, 0.2], fov: 70}}
           gl={{preserveDrawingBuffer: true}}
           >
-      
    
       {/*Used as a fall back component. In this component loading percentage will be displayed when rendering the gltf  */}
       <Suspense fallback={<CanvasLoader/>} >
   
-      {/* enableZoom is used so users can't zoom in or out of the gltf scene.*/}
+     
       <OrbitControls
       // autoRotate={true}
       autoRotateSpeed={0.5}
+      // enableZoom is used so users can't zoom in or out of the gltf scene
       enableZoom={false}
       // PolarAngle is used so users can't rotate the gltf scene freely.
       maxPoLarAngle={Math.PI / 1}
