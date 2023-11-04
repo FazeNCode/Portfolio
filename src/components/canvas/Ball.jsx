@@ -22,9 +22,6 @@ const Ball = (props) => {
         flatShading
         opacity={0.1}
         transparent={true}
-       
-   
-     
         />
       
 
