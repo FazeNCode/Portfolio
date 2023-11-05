@@ -12,6 +12,25 @@
   color-scheme: dark;
 }
 
+.bg-hero-pattern {
+  /* Other background properties */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto; /* Start with 'auto' for smooth transition */
+  transition: background-size 500ms; /* Adjust the duration as needed */
+}
+
+@media (min-width: 1920px) {
+  .bg-hero-pattern {
+    background-size: cover; /* Apply 'bg-cover' on xl screens */
+  }
+}
+
+
+
+
+
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

@@ -40,16 +40,17 @@ const About = () => {
     <>
       <motion.div>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>About</h2>
+        <h2 className={styles.sectionHeadText}>About</h2> 
       </motion.div>
-
       {/* Parameters 1st:Direction 2nd:Type 3rd:Delay 4th:Duration*/}
       <motion.p
         variants={fadeIn("", "", 0.1, 2)}
         // leading will add space between the specified between sentences
         className="mt-2 text-secondary text-[21px] max-w-3xl leading-[30px]"
       >
+
         <Linuxs />
+     
         Experienced Linux administrator proficient in managing and maintaining
         Linux-based computer systems, ensuring stability, security, and
         efficiency. Skilled in installation, configuration, monitoring, and
@@ -59,15 +60,15 @@ const About = () => {
         knowledge of security measures, compliance standards, and documentation.
         Proficient in automation and scripting for streamlined system
         management. Adept at collaborating with teams and generating reports.
-        <br/>
-        <br/>
+        <br/> <br/> 
+     
         Self-taught Web Developer proficient in HTML, CSS,
         JavaScript, and various web development frameworks. such as, React |
         Tailwindcss | Nodejs. <br/> Experienced in responsive design, cross-browser
         compatibility, and optimizing website performance.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 ">
+      <div className="mt-20 flex flex-wrap gap-10">
         {/* loop over the services, get each indivdual service  */}
         {services.map((service, index) => (
           // for each service, render a custom ServiceCard

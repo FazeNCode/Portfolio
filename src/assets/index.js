@@ -1,7 +1,7 @@
 import flogo from "./flogo.png";
 import github from "./github.png";
-import menu from "./menu.png";
-import close from "./close.png";
+
+
 import cloud from "./cloud.png";
 import react from "./react.png";
 import linux from "./linux.png";
@@ -33,8 +33,6 @@ import Texada from "./company/Texada.jpg";
 export {
   flogo,
   github,
-  menu,
-  close,
   css,
   docker,
   figma,

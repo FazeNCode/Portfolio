@@ -15,6 +15,7 @@
     "@react-three/fiber": "^8.13.0",
     "amqplib": "^0.10.3",
     "framer-motion": "^10.12.16",
+    "hamburger-react": "^2.5.0",
     "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

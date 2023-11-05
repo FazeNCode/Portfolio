@@ -1,6 +1,6 @@
 // import {motion} from 'framer-motion';
 // import {styles} from '../styles'
-// import {ComputersCanvas, BirdCanvas, CloudCanvas, CloudPolyCanvas, SunCanvas, OrangeMushroomCanvas, StumpCanvas} from './canvas';
+// import {BirdCanvas, OrangeMushroomCanvas, StumpCanvas} from './canvas';
 
 
 // const Hero = () => {
@@ -8,7 +8,7 @@
 
    
 //     // Semantic tag
-//     <section className=' lg:relative lg:w-full lg:h-screen lg:x-auto'>
+//     <section className=' relative lg:w-full h-screen mx-auto'>
 
 //       <div className=' mx-auto'> 
 //       <BirdCanvas/>
@@ -47,6 +47,9 @@
 
 
 
+
+
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
@@ -74,7 +77,7 @@ const Hero = () => {
 
   return (
     <section
-    className={`xl:relative xl:w-full xl:h-screen xl:mx-auto section-container  ${
+    className={`relative w-full h-screen mx-auto section-container  ${
       expanded ? "expanded" : ""
     }`}
     >
@@ -84,7 +87,7 @@ const Hero = () => {
 
       <div className="flex justify-center">
   <div className="model-container">
-    <OrangeMushroomCanvas />
+  <OrangeMushroomCanvas />
   </div>
   <div className="model-container">
     <SlimeCanvas />
