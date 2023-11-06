@@ -12,6 +12,7 @@
   color-scheme: dark;
 }
 
+/* FAISAL THIS IS FOR THE BACKGROUND IMAGE THAT IS DYNAMIC FOR PHONE AND BIG SCREEN */
 .bg-hero-pattern {
   /* Other background properties */
   background-repeat: no-repeat;
@@ -25,9 +26,6 @@
     background-size: cover; /* Apply 'bg-cover' on xl screens */
   }
 }
-
-
-
 
 
 
@@ -163,7 +161,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* canvas- styles */
+/* canvas- styles   CANVAS-LOADER CLASS CAN BE REMOVED, IT"S NOT BEING USED!!!*/
 .canvas-loader {
   font-size: 10px;
   width: 1em;
@@ -171,9 +169,38 @@
   border-radius: 50%;
   position: relative;
   text-indent: -9999em;
-  animation: mulShdSpin 1.1s infinite ease;
+  animation: spin 2s linear infinite; /* Add an animation called 'spin' */
   transform: translateZ(0);
 }
+
+
+
+
+/* Canvas Loader */
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 4s linear infinite;
+} 
+
+.loader-text {
+  font-size: 20px;
+  color: #f1f1f1;
+  font-weight: 1000;
+  margin-top: 2px; /* Adjust the margin to separate the spinner and text */
+}
+
+/*  */
+
 
 @keyframes mulShdSpin {
   0%,

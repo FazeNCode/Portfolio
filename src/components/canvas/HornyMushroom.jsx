@@ -23,6 +23,8 @@ const { nodes, materials, animations} = useGLTF("./hornymushroom_scene/scene.glt
   }, [actions, animationToPlay]);
 
 
+  
+
 //   return (
 //     <group>
 //       <primitive object={nodes.Object_6}   />

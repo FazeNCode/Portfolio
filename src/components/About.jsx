@@ -49,7 +49,7 @@ const About = () => {
         className="mt-2 text-secondary text-[21px] max-w-3xl leading-[30px]"
       >
 
-        <Linuxs />
+        {/* <Linuxs /> */}
      
         Experienced Linux administrator proficient in managing and maintaining
         Linux-based computer systems, ensuring stability, security, and

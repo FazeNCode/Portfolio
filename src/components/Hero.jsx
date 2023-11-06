@@ -49,8 +49,8 @@
 
 
 
+import React, { useState, useEffect} from "react";
 
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import {
@@ -58,8 +58,11 @@ import {
   OrangeMushroomCanvas,
   StumpCanvas,
   SlimeCanvas,
-  HornyMushroomCanvas
+  HornyMushroomCanvas,
+  MapleThiefCanvas
 } from "./canvas";
+
+
 
 const Hero = () => {
   const [expanded, setExpanded] = useState(false);
@@ -82,10 +85,10 @@ const Hero = () => {
     }`}
     >
       <div className="mx-auto">
-        <BirdCanvas />
+        {/* <BirdCanvas /> */}
       </div>
 
-      <div className="flex justify-center">
+    <div className="flex justify-center">
   <div className="model-container">
   <OrangeMushroomCanvas />
   </div>
@@ -98,6 +101,7 @@ const Hero = () => {
   <div className="model-container">
     <HornyMushroomCanvas />
   </div>
+
 
 </div>
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">

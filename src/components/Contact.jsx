@@ -6,6 +6,7 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 import { profile } from "../assets";
+import { MapleThiefCanvas } from "./canvas";
 
 
 
@@ -69,7 +70,6 @@ const Contact = () => {
         <div className='w-20 h-20 rounded-full bg-[#c6c2cf]'/> 
       </div> */}
 
-          
     <div className="absolute justify-end right-6 ">
     
     <img
@@ -77,15 +77,10 @@ const Contact = () => {
               alt="profile"
               className=" w-24 h-24  rounded-full object-cover" 
             />
-            
         </div>
-
-         
-
         <p className={styles.sectionSubText}>Get In touch</p>
         <h2 className={styles.sectionHeadText}>Contact</h2>
        
-
         <form
           ref={formRef}
           onSubmit={handleSubmit}

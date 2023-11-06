@@ -32,7 +32,6 @@ const Navbar = () => {
             </p>
           </div>
         </Link>
-
  {/* Mobile Navigation */}
         <div className="md:hidden">
           <Hamburger
@@ -40,7 +39,7 @@ const Navbar = () => {
             toggle={setToggle}
             size={50}
             easing="ease-in"
-            duration={1}
+            duration={0.7}
             rounded
             
           />

@@ -1,0 +1,11 @@
+Model Information:
+* title:	MapleStory - Thief
+* source:	https://sketchfab.com/3d-models/maplestory-thief-bb95fd3f26a046b7ad1ff0193f4e4654
+* author:	Munin Nin (https://sketchfab.com/muninlim)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "MapleStory - Thief" (https://sketchfab.com/3d-models/maplestory-thief-bb95fd3f26a046b7ad1ff0193f4e4654) by Munin Nin (https://sketchfab.com/muninlim) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
