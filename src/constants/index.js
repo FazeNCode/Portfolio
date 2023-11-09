@@ -106,7 +106,7 @@ const experiences = [
   {
     title: "Linux Administrator",
     company_name: "TexadaSoftware",
-      icon: Texada,
+      icon: '',
     iconBg: "#383E56",
     date: "March 2018 - April 2020",
     points: [
@@ -120,7 +120,7 @@ const experiences = [
   {
     title: "Linux Engineer",
     company_name: "Agio",
-      icon: Agio,
+    icon: '',
     iconBg: "#383E56",
     date: "March 2021 - April 2022",
     points: [

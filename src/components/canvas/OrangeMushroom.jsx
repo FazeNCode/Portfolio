@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import CanvasLoader from "../Loader";
-
+import * as THREE from "three"; // Import THREE explicitly
 
 const OrangeMushroom = () => {
 const orangemushroom = useGLTF("./orangemushroom_scene/scene.gltf");
@@ -12,28 +12,31 @@ const orangemushroom = useGLTF("./orangemushroom_scene/scene.gltf");
 
 const {nodes, material, animations} = useGLTF("./orangemushroom_scene/scene.gltf");
 
-  const { actions } = useAnimations(animations);
-  const animationToPlay = "Walk";
-
-  useEffect(() => {
-    console.log(animations); // Log available actions
-    const clip = actions[animationToPlay]; // Use animationToPlay to access the desired animation
-    if (clip) {
-      clip.timeScale = 1; // You can set it to any value you like
-      clip.reset();
-      clip.play();
-    }
-  }, [actions, animationToPlay]);
 
 
-//   const animationToPlayIndex = 1; // Index of the animation you want to play
+  // const { actions } = useAnimations(animations);
+  // const animationToPlay = 'Death';
+  // useEffect(() => {
+  //   console.log(animations); // Log available actions
+  //   const clip = actions[animationToPlay]; // Use animationToPlay to access the desired animation
+  //   if (clip) {
+  //     clip.timeScale = 1; // You can set it to any value you like
+  //     clip.reset();
+  //     clip.play();
+  //   }
+  // }, [actions, animationToPlay]);
+
+  console.log(animations); // Log available actions
+
+
+//   const animationToPlayIndex = (1); // Index of the animation you want to play
 //   const { actions } = useAnimations(animations);
 //  useEffect(() => {
 //     console.log(animations); // Log available animations
 //     const action = actions[animationToPlayIndex]; // Use animationToPlayIndex to access the desired animation
 //     if (action) {
-//       action.setEffectiveTimeScale(10); // You can set it to any value you like
-//       action.time = 0.83; // Reset the animation by setting the time to zero
+//       action.setEffectiveTimeScale(20); // You can set it to any value you like
+//       action.time = 0; // Reset the animation by setting the time to zero
 //       action.play();
 //     }
 //   }, [animations, animationToPlayIndex]);
@@ -48,7 +51,7 @@ const {nodes, material, animations} = useGLTF("./orangemushroom_scene/scene.gltf
     penumbra={1}
     intensity={2}
     castShadow
-    shadow-mapSize={1024} />
+    shadow-mapSize={1920} />
     <primitive 
     object={orangemushroom.scene} 
     scale= {10.5}
@@ -74,10 +77,10 @@ const OrangeMushroomCanvas = () => {
  {/* enableZoom is set to flase so users can't zoom in or out on the 3d model.*/}
       <OrbitControls
        ref={orbitControlsRef}
-      autoRotate={false}
+      autoRotate={true}
       enableRotate={false}
       autoRotateSpeed={0}
-      enableZoom={false}
+      enableZoom={true}
       // PolarAngle is used so users can't rotate the gltf scene freely.
       // maxPoLarAngle={Math.PI / 1}
       // minPoLarAngle={Math.PI / 1}

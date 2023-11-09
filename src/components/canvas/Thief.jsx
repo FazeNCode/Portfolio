@@ -1,59 +1,37 @@
-import { Suspense, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useFBX, useAnimations, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import * as THREE from 'three';
+
 
 const MapleThief = () => {
 //   const maplethief = useFBX("./maplethief_scene/scene.fbx"); 
-const maplethief = useGLTF("./maplethief_scene/scene2.glb"); 
-const { nodes, materials, animations } = maplethief; // Correct variable names
+// const maplethief = useGLTF("./maplethief_scene/scene2.glb"); 
+
+const maplethief = useGLTF("./maplethief_scene/dancethiefs.glb"); 
+const {nodes, material, animations} = useGLTF("./maplethief_scene/dancethiefs.glb");
+
+ const {actions} = useAnimations(animations);
+
+  const animationToPlay = 'dancing';
 
 
-//   useEffect(() => {
-//     if (maplethief.animations && maplethief.animations.length > 0) {
-//       console.log("Available animations:", maplethief.animations);
-//     } else {
-//       console.log("No animations found in the model.");
-//     }
-//   }, [maplethief]);
+  useEffect(() => {
+    console.log(animations); // Log available actions
+    const clip = actions[animationToPlay]; // Use animationToPlay to access the desired animation
+    if (clip) {
+      clip.timeScale = 6.349; // You can set it to any value you like
+      clip.reset(0);
+      clip.play(0);
+    }
+  }, [actions, animationToPlay]);
 
-
-const { actions, names } = useAnimations(animations);
-
-const playAnimation = () => {
- console.log("Available animations:", maplethief.animations);
-  const sitAction = actions["Armature|mixamo.com|Layer0"];
-  if (sitAction) {
-    sitAction.reset().fadeIn(1).play();
-  }
-};
-useEffect(() => {
-  playAnimation();
-}, []); // The empty dependency array ensures it runs only once when the component mounts
-
-
-  return (
-    <mesh>
-      <hemisphereLight intensity={0.2} groundColor="black" />
-      <pointLight intensity={0.4} />
-      <spotLight
-        position={[-60, 90, 40]}
-        angle={0.7}
-        penumbra={1}
-        intensity={2}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <primitive
-        object={maplethief.scene}
-        // Use this value with fbx file type   object={maplethief}
-        scale={30}
-        // Use this value with fbx file type   scale={.5}
-        position={[-60, -20, -9]}
-        rotation={[0, 1.5, 0]}
-      />
-    </mesh>
-  );
+return (
+  <group>
+    <primitive object={maplethief.scene} />
+  </group>
+);
 };
 
 const MapleThiefCanvas = () => {
@@ -62,14 +40,24 @@ const MapleThiefCanvas = () => {
       <Canvas
         frameloop="demand"
         shadows
-        camera={{ position: [10, 0.2, 0.2], fov: 80 }}
+        camera={{ position: [10, 0.2, 0.2], fov: 30 }}
         gl={{ preserveDrawingBuffer: true }}
       >
+      
+        <hemisphereLight intensity={0} groundColor="black" />
+        <pointLight intensity={0.4} />
+        <spotLight
+        position={[-60, 90, 40]}
+        angle={0.7}
+        penumbra={1}
+        intensity={2}
+        castShadow
+        shadow-mapSize={1024}
+      />
         <Suspense fallback={<CanvasLoader />}>
-
           <OrbitControls
             autoRotate={false}
-            enableRotate={false}
+            enableRotate={true}
           />
           <MapleThief />
         </Suspense>
@@ -78,5 +66,41 @@ const MapleThiefCanvas = () => {
     </div>
   );
 };
-
 export default MapleThiefCanvas;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   return (
+//     <mesh>
+//       <hemisphereLight intensity={0.2} groundColor="black" />
+//       <pointLight intensity={0.4} />
+//       <spotLight
+//         position={[-60, 90, 40]}
+//         angle={0.7}
+//         penumbra={1}
+//         intensity={2}
+//         castShadow
+//         shadow-mapSize={1024}
+//       />
+//       <primitive
+//         object={maplethief.scene}
+//         // Use this value with fbx file type   object={maplethief}
+//         scale={30}
+//         // Use this value with fbx file type   scale={.5}
+//         position={[-60, -20, -9]}
+//         rotation={[0, 1.5, 0]}
+//       />
+//     </mesh>
+//   );
+// };
