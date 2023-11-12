@@ -141,7 +141,7 @@ const DanceThief = () => {
 
   return (
     <group ref={group} dispose={null} scale={[3, 3, 3]}>
-      <primitive object={nodes.Scene} material-roughness={0.5} material-metalness={0.5} />
+      <primitive object={nodes.Scene} />
     </group>
   );
 };
