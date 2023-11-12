@@ -1,13 +1,15 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works,  MapleThiefCanvas} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works,  MapleThiefCanvas, DanceThief} from './components'
+import { Canvas } from "@react-three/fiber";
+
 
 
 const App = () => {
   return (
    <BrowserRouter>
 
-   <div className="relative bg-primary">
-    <div className=" ">
+   <div className="relative bg-primary    ">
+    <div className=" bg-hero-pattern  ">
     {/* bg-hero-pattern */}
       <Navbar/>
       <Hero/>
@@ -19,7 +21,11 @@ const App = () => {
     {/* <Works/>
     <Feedbacks/> */}
     <div className="relative z-0">
-    <MapleThiefCanvas/>
+    {/* <MapleThiefCanvas/> */}
+    <Canvas>
+    <DanceThief/>
+    </Canvas>
+    
     <Contact/>
 
     </div>

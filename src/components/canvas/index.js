@@ -10,5 +10,6 @@ import OrangeMushroomCanvas from "./OrangeMushroom";
 import StumpCanvas from "./Stump";
 import SlimeCanvas from "./Slime";
 import HornyMushroomCanvas from "./HornyMushroom";
+import DanceThief from "./Dancethief";
 
-export { EarthCanvas, BallCanvas,  Linuxs, BirdCanvas, OrangeMushroomCanvas, StumpCanvas, SlimeCanvas, HornyMushroomCanvas, MapleThiefCanvas};
+export { EarthCanvas, BallCanvas,  Linuxs, BirdCanvas, OrangeMushroomCanvas, StumpCanvas, SlimeCanvas, HornyMushroomCanvas, MapleThiefCanvas, DanceThief};
