@@ -11,7 +11,7 @@ const slime = useGLTF("./slime_scene/scene.gltf");
 const { nodes, materials, animations} = useGLTF("./slime_scene/scene.gltf");
 
   const { actions } = useAnimations(animations);
-  const animationToPlay = 'Walk';
+  const animationToPlay = '';
 
   useEffect(() => {
     console.log(animations); // Log available actions

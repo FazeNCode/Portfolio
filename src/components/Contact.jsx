@@ -5,8 +5,10 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-import { profile } from "../assets";
-import { MapleThiefCanvas } from "./canvas";
+
+
+import { profile, youtube, github, youtube_circle } from "../assets";
+
 
 
 
@@ -64,21 +66,15 @@ const Contact = () => {
     <div className="xl::mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
-      >
-        {/* <div className='flex items-end justify-end '> 
-        <div className='w-20 h-20 rounded-full bg-[#c6c2cf]'/> 
-      </div> */}
-
+        className="flex-[0.75] bg-black-100 p-8 rounded-2xl" >
+       
     <div className="absolute justify-end right-6 ">
-    
     <img
               src={profile}
               alt="profile"
               className=" w-24 h-24  rounded-full object-cover" 
             />
         </div>
-        <p className={styles.sectionSubText}>Get In touch</p>
         <h2 className={styles.sectionHeadText}>Contact</h2>
        
         <form
@@ -93,7 +89,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Name:"
+              placeholder="Enter Name:"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
@@ -105,7 +101,7 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Email:"
+              placeholder="Enter Email:"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
@@ -117,20 +113,44 @@ const Contact = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Enter your message"
+              placeholder="Write me a message:"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
 
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-9 outline-none w-fit text-white font-bold shadow-2xl shadow-primary rounded-lg"
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-        </form>
-      </motion.div>
+  <div className="flex items-center justify-between">
+  <button
+    type="submit"
+    className="bg-tertiary py-3 px-9 outline-none w-fit text-white font-bold shadow-2xl shadow-primary rounded-lg"
+  >
+    {loading ? "Sending..." : "Send"}
+  </button>
 
+  <div className="flex items-center space-x-4">
+    <a href="https://github.com/FazeNCode" target="_blank" rel="noopener noreferrer">
+    <img
+      src={github}
+      alt="profile"
+      className="w-14 h-14 rounded-full object-cover"
+    />
+    </a>
+   
+
+    <img
+      src={youtube_circle}
+      alt="profile"
+      className="w-12 h-12 rounded-full object-cover"
+    />
+  </div>
+</div>
+
+
+
+        
+
+        </form>
+
+      </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h=[550px] h-[350px]"

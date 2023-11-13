@@ -74,66 +74,99 @@
 
 
 
+// CURRENT CODE THAT WORKS!!!!!!
+
+// import React, { useEffect } from "react";
+// import { Canvas, } from "@react-three/fiber";
+// import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+// import CanvasLoader from "../Loader";
+// import DanceThief from "./Dancethief";
+
+// const MapleThiefCanvas = () => {
+//   useEffect(() => {
+//     // Additional logic related to character animations (if needed)
+//   }, []);
 
 
+//   return (
+
+//     <div>
+//       </div>
+      
+    // <div className="">
+    //   <Canvas
+    //     frameloop="demand"
+    //     shadows
+    //     camera={{ position: [10, 0.2, 0.2], fov: 30 }}
+    //     gl={{ preserveDrawingBuffer: true }}
+    //   >
+    //     <ambientLight />
+    //     {/* <hemisphereLight intensity={1} groundColor="black" /> */}
+    //     <directionalLight position={[-10, 5, 5]} castShadow sintensity={1} />
+    //     <pointLight intensity={0.4} />
+    //     <spotLight
+    //       position={[-60, 90, 40]}
+    //       angle={0.7}
+    //       penumbra={1}
+    //       intensity={2}
+    //       castShadow
+    //       shadow-mapSize={1024}
+    //     />
+    //      <Suspense fallback={<CanvasLoader />}>
+    //     <OrbitControls autoRotate={false} enableRotate={true} />
+    //     <DanceThief OrbitControls autoRotate={true} enableRotate={true} />
+    //     </Suspense>
+    //     <Preload all />
+    //   </Canvas>
+    // </div>
+//   );
+// };
+
+// export default MapleThiefCanvas;
 
 
 // CURRENT CODE THAT WORKS!!!!!!
 
-import React, { useEffect } from "react";
-import { Canvas, } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import CanvasLoader from "../Loader";
-import DanceThief from "./Dancethief";
 
-const MapleThiefCanvas = () => {
+
+
+
+
+
+
+
+import React, { useRef, useEffect } from 'react';
+import { useGLTF, useAnimations } from '@react-three/drei';
+import { useCharacterAnimations } from './useCharacterAnimations';
+import { OrbitControls, Preload } from "@react-three/drei";
+
+const Thief = () => {
+  const group = useRef();
+  const { nodes, materials, animations } = useGLTF('./maplethief_scene/dancethiefs.glb');
+  const { setAnimations, animationIndex } = useCharacterAnimations();
+  const { actions, names } = useAnimations(animations, group);
+
   useEffect(() => {
-    // Additional logic related to character animations (if needed)
-  }, []);
+    setAnimations(names);
+  }, [names]);
 
-  const { intensity } = useCon
+  useEffect(() => {
+
+    console.log("Names:", names);
+    actions[names[animationIndex]].reset().fadeIn(0.5).play();
+    return () => {
+      // actions[names[animationIndex]].fadeOut(0.5);
+    };
+  }, [actions, animationIndex]);
+
   return (
-    <div className="">
-      <Canvas
-        frameloop="demand"
-        shadows
-        camera={{ position: [10, 0.2, 0.2], fov: 30 }}
-        gl={{ preserveDrawingBuffer: true }}
-      >
-        <hemisphereLight intensity={1} groundColor="black" />
-        <directionalLight position={[5, 5, 5]} intensity={2} />
-        <pointLight intensity={0.4} />
-        <spotLight
-          position={[-60, 90, 40]}
-          angle={0.7}
-          penumbra={1}
-          intensity={2}
-          castShadow
-          shadow-mapSize={1920}
-        />
-         <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls autoRotate={false} enableRotate={true} />
-        <DanceThief />
-        </Suspense>
-        <Preload all />
-      </Canvas>
-    </div>
+    <group ref={group} dispose={null} scale={[3, 3, 3]}>
+      <primitive object={nodes.Scene} />
+    </group>
   );
 };
 
-export default MapleThiefCanvas;
-
-
-// CURRENT CODE THAT WORKS!!!!!!
-
-
-
-
-
-
-
-
-
+export default Thief;
 
 
 

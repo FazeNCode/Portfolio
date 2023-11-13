@@ -6,6 +6,7 @@ import cloud from "./cloud.png";
 import react from "./react.png";
 import linux from "./linux.png";
 import youtube from "./youtube.png";
+import youtube_circle from "./youtube_circle.png";
 import profile from "./profile.jpg";
 
 
@@ -50,6 +51,7 @@ export {
   cloud,
   react,
   youtube,
+  youtube_circle,
   Agio,
   Texada,
   profile

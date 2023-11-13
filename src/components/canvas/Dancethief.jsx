@@ -26,7 +26,6 @@
 //     };
 //   }, [animationIndex]);
 
-  
 
 //   return (
 //     <group ref={group} {...props} dispose={null}>
@@ -114,39 +113,56 @@
 
 
 
+// import React, { useRef, useEffect } from 'react';
+// import { useGLTF, useAnimations } from '@react-three/drei';
+// import { useCharacterAnimations } from './useCharacterAnimations';
+// import { OrbitControls, Preload } from "@react-three/drei";
 
-import React, { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
-import { useCharacterAnimations } from './useCharacterAnimations';
-import { OrbitControls, Preload } from "@react-three/drei";
+// const DanceThief = () => {
+//   const group = useRef();
+//   const { nodes, materials, animations } = useGLTF('./maplethief_scene/dancethiefs.glb');
+//   const { setAnimations, animationIndex } = useCharacterAnimations();
+//   const { actions, names } = useAnimations(animations, group);
 
-const DanceThief = () => {
-  const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./maplethief_scene/dancethiefs.glb');
-  const { setAnimations, animationIndex } = useCharacterAnimations();
-  const { actions, names } = useAnimations(animations, group);
+//   useEffect(() => {
+//     setAnimations(names);
+//   }, [names]);
 
-  useEffect(() => {
-    setAnimations(names);
-  }, [names]);
+//   useEffect(() => {
+//     console.log("Names:", names);
+//     actions[names[animationIndex]].reset().fadeIn(0.5).play();
+//     return () => {
+//       actions[names[animationIndex]].fadeOut(0.5);
+//     };
+//   }, [actions, animationIndex]);
 
-  useEffect(() => {
+//   return (
+//     <group ref={group} dispose={null} scale={[4, 4, 4]}>
+//       <primitive object={nodes.Scene} />
+//         <ambientLight />
+//         {/* <hemisphereLight intensity={1} groundColor="black" /> */}
+//         <directionalLight position={[4, 5, 5]} castShadow intensity={1} />
+//         <pointLight intensity={1} />
+//         <spotLight
+//           position={[-60, 90, 40]}
+//           angle={0.7}
+//           penumbra={1}
+//           intensity={1}
+//           castShadow
+//           shadow-mapSize={1024}
+//         />
+//     </group>
+//   );
+// };
 
-    console.log("Names:", names);
-    actions[names[animationIndex]].reset().fadeIn(0.5).play();
-    return () => {
-      actions[names[animationIndex]].fadeOut(0.5);
-    };
-  }, [actions, animationIndex]);
+// export default DanceThief;
 
-  return (
-    <group ref={group} dispose={null} scale={[3, 3, 3]}>
-      <primitive object={nodes.Scene} />
-    </group>
-  );
-};
 
-export default DanceThief;
+
+
+
+
+
 
 
 
