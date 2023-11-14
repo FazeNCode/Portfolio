@@ -129,13 +129,8 @@ import { OrbitControls, Preload } from "@react-three/drei";
 const Thief = () => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "./maplethief_scene/dancethiefs.glb",
-    [
-      "./maplethief_scene/textures/Beltetc_baseColor.png",
-      "./maplethief_scene/textures/Body_baseColor.png",
-      "./maplethief_scene/textures/Face_baseColor.png",
-      // Add paths to all your textures here
-    ]
+    "./maplethief_scene/thief_idle.glb",
+ 
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
@@ -146,24 +141,27 @@ const Thief = () => {
 
   useEffect(() => {
     console.log("Names:", names);
-    actions[names[animationIndex]].reset().fadeIn(0.5).play();
+    actions[names[animationIndex]].reset().fadeIn(0.5).play("Idle");
     return () => {
       // actions[names[animationIndex]].fadeOut(0.5);
     };
   }, [actions, animationIndex]);
 
+
+
   return (
-    <group ref={group} dispose={null} scale={[2.2, 2.2, 2.2]}>
+    // <group ref={group} dispose={null} scale={[2.2, 2.2, 2.2]}>
+    <group ref={group} dispose={null} scale={[75, 65, 75 ]}>
       <primitive object={nodes.Scene} />
    
-      <hemisphereLight intensity={0} groundColor="" />
+      <hemisphereLight intensity={1} groundColor="black" />
       <directionalLight position={[0, 0, 0]} castShadow intensity={1} />
-      <pointLight intensity={1} />
+      <pointLight intensity={0.4} />
       <spotLight
-        position={[-60, 90, 40]}
+        position={[0, -40, -40]}
         angle={0.7}
-        penumbra={1}
-        intensity={1}
+        penumbra={0.1}
+        intensity={0.1}
         castShadow
         shadow-mapSize={1024}
       />
@@ -173,23 +171,13 @@ const Thief = () => {
         enableDamping={true}
         dampingFactor={0.25}
         autoRotate={false}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2.5}
+        minPolarAngle={Math.PI / 2.5}
         position={[-0, 0, 0]} // Adjust the camera position here
       />
 
 <mesh>
-{/* <ambientLight /> */}
-      <hemisphereLight intensity={1} groundColor="" />
-      <pointLight intensity={0.4} />
-      <spotLight
-        position={[-60, 90, 40]}
-        angle={0.7}
-        penumbra={1}
-        intensity={2}
-        castShadow
-        shadow-mapSize={1024}
-      />
+  {/* Have not yet utilized mesh, WILL DO IN THE FUTURE! */}
     </mesh>
       
     </group>
