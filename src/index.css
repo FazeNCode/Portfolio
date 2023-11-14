@@ -25,7 +25,89 @@
   .bg-hero-pattern {
     background-size: cover; /* Apply 'bg-cover' on xl screens */
   }
+} 
+/*  */
+
+
+/* Canvas Loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 4s linear infinite;
+} 
+.loader-text {
+  font-size: 20px;
+  color: #f1f1f1;
+  font-weight: 1000;
+  margin-top: 2px; /* Adjust the margin to separate the spinner and text */
+}
+/*  */
+
+
+
+/* Container for 3d models in hero section */
+.section-container {
+  transition: height 0.3s ease-in-out;  /* You can adjust the duration and timing function as needed */
+}
+
+/* Optional: You can add a max-height if you want to limit the expansion */
+.section-container.expanded {
+  max-height: 1200px;
+  max-width: 1200px;
+}
+
+.model-container {
+  width: 25%; /* Adjust the width as needed */
+  padding: 10px; /* Adjust the spacing between models */
+  overflow: auto;
+}
+/*  */
+
+
+/* Contact form  */
+.form-label{
+  display: flex;
+  flex-direction: column;
+}
+.form-span{
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.form-input {
+  background-color: #151030; /* tertiary color */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500; /* or 'medium' if available in the font */
+}
+/* bg-tertiary 
+py-4 
+px-6 
+placeholder:text-secondary 
+text-white 
+rounded-lg 
+outlined-none
+border-none 
+font-medium */
+
+.form-input::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(170 166 195 / var(--tw-text-opacity));
+}
+/*  */
+
 
 
 
@@ -79,22 +161,6 @@
 } */
 
 
-.section-container {
-  transition: height 0.3s ease-in-out;  /* You can adjust the duration and timing function as needed */
-}
-
-/* Optional: You can add a max-height if you want to limit the expansion */
-.section-container.expanded {
-  max-height: 1200px;
-  max-width: 1200px;
-}
-
-
-.model-container {
-  width: 25%; /* Adjust the width as needed */
-  padding: 10px; /* Adjust the spacing between models */
-  overflow: auto;
-}
 
 .orange-text-gradient {
   background: #f12711; /* fallback for old browsers */
@@ -160,46 +226,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* canvas- styles   CANVAS-LOADER CLASS CAN BE REMOVED, IT"S NOT BEING USED!!!*/
-.canvas-loader {
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  animation: spin 2s linear infinite; /* Add an animation called 'spin' */
-  transform: translateZ(0);
-}
-
-
-
-
-/* Canvas Loader */
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.spinner {
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 4s linear infinite;
-} 
-
-.loader-text {
-  font-size: 20px;
-  color: #f1f1f1;
-  font-weight: 1000;
-  margin-top: 2px; /* Adjust the margin to separate the spinner and text */
-}
-
-/*  */
 
 
 @keyframes mulShdSpin {

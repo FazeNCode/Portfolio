@@ -6,7 +6,6 @@ import {
   StumpCanvas,
   SlimeCanvas,
   OrangeMushroom,
-
 } from "./canvas";
 
 import React, { useState, useEffect} from "react";
@@ -41,7 +40,7 @@ const Hero = () => {
 
 {/* REMOVE THE CANVAS IF IT"S CAUSING ISSUES! */}
     <Canvas>
-    {/* <OrangeMushroomAnim/> */}
+    <OrangeMushroom/>
     {/* <HornyMushroom/> */}
     </Canvas>
 

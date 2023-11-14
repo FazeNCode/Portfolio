@@ -5,8 +5,6 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-
-
 import { profile, youtube, github, youtube_circle } from "../assets";
 
 
@@ -72,7 +70,7 @@ const Contact = () => {
     <img
               src={profile}
               alt="profile"
-              className=" w-24 h-24  rounded-full object-cover" 
+              className=" w-24 h-24 rounded-full object-cover" 
             />
         </div>
         <h2 className={styles.sectionHeadText}>Contact</h2>
@@ -80,73 +78,69 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-14 flex flex-col gap-8"
         >
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4"> Your Name:</span>
+          <label className="form-label">
+            <span className="form-span"> Your Name</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Enter Name:"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+              placeholder="Enter Name"
+              className="form-input"
             />
           </label>
 
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4"> Your Email:</span>
+          <label className="form-label">
+            <span className="form-span"> Your Email:</span>
             <input
               type="text"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Enter Email:"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+              placeholder="Enter Email"
+              className="form-input"
             />
           </label>
 
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Message:</span>
+          <label className="form-label">
+            <span className="form-span">Message:</span>
             <textarea
               rows="7"
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Write me a message:"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+              placeholder="Write me a message"
+              className="form-input"
             />
           </label>
 
   <div className="flex items-center justify-between">
   <button
     type="submit"
-    className="bg-tertiary py-3 px-9 outline-none w-fit text-white font-bold shadow-2xl shadow-primary rounded-lg"
+    className="bg-tertiary py-3 px-10 outline-none w-fit text-white font-bold shadow-2xl shadow-primary rounded-lg"
   >
     {loading ? "Sending..." : "Send"}
   </button>
 
-  <div className="flex items-center space-x-4">
+  <div className="flex items-center space-x-2">
     <a href="https://github.com/FazeNCode" target="_blank" rel="noopener noreferrer">
     <img
       src={github}
       alt="profile"
-      className="w-14 h-14 rounded-full object-cover"
+      className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover"
     />
     </a>
-   
-
+    
+    {/* ! IMPORT A NEW youtube_circle WITH A SMALLER SIZE TO MATCH GITHUB LOGO! */}
     <img
       src={youtube_circle}
       alt="profile"
-      className="w-12 h-12 rounded-full object-cover"
+      className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover"
     />
   </div>
 </div>
-
-
-
-        
 
         </form>
 

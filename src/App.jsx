@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom} from './components'
 import { Canvas } from "@react-three/fiber";
 
 
@@ -25,9 +25,13 @@ const App = () => {
     <div className="relative z-0">
     {/* <MapleThiefCanvas/> */}
 
-    <Canvas>
+<div className="h-[600px]">
+<Canvas>
     <Thief/>
     </Canvas>
+  
+</div>
+    
 
   
   

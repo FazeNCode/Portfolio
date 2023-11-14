@@ -52,8 +52,6 @@ const About = () => {
         {/* <Linuxs /> */}
 
 
-        
-     
         Experienced Linux administrator proficient in managing and maintaining
         Linux-based computer systems, ensuring stability, security, and
         efficiency. Skilled in installation, configuration, monitoring, and

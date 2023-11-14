@@ -55,6 +55,10 @@ const services = [
     title: "Content Creator",
     icon: youtube,
   },
+  {
+    title: "Content Creator",
+    icon: youtube,
+  },
 ];
 
 const technologies = [
