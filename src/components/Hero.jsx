@@ -4,8 +4,8 @@ import { styles } from "../styles";
 import {
   BirdCanvas,
   StumpCanvas,
-  SlimeCanvas,
   OrangeMushroom,
+  SlimeCanvas
 } from "./canvas";
 
 import React, { useState, useEffect} from "react";
@@ -36,16 +36,20 @@ const Hero = () => {
       </div>
 
 
-    <div className="flex justify-center h-[600px]">
+    <div className="flex justify-center h-screen">
 
 {/* REMOVE THE CANVAS IF IT"S CAUSING ISSUES! */}
-    <Canvas>
+<div className=" my-[450px] max-h-70">
+<Canvas>
     <OrangeMushroom/>
-    {/* <HornyMushroom/> */}
     </Canvas>
+
+</div>
+  
 
   <div className="model-container">
     <SlimeCanvas />
+  
   </div>
   <div className="model-container">
     <StumpCanvas />

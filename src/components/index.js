@@ -27,6 +27,6 @@ export {
   // StumpCanvas,
   // MapleThiefCanvas,
   Thief,
-  OrangeMushroom
+  OrangeMushroom,
 
 }

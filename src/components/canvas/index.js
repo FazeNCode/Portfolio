@@ -9,10 +9,8 @@ import BirdCanvas from "./Bird";
 // import HornyMushroomCanvas from "./HornyMushroom";
 
 import StumpCanvas from "./Stump";
+
 import SlimeCanvas from "./Slime";
-
-
-
 
 import OrangeMushroom from "./OrangeMushroom";
 

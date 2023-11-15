@@ -33,15 +33,8 @@ const App = () => {
 </div>
     
 
-  
-  
-
-   
-    
     <Contact/>
-
     </div>
-
    </div>
    </BrowserRouter>
   
