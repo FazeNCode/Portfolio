@@ -5,6 +5,7 @@ import github from "./github.png";
 import cloud from "./cloud.png";
 import react from "./react.png";
 import linux from "./linux.png";
+import vmware from "./vmware.png"
 import youtube from "./youtube.png";
 import youtube_circle from "./youtube_circle.png";
 import profile from "./profile.jpg";
@@ -50,6 +51,7 @@ export {
   linux,
   cloud,
   react,
+  vmware,
   youtube,
   youtube_circle,
   Agio,

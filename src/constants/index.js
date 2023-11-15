@@ -16,6 +16,7 @@ import {
   react,
   linux,
   youtube,
+  vmware,
   Texada,
   Agio,
 
@@ -44,16 +45,16 @@ const services = [
     icon: linux,
   },
   {
-    title: "Cloud",
+    title: "Cloud Engineer",
     icon: cloud,
+  },
+  {
+    title: "Virtualization",
+    icon: vmware,
   },
   {
     title: "Web Developer",
     icon: react,
-  },
-  {
-    title: "Content Creator",
-    icon: youtube,
   },
   {
     title: "Content Creator",
