@@ -57,7 +57,7 @@ const services = [
     icon: react,
   },
   {
-    title: "Content Creator",
+    title: "Educator",
     icon: youtube,
   },
 ];

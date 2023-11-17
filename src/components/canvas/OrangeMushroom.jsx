@@ -6,7 +6,7 @@ import { OrbitControls, Preload } from "@react-three/drei";
 
 const OrangeMushroom = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/testmushie.glb',
+  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom_animation_test2.glb',
   "./orangemushroom_scene/Orange_mushroom_baseColor.png",
   [
     "./maplethief_scene/textures/Beltetc_baseColor.png",
@@ -36,7 +36,15 @@ const OrangeMushroom = () => {
   
   return (
     <group ref={group} dispose={null} scale={[1, 1, 1]}>
-      <primitive object={nodes.Scene} />
+      <primitive object={nodes.Scene}
+       scale= {1}
+       position={[0.3, -8, -3.8]} />
+
+      {/* <primitive 
+    object={slime.scene} 
+    scale= {25}
+    position={[-60, -20, -9]}
+    rotation={[0, 1.5, 0]}  /> */}
 
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="orange" />

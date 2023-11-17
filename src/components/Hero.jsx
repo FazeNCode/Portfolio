@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import {
   BirdCanvas,
-  StumpCanvas,
+  Stump,
   OrangeMushroom,
   SlimeCanvas
 } from "./canvas";
@@ -49,11 +49,18 @@ const Hero = () => {
 
   <div className="model-container">
     <SlimeCanvas />
+  </div>
+
+
+  <div className="my-[450px] max-h-30">
+    <Canvas>
+    <Stump />
+
+    </Canvas>
+
+  </div>
+
   
-  </div>
-  <div className="model-container">
-    <StumpCanvas />
-  </div>
   <div className="model-container">
     {/* <HornyMushroom /> */}
   </div>
