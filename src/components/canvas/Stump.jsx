@@ -178,8 +178,8 @@ const Stump = () => {
   return (
     <group ref={group} dispose={null} scale={[1, 1, 1]}>
       <primitive object={nodes.Scene}
-       scale= {1}
-       position={[0.3, -3, -3.8]} />
+       scale= {0.4}
+       position={[-0.1, -3, -0.001]} />
 
       {/* <primitive 
     object={slime.scene} 
@@ -208,7 +208,7 @@ const Stump = () => {
         autoRotate={false}
         maxPolarAngle={Math.PI / 2.5}
         minPolarAngle={Math.PI / 2.5}
-        position={[-0, 0, 0]} // Adjust the camera position here
+        position={[-1, 0, 0]} // Adjust the camera position here
       />
 
     </group>

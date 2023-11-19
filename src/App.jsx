@@ -9,12 +9,12 @@ const App = () => {
    <BrowserRouter>
 
    <div className="relative bg-primary    ">
+
     <div className=" bg-hero-pattern  ">
     {/* bg-hero-pattern */}
       <Navbar/>
-    
-
       <Hero/>
+
     </div>
     <About/>
     <Experience/>
@@ -25,7 +25,7 @@ const App = () => {
     <div className="relative z-0">
     {/* <MapleThiefCanvas/> */}
 
-<div className="h-[600px]">
+<div className=" h-[600px]">
 <Canvas>
     <Thief/>
     </Canvas>

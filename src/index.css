@@ -16,9 +16,9 @@
 .bg-hero-pattern {
   /* Other background properties */
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom ;
   background-size: auto; /* Start with 'auto' for smooth transition */
-  transition: background-size 500ms; /* Adjust the duration as needed */
+  transition: background-size 1000ms; /* Adjust the duration as needed */
 }
 
 @media (min-width: 1920px) {
@@ -56,15 +56,14 @@
 .section-container {
   transition: height 0.3s ease-in-out;  /* You can adjust the duration and timing function as needed */
 }
-
 /* Optional: You can add a max-height if you want to limit the expansion */
 .section-container.expanded {
   max-height: 1200px;
   max-width: 1200px;
+  /* height: calc(100vw * (1080 / 390)); Adjust as needed */
 }
-
 .model-container {
-  width: 25%; /* Adjust the width as needed */
+  width: 50%; /* Adjust the width as needed */
   padding: 10px; /* Adjust the spacing between models */
   overflow: auto;
 }

@@ -35,10 +35,18 @@ const OrangeMushroom = () => {
 
   
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1]}>
+    
+    <group ref={group} dispose={null} scale={[2, 2, 3]}>
       <primitive object={nodes.Scene}
-       scale= {1}
-       position={[0.3, -8, -3.8]} />
+       scale= {0.4}
+       position={[2, -7, -7]} />
+
+ {/* <group ref={group} dispose={null} scale={[1, 1, 1]}>
+<group ref={group} dispose={null} scale={[2, 2, 3]}>
+      <primitive object={nodes.Scene}
+       scale= {0.4}
+       position={[0.4, -8, -3.8]} /> */}
+       
 
       {/* <primitive 
     object={slime.scene} 
@@ -47,7 +55,7 @@ const OrangeMushroom = () => {
     rotation={[0, 1.5, 0]}  /> */}
 
       <ambientLight />
-       <hemisphereLight intensity={0} groundColor="orange" />
+       <hemisphereLight intensity={0} groundColor="black" />
         <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
       <pointLight intensity={1} />
      <spotLight
