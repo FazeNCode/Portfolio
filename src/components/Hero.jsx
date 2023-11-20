@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import {
@@ -6,7 +5,8 @@ import {
   Stump,
   OrangeMushroom,
   Slime,
-  HornyMushroom
+  HornyMushroom,
+  Thief
 } from "./canvas";
 
 import React, { useState, useEffect} from "react";
@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <section
-    className={`relative w-full h-screen mx-auto section-container ${
+    className={`relative w-full h-screen mx-auto  ${
       expanded ? "expanded" : ""
   }`}
     >
@@ -39,27 +39,18 @@ const Hero = () => {
     {/* <div className="flex justify-center h-screen  mx-auto"> */}
     <div className=" justify-center  mx-auto">
 
-
 <div className="h-screen">
 <Canvas>
     <OrangeMushroom/>
     <HornyMushroom/>
     <Slime/>
     <Stump />
+
+   
+    
     </Canvas>
 </div>
   
-  {/* <div className="model-container">
-    <SlimeCanvas />
-  </div> */}
-
-  {/* <div className="">
-    <Canvas>
-    <Stump />
-    </Canvas>
-
-  </div> */}
-
   
 </div>
 

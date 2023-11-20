@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -9,9 +9,28 @@ import { Sling as Hamburger } from 'hamburger-react'
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 768);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 top-0 z-20 bg-primary`}>
+    // <nav className={`${styles.paddingX} w-full flex items-center py-2 md:py-5 top-0 z-20 bg-primary`}>
+
+    <nav
+    className={`${styles.paddingX} w-full flex items-center  ${
+      isLargeScreen ? "py-5" : "py-2"
+    } top-0 z-20 bg-primary transition-all duration-1000`}
+  >
+
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"

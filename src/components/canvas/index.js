@@ -23,5 +23,3 @@ import Thief from "./Thief";
 
 export { EarthCanvas, BallCanvas, Linuxs, BirdCanvas, Stump, Slime, Thief, OrangeMushroom, HornyMushroom};
 
-// MapleThiefCanvas, 
-// HornyMushroomCanvas,

@@ -29,23 +29,14 @@ const Slime = () => {
   
   return (
     
-    <group ref={group} dispose={null} scale={[2, 2, 3]}>
+    <group ref={group} dispose={null} scale={[2, 2, 2]}>
       <primitive object={nodes.Scene}
-       scale= {0.4}
-       position={[4, -7, -7]} />
+       scale= {0.09}
+       position={[-1, 0, 0]}
+       rotation={[-0.1, 0.4, 0]}
+        />
 
- {/* <group ref={group} dispose={null} scale={[1, 1, 1]}>
-<group ref={group} dispose={null} scale={[2, 2, 3]}>
-      <primitive object={nodes.Scene}
-       scale= {0.4}
-       position={[0.4, -8, -3.8]} /> */}
-       
 
-      {/* <primitive 
-    object={slime.scene} 
-    scale= {25}
-    position={[-60, -20, -9]}
-    rotation={[0, 1.5, 0]}  /> */}
 
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />
