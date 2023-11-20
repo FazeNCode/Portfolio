@@ -16,7 +16,7 @@
 .bg-hero-pattern {
   /* Other background properties */
   background-repeat: no-repeat;
-  background-position: center bottom ;
+  background-position: center ;
   background-size: auto; /* Start with 'auto' for smooth transition */
   transition: background-size 1000ms; /* Adjust the duration as needed */
 }

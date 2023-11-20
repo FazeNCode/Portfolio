@@ -5,7 +5,7 @@ import {
   BirdCanvas,
   Stump,
   OrangeMushroom,
-  SlimeCanvas
+  Slime
 } from "./canvas";
 
 import React, { useState, useEffect} from "react";
@@ -42,7 +42,9 @@ const Hero = () => {
 <div className="h-screen">
 <Canvas>
     <OrangeMushroom/>
-    <Stump />
+    <Slime/>
+    {/* <Stump /> */}
+  
     </Canvas>
 </div>
   

@@ -10,7 +10,7 @@ const App = () => {
 
    <div className="relative bg-primary    ">
 
-    <div className=" bg-hero-pattern  ">
+    <div className=" ">
     {/* bg-hero-pattern */}
       <Navbar/>
       <Hero/>

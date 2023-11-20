@@ -1,8 +1,0 @@
-Model Information:
-* title:	Stump | MapleStory
-* source:	https://sketchfab.com/3d-models/stump-maplestory-7d78b0a9e0ef44059082c11b0d09fadd
-* author:	MooKorea (https://sketchfab.com/MooKorea)
-
-Model License:
-* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
-* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

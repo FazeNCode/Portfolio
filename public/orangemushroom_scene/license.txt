@@ -1,8 +1,0 @@
-Model Information:
-* title:	Orange Mushroom | MapleStory
-* source:	https://sketchfab.com/3d-models/orange-mushroom-maplestory-d5f776e79f734da5b08619ff040bbc8f
-* author:	MooKorea (https://sketchfab.com/MooKorea)
-
-Model License:
-* license type:	SKETCHFAB Editorial (https://sketchfab.com/licenses)
-* requirements:	Use only in connection with events that are newsworthy or of public interest

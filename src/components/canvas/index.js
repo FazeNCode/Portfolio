@@ -10,7 +10,7 @@ import BirdCanvas from "./Bird";
 
 import Stump from "./Stump";
 
-import SlimeCanvas from "./Slime";
+import Slime from "./Slime";
 
 import OrangeMushroom from "./OrangeMushroom";
 
@@ -22,7 +22,7 @@ import Thief from "./Thief";
 
 
 
-export { EarthCanvas, BallCanvas, Linuxs, BirdCanvas, Stump, SlimeCanvas, Thief, OrangeMushroom};
+export { EarthCanvas, BallCanvas, Linuxs, BirdCanvas, Stump, Slime, Thief, OrangeMushroom};
 
 // MapleThiefCanvas, 
 // HornyMushroomCanvas,
