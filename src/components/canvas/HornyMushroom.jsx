@@ -1,19 +1,13 @@
+
 import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
 import { OrbitControls, Preload } from "@react-three/drei";
 
-const OrangeMushroom = () => {
+const HornyMushroom = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom_animation_test2.glb',
-  "./orangemushroom_scene/Orange_mushroom_baseColor.png",
-  [
-    "./maplethief_scene/textures/Beltetc_baseColor.png",
-    "./maplethief_scene/textures/Body_baseColor.png",
-    "./maplethief_scene/textures/Face_baseColor.png",
-    // Add paths to all your textures here
-  ]
-  
+  const { nodes, materials, animations } = useGLTF('./hornymushroom_scene/hornymushroom.glb',
+
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
@@ -34,11 +28,10 @@ const OrangeMushroom = () => {
 
   
   return (
-    
     <group ref={group} dispose={null} scale={[2, 2, 3]}>
       <primitive object={nodes.Scene}
        scale= {0.4}
-       position={[2, -7, -7]} />
+       position={[-3, -7, -7]} />
 
  {/* <group ref={group} dispose={null} scale={[1, 1, 1]}>
 <group ref={group} dispose={null} scale={[2, 2, 3]}>
@@ -81,5 +74,5 @@ const OrangeMushroom = () => {
   );
 };
 
-export default OrangeMushroom;
+export default HornyMushroom;
 

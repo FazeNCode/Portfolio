@@ -5,7 +5,8 @@ import {
   BirdCanvas,
   Stump,
   OrangeMushroom,
-  Slime
+  Slime,
+  HornyMushroom
 } from "./canvas";
 
 import React, { useState, useEffect} from "react";
@@ -38,13 +39,13 @@ const Hero = () => {
     {/* <div className="flex justify-center h-screen  mx-auto"> */}
     <div className=" justify-center  mx-auto">
 
-{/* REMOVE THE CANVAS IF IT"S CAUSING ISSUES! */}
+
 <div className="h-screen">
 <Canvas>
     <OrangeMushroom/>
+    <HornyMushroom/>
     <Slime/>
-    {/* <Stump /> */}
-  
+    <Stump />
     </Canvas>
 </div>
   
