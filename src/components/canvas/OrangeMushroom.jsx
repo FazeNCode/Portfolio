@@ -5,7 +5,7 @@ import { OrbitControls, Preload } from "@react-three/drei";
 
 const OrangeMushroom = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom_animation_test2.glb',
+  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom.glb',
  
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();

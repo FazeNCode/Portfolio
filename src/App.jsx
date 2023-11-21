@@ -31,7 +31,7 @@ const App = () => {
     <About/>
     <Experience/>
 
-<div className="h-[400px]  ">
+<div className="h-[300px]  ">
 <Canvas>
         <Banner/>
       </Canvas>
