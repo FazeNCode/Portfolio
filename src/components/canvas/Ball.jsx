@@ -9,6 +9,7 @@ import CanvasLoader from '../Loader';
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
   return (
+    
     <Float speed = {1.75} rotationIntensity={1} floatIntensity={1}>
       <ambientLight intensity={0.1} />
       <directionalLight position={[0, 0, 0.05]}/>
@@ -23,8 +24,6 @@ const Ball = (props) => {
         opacity={0.1}
         transparent={true}
         />
-      
-
         <Decal 
         position={[0, 0, 1]}
         rotation={[ 2 * Math.PI, 0, 6.25]}
@@ -32,12 +31,17 @@ const Ball = (props) => {
         map={decal} />
 
       </mesh>
+
+   
     </Float>
+    
   )
 }
 
 const BallCanvas = ({ icon }) => {
   return (
+
+  
    <Canvas  
    frameloop="demand"
    shadows
@@ -49,14 +53,13 @@ const BallCanvas = ({ icon }) => {
 {/* enableZoom is used so users can't zoom in or out of the gltf scene.*/}
 <OrbitControls enableZoom={false}
 />
-
 {/* We are passing the isMobile variable to the scene for smaller screens  */}
 <Ball imgUrl={icon} />
 
 </Suspense>
 <Preload all />
-
 </Canvas>
+
     
   )
 }

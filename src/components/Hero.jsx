@@ -46,8 +46,6 @@ const Hero = () => {
     <Slime/>
     <Stump />
 
-   
-    
     </Canvas>
 </div>
   

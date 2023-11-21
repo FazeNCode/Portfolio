@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, Linuxs, BirdCanvas,  Stump,  Thief, OrangeMushroom, Slime, HornyMushroom} from './canvas';
+import { EarthCanvas, BallCanvas, Linuxs, BirdCanvas,  Stump,  Thief, OrangeMushroom, Slime, HornyMushroom, Banner} from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -23,12 +23,13 @@ export {
   EarthCanvas, 
   BallCanvas, 
   // Linuxs,
+
   BirdCanvas,
   Stump,
-
   Thief,
   OrangeMushroom,
   Slime,
-  HornyMushroom
+  HornyMushroom,
+  Banner
 
 }

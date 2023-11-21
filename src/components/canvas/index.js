@@ -20,6 +20,7 @@ import HornyMushroom from "./HornyMushroom";
 import Thief from "./Thief";
 
 
+import Banner from "./Banner";
 
-export { EarthCanvas, BallCanvas, Linuxs, BirdCanvas, Stump, Slime, Thief, OrangeMushroom, HornyMushroom};
+export { EarthCanvas, BallCanvas, Linuxs, BirdCanvas, Stump, Slime, Thief, OrangeMushroom, HornyMushroom, Banner};
 

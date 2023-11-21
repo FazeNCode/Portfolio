@@ -1,22 +1,9 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Banner} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 
 const App = () => {
-
-  // useEffect(() => {
-  //   const handleClick = () => {
-  //     document.body.style.cursor = 'url(../assets/cursor_red.png), auto';
-  //   };
-  //   document.addEventListener('click', handleClick);
-
-  //   return () => {
-  //     document.removeEventListener('click', handleClick);
-  //   };
-  // }, []);
-
-
 
   useEffect(() => {
     const handleClick = () => {
@@ -30,6 +17,7 @@ const App = () => {
       document.removeEventListener("click", handleClick);
     };
   }, []);
+
   
   return (
    <BrowserRouter>
@@ -42,17 +30,27 @@ const App = () => {
     </div>
     <About/>
     <Experience/>
+
+<div className="h-[400px]  ">
+<Canvas>
+        <Banner/>
+      </Canvas>
+
+</div>
+     
+  
+  
     <Tech/>
   
     {/* <Works/>
     <Feedbacks/> */}
     <div className="relative z-0">
  
-{/* <div className=" h-[600px]">
-<Canvas>
+<div className=" h-[600px]">
+<Canvas >
     <Thief/>
     </Canvas>
-</div> */}
+</div>
 
     <Contact/>
     </div>

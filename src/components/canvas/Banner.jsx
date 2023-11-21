@@ -1,37 +1,48 @@
+
 import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
 import { OrbitControls, Preload } from "@react-three/drei";
 
-const HornyMushroom = () => {
+const Banner = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./hornymushroom_scene/hornymushroom.glb',
+  const { nodes, materials, animations } = useGLTF('./banner_scene/banner_test2.glb',
 
   );
-  const { setAnimations, animationIndex } = useCharacterAnimations();
-  const { actions, names } = useAnimations(animations, group);
+//   const { setAnimations, animationIndex } = useCharacterAnimations();
+//   const { actions, names } = useAnimations(animations, group);
 
-  useEffect(() => {
-    setAnimations(names);
-  }, [names]);
+//   useEffect(() => {
+//     setAnimations(names);
+//   }, [names]);
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    console.log("Names:", names);
-    actions[names[animationIndex]].reset().fadeIn(1).play('Idle');
-    return () => {
-      actions[names[animationIndex]].fadeOut(0.5);
-    };
-  }, [actions, animationIndex]);
+//     console.log("Names:", names);
+//     actions[names[animationIndex]].reset().fadeIn(1).play('');
+//     return () => {
+//       actions[names[animationIndex]].fadeOut(0.5);
+//     };
+//   }, [actions, animationIndex]);
 
   
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1]}>
+    <group ref={group} dispose={null} scale={[2, 2, 1]}>
+ 
+<primitive
+    object={nodes.Scene}
+    scale={1}
+    position={[0, -0.3, 2.1]}
+    rotation={[0, Math.PI / -2, 0.4]}  
+  />
+
+
+{/* <group ref={group} dispose={null} scale={[2, 2, 1]}>
     <primitive object={nodes.Scene}
-     scale= {0.1}
-     position={[1.1, -0.5, -0.2]} 
-    // rotation={[0, 1.5, 0]}  
-     />
+     scale= {1}
+     position={[1, -0.3, 2]} 
+    rotation={[-1, 1.5, 1]}  
+     /> */}
 
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />
@@ -58,5 +69,5 @@ const HornyMushroom = () => {
     </group>
   );
 };
-export default HornyMushroom;
+export default Banner;
 
