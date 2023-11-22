@@ -6,7 +6,7 @@ import { OrbitControls, Preload } from "@react-three/drei";
 
 const Banner = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./banner_scene/banner.glb',
+  const { nodes, materials, animations } = useGLTF('./banner_scene/banner_text3.glb',
 
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();
@@ -28,14 +28,13 @@ const Banner = () => {
   
   return (
 
-    // <group ref={group} dispose={null} scale={[2, 2, 2]}>
-
-    // <primitive
-    //     object={nodes.Scene}
-    //     scale={0.22}
-    //     position={[0, 0.6, 2.1]}
-    //     rotation={[0, Math.PI / -2, 0.4]}  
-    //   />  
+//     <group ref={group} dispose={null} scale={[2, 2, 1.18]}>
+//  <primitive
+//      object={nodes.Scene}
+//      scale={1}
+//      position={[0, -0.1, 2.1]}
+//      rotation={[0, Math.PI / -2, 0.4]}  
+//    />   
 
 
 

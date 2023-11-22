@@ -43,9 +43,6 @@ const OrangeMushroom = () => {
         /> */}
 
 
-       
-  
-
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />
         <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
