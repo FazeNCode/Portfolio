@@ -6,7 +6,7 @@ import { OrbitControls, Preload } from "@react-three/drei";
 
 const Banner = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./banner_scene/banner_text3.glb',
+  const { nodes, materials, animations } = useGLTF('./banner_scene/banner_texted.glb',
 
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();
