@@ -46,11 +46,12 @@ const HornyMushroom = () => {
           shadow-mapSize={1024}
         />
 <OrbitControls
+        enableRotate={false}
+        autoRotate={false}
         enableZoom={false}
         enablePan={false}
         enableDamping={true}
         dampingFactor={0.25}
-        autoRotate={false}
         maxPolarAngle={Math.PI / 2.5}
         minPolarAngle={Math.PI / 2.5}
         position={[-0, 0, 0]} // Adjust the camera position here

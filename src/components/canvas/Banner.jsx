@@ -28,23 +28,28 @@ const Banner = () => {
   
   return (
 
-//     <group ref={group} dispose={null} scale={[2, 2, 1.18]}>
+
+
+// BELOW IS TESTING CODE!
+
+//   <group ref={group} dispose={null} scale={[2, 2, 2]}>
 //  <primitive
 //      object={nodes.Scene}
-//      scale={1}
-//      position={[0, -0.1, 2.1]}
+//      scale={0.23}
+//      position={[0, 0.60, 2.1]}
 //      rotation={[0, Math.PI / -2, 0.4]}  
 //    />   
 
 
 
-  <group ref={group} dispose={null} scale={[2, 2, 1.18]}>
+// Original Code
+<group ref={group} dispose={null} scale={[2, 2, 1.18]}>
  <primitive
      object={nodes.Scene}
      scale={1}
      position={[0, -0.1, 2.1]}
      rotation={[0, Math.PI / -2, 0.4]}  
-   />   
+   />     
 
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />
@@ -59,6 +64,7 @@ const Banner = () => {
           shadow-mapSize={1024}
         />
 <OrbitControls
+        enableRotate={false}
         enableZoom={false}
         enablePan={false}
         enableDamping={true}

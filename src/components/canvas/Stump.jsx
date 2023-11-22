@@ -52,6 +52,7 @@ const Stump = () => {
         />
 
 <OrbitControls
+        enableRotate={false}
         enableZoom={false}
         enablePan={false}
         enableDamping={true}
