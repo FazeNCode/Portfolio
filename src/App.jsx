@@ -26,16 +26,14 @@ const App = () => {
     {/* bg-hero-pattern */}
       <Navbar/>
       <Hero/>
-
     </div>
     <About/>
     <Experience/>
 
 <div className="h-[300px] mt-24  ">
 <Canvas>
-        <Banner/>
-      </Canvas>
-
+      <Banner/>
+  </Canvas>
 </div>
      
   
@@ -46,11 +44,7 @@ const App = () => {
     <Feedbacks/> */}
     <div className="relative z-0">
  
-<div className=" h-[600px]">
-<Canvas >
-    <Thief/>
-    </Canvas>
-</div>
+
 
     <Contact/>
     </div>

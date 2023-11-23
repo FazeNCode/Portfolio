@@ -1,4 +1,4 @@
-import EarthCanvas from "./Earth";
+
 
 
 import BallCanvas from "./Ball";
@@ -22,5 +22,5 @@ import Thief from "./Thief";
 
 import Banner from "./Banner";
 
-export { EarthCanvas, BallCanvas, Linuxs, BirdCanvas, Stump, Slime, Thief, OrangeMushroom, HornyMushroom, Banner};
+export {BallCanvas, Linuxs, BirdCanvas, Stump, Slime, Thief, OrangeMushroom, HornyMushroom, Banner};
 

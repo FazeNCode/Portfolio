@@ -5,6 +5,8 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { profile, youtube, github, youtube_circle } from "../assets";
+import { Thief } from "./canvas";
+import { Canvas } from "@react-three/fiber";
 
 
 const Contact = () => {
@@ -144,8 +146,21 @@ const Contact = () => {
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[450px] h-[350px] bg-yellow-300"
+        className="xl:flex-1 xl:h-auto md:h-[450px] h-[350px"
     >
+      <div className=" h-[600px]">
+<Canvas
+dpr={[8, 8]}
+camera={{
+  fov: 45,
+  near: 5,
+  far: -200,
+  position: [-2, 3, 6],
+}}
+>
+    <Thief/>
+    </Canvas>
+</div>
           
       </motion.div>
     </div>

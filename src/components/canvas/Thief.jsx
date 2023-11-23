@@ -29,9 +29,13 @@ const Thief = () => {
   return (
     // <group ref={group} dispose={null} scale={[2.2, 2.2, 2.2]}>
     <group ref={group} dispose={null} scale={[75, 65, 75 ]}>
-      <primitive object={nodes.Scene} />
-   
-      <hemisphereLight intensity={1} groundColor="yellow" />
+      <primitive object={nodes.Scene} 
+       scale={1.5} 
+       position-x={-0.0} 
+       position-y={-0.03} 
+        rotation={[0, 0, 0]} 
+      />
+      <hemisphereLight intensity={1} groundColor="black" />
       <directionalLight position={[0, 0, 0]} castShadow intensity={1} />
       <pointLight intensity={0.4} />
       <spotLight
@@ -53,9 +57,8 @@ const Thief = () => {
         position={[-0, 0, 0]} // Adjust the camera position here
       />
 
-<mesh>
-  {/* Have not yet utilized mesh, WILL DO IN THE FUTURE! */}
-    </mesh>
+{/* <mesh>
+    </mesh> */}
       
     </group>
   );
