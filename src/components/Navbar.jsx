@@ -3,34 +3,48 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { flogo } from "../assets";
-
-import { Sling as Hamburger } from 'hamburger-react'
+import { Sling as Hamburger } from 'hamburger-react';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth >= 768);
     };
+
     window.addEventListener("resize", handleResize);
+
+    let scrollTimeout; // Declare scrollTimeout outside of handleScroll
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout);
+
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 200); // Adjust the duration as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    // <nav className={`${styles.paddingX} w-full flex items-center py-2 md:py-5 top-0 z-20 bg-primary`}>
-
     <nav
-    className={`${styles.paddingX} w-full flex items-center  ${
-      isLargeScreen ? "py-5" : "py-2"
-    } top-0 z-20 bg-primary transition-all duration-1000`}
-  >
-
+      className={`${styles.paddingX} w-full flex items-center ${
+        isLargeScreen ? "py-5" : "py-2"
+      } top-0 z-20 bg-primary transition-all duration-1000 ${
+        (isScrolling || toggle) ? "bg-opacity-50" : "bg-opacity-100"
+      } fixed`}
+    >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
@@ -51,7 +65,7 @@ const Navbar = () => {
             </p>
           </div>
         </Link>
- {/* Mobile Navigation */}
+        {/* Mobile Navigation */}
         <div className="md:hidden">
           <Hamburger
             toggled={toggle}
@@ -60,10 +74,9 @@ const Navbar = () => {
             easing="ease-in"
             duration={0.7}
             rounded
-            
           />
         </div>
-  {/* if it's not toggled show hidden : else show flex */}
+        {/* if it's not toggled show hidden : else show flex */}
         <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
@@ -71,12 +84,11 @@ const Navbar = () => {
               className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[20px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-               {/* Dynamic template string */}
+              {/* Dynamic template string */}
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
         </ul>
-
         <div
           className={`${
             !toggle ? "hidden" : "flex"
@@ -95,7 +107,7 @@ const Navbar = () => {
                   setActive(link.title);
                 }}
               >
-                 {/* Dynamic template string */}
+                {/* Dynamic template string */}
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
