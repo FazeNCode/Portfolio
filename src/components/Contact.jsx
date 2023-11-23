@@ -4,10 +4,7 @@ import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-
 import { profile, youtube, github, youtube_circle } from "../assets";
-
-
 
 
 const Contact = () => {
@@ -66,15 +63,16 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl" >
        
-    <div className="absolute justify-end right-6 ">
+    <div className="absolute justify-end right-8 ">
     <img
               src={profile}
               alt="profile"
-              className=" w-24 h-24 rounded-full object-cover" 
+              className="rounded-full object-cover w-16 h-16 xs:w-20 xs:h-20 transition-all ease-in-out duration-1000" 
             />
+            
         </div>
-        <h2 className={styles.sectionHeadText}>Contact</h2>
-       
+        <h2 className={styles.sectionHeadText}>Connect</h2>
+      
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -141,14 +139,15 @@ const Contact = () => {
     />
   </div>
 </div>
-
         </form>
 
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h=[550px] h-[350px]"
-      ></motion.div>
+        className="xl:flex-1 xl:h-auto md:h-[450px] h-[350px] bg-yellow-300"
+    >
+          
+      </motion.div>
     </div>
   );
 };

@@ -73,9 +73,10 @@ const Navbar = () => {
             size={50}
             easing="ease-in"
             duration={0.7}
-            rounded
-          />
+            rounded/>
+
         </div>
+
         {/* if it's not toggled show hidden : else show flex */}
         <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
@@ -119,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
