@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import {
-  BirdCanvas,
+  Bird,
   Stump,
   OrangeMushroom,
   Slime,
@@ -32,23 +32,30 @@ const Hero = () => {
       expanded ? "expanded" : ""
   }`}
     >
-      <div className="mx-auto">
-        {/* <BirdCanvas /> */}
-      </div>
+     
+        <Canvas>
+        <Bird />
+        <OrangeMushroom/>
+    <HornyMushroom/>
+    <Slime/>
+    <Stump />
+        
+
+        </Canvas>
+       
+   
 
     {/* <div className="flex justify-center h-screen  mx-auto"> */}
-    <div className=" justify-center  mx-auto">
+    <div className=" justify-center  mx-auto ">
 
 <div className="h-screen">
-<Canvas>
+{/* <Canvas>
     <OrangeMushroom/>
     <HornyMushroom/>
     <Slime/>
     <Stump />
-
-    </Canvas>
+    </Canvas> */}
 </div>
-  
   
 </div>
 

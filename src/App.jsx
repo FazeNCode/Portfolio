@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Banner} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Banner, Bird} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 
@@ -21,7 +21,7 @@ const App = () => {
   
   return (
    <BrowserRouter>
-   <div className="relative bg-primary   ">
+   <div className="relative bg-primary  ">
     <div className=" bg-hero-pattern  ">
     {/* bg-hero-pattern */}
       <Navbar/>

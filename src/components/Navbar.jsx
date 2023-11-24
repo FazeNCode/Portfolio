@@ -5,6 +5,28 @@ import { navLinks } from "../constants";
 import { flogo } from "../assets";
 import { Sling as Hamburger } from 'hamburger-react';
 
+const Logo = ({ isScrolling }) => (
+  <div className={`flex items-center ${isScrolling ? "opacity-0 transition-all duration-1000" : "opacity-100 transition-all duration-1000"}`}>
+    <img src={flogo} alt="logo" className="w-30 h-24 object-contain" />
+    <p className="text-white text-[34px] font-bold cursor-pointer">
+      <span className="sm:block hidden mx-[-24px]">aisal</span>
+    </p>
+  </div>
+);
+
+const MobileNav = ({ toggle, setToggle, isScrolling }) => (
+  <div className={`md:hidden ${isScrolling ? "opacity-0 transition-all duration-1000" : "opacity-100 transition-all duration-300"}`}>
+    <Hamburger
+      toggled={toggle}
+      toggle={setToggle}
+      size={50}
+      easing="ease-in"
+      duration={0.7}
+      rounded
+    />
+  </div>
+);
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -18,15 +40,14 @@ const Navbar = () => {
 
     window.addEventListener("resize", handleResize);
 
-    let scrollTimeout; // Declare scrollTimeout outside of handleScroll
-
+    let scrollTimeout;
     const handleScroll = () => {
       setIsScrolling(true);
       clearTimeout(scrollTimeout);
 
       scrollTimeout = setTimeout(() => {
         setIsScrolling(false);
-      }, 200); // Adjust the duration as needed
+      }, 200);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,7 +63,7 @@ const Navbar = () => {
       className={`${styles.paddingX} w-full flex items-center ${
         isLargeScreen ? "py-5" : "py-2"
       } top-0 z-20 bg-primary transition-all duration-1000 ${
-        (isScrolling || toggle) ? "bg-opacity-50" : "bg-opacity-100"
+        (isScrolling || toggle) ? "bg-opacity-0" : "bg-opacity-80"
       } fixed`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -54,30 +75,10 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <div className="flex items-center ">
-            <img
-              src={flogo}
-              alt="logo"
-              className="w-30 h-24 object-contain"
-            />
-            <p className="text-white text-[34px] font-bold cursor-pointer">
-              <span className="sm:block hidden mx-[-24px]">aisal</span>
-            </p>
-          </div>
+          <Logo isScrolling={isScrolling} />
         </Link>
-        {/* Mobile Navigation */}
-        <div className="md:hidden">
-          <Hamburger
-            toggled={toggle}
-            toggle={setToggle}
-            size={50}
-            easing="ease-in"
-            duration={0.7}
-            rounded/>
+        <MobileNav toggle={toggle} setToggle={setToggle} isScrolling={isScrolling} />
 
-        </div>
-
-        {/* if it's not toggled show hidden : else show flex */}
         <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
@@ -85,18 +86,17 @@ const Navbar = () => {
               className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[20px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              {/* Dynamic template string */}
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
         </ul>
+
         <div
           className={`${
             !toggle ? "hidden" : "flex"
           } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
         >
           <ul className="list-none flex justify-end items-start flex-col gap-6">
-            {/* Dynamic block of code  */}
             {navLinks.map((link) => (
               <li
                 key={link.id}
@@ -108,7 +108,6 @@ const Navbar = () => {
                   setActive(link.title);
                 }}
               >
-                {/* Dynamic template string */}
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
@@ -118,6 +117,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
-
