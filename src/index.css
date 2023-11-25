@@ -24,29 +24,23 @@ body.custom-cursor {
   background-repeat: no-repeat;
   background-position: bottom ;
   background-size: auto; /* Start with 'auto' for smooth transition */
-  transition: background-size ease-in 1000ms; /* Adjust the duration as needed */
+
   /* background-attachment: fixed; Ensure the background stays fixed */
 }
 
 
-/* @media (max-width: 799px) {
-  .bg-hero-pattern {
-    background-position: bottom; 
-  }
-} */
 
-/* @media (max-width: 1080px) {
-  
-  .bg-hero-pattern {
-    background-position: top; 
-  }
-} */
 
+@media (min-width: 200px) {
+  .bg-hero-pattern {
+    background-size: cover; /* Apply 'bg-cover' on xl screens */
+    background-position: bottom ;
+  }
+} 
 
 @media (min-width: 1920px) {
   .bg-hero-pattern {
     background-size: cover; /* Apply 'bg-cover' on xl screens */
-   
   }
 } 
 /*  */
@@ -98,22 +92,12 @@ body.custom-cursor {
   border: none;
   font-weight: 500; /* or 'medium' if available in the font */
 }
-/* bg-tertiary 
-py-4 
-px-6 
-placeholder:text-secondary 
-text-white 
-rounded-lg 
-outlined-none
-border-none 
-font-medium */
 
 .form-input::placeholder {
   --tw-text-opacity: 1;
   color: rgb(170 166 195 / var(--tw-text-opacity));
 }
 /*  */
-
 
 
 .hash-span {

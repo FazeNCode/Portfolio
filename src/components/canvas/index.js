@@ -1,10 +1,5 @@
-
-
-
 import BallCanvas from "./Ball";
 import Linuxs from "./Linux";
-
-
 import Bird from "./Bird";
 import Stump from "./Stump";
 import Slime from "./Slime";

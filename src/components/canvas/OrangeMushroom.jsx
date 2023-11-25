@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, Suspense } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
 import { OrbitControls, Preload } from "@react-three/drei";
+import Loader from '../Loader';
 
 const OrangeMushroom = () => {
   const group = useRef();
@@ -56,6 +57,7 @@ const OrangeMushroom = () => {
           shadow-mapSize={1024}
         />
 
+
 <OrbitControls
         enableRotate={false}
         enableZoom={false}
@@ -67,6 +69,7 @@ const OrangeMushroom = () => {
         minPolarAngle={Math.PI / 2.5}
         position={[-0, 0, 0]} // Adjust the camera position here
       />
+  
 
     </group>
   );

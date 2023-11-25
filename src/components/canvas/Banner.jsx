@@ -63,6 +63,7 @@ const Banner = () => {
           castShadow
           shadow-mapSize={1024}
         />
+       
 <OrbitControls
         enableRotate={false}
         enableZoom={false}
@@ -74,6 +75,7 @@ const Banner = () => {
         minPolarAngle={Math.PI / 2.5}
         position={[-0, 0, 0]} // Adjust the camera position here
       />
+   
     </group>
   );
 };

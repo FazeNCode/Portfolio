@@ -5,18 +5,18 @@ import { useEffect } from "react";
 
 const App = () => {
 
-  useEffect(() => {
-    const handleClick = () => {
-      const body = document.querySelector("body");
-      if (body) {
-        body.style.cursor = "url(/src/assets/cursor_red.png), auto";
-      }
-    };
-    document.addEventListener("click", handleClick);
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleClick = () => {
+  //     const body = document.querySelector("body");
+  //     if (body) {
+  //       body.style.cursor = "url(/src/assets/cursor_red.png), auto";
+  //     }
+  //   };
+  //   document.addEventListener("click", handleClick);
+  //   return () => {
+  //     document.removeEventListener("click", handleClick);
+  //   };
+  // }, []);
 
   
   return (

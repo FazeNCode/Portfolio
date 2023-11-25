@@ -109,7 +109,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Linux Administrator",
+    title: "Linux Admin",
     company_name: "TexadaSoftware",
       icon: '',
     iconBg: "#383E56",
