@@ -26,12 +26,19 @@ const HornyMushroom = () => {
 
   
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1]}>
-    <primitive object={nodes.Scene}
-     scale= {0.1}
-     position={[1.1, -0.5, -0.2]} 
-    // rotation={[0, 1.5, 0]}  
-     />
+    // <group ref={group} dispose={null} scale={[1, 1, 1]}>
+    // <primitive object={nodes.Scene}
+    //  scale= {0.15}
+    //  position={[1.1, -0.5, -0.2]} 
+    // // rotation={[0, 1.5, 0]}  
+    //  />
+
+      <group ref={group} dispose={null} scale={[2, 2, 3]}>
+      <primitive object={nodes.Scene}
+       scale= {0.4}
+       position={[2.7, -4.3, -7]}
+       rotation={[-0.2, 0, 0]}  
+        />
 
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />

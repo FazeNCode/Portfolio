@@ -23,14 +23,13 @@ const App = () => {
    <BrowserRouter>
    <div className="relative bg-primary  ">
     <div className=" bg-hero-pattern  ">
-    {/* bg-hero-pattern */}
       <Navbar/>
       <Hero/>
     </div>
     <About/>
     <Experience/>
 
-<div className="h-[300px] mt-24  ">
+<div className="h-[300px] mt-24 ">
 <Canvas>
       <Banner/>
   </Canvas>
@@ -48,6 +47,8 @@ const App = () => {
 
     <Contact/>
     </div>
+
+    
    </div>
    </BrowserRouter>
   

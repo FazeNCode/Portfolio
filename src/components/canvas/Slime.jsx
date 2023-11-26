@@ -30,10 +30,13 @@ const Slime = () => {
   return (
     <group ref={group} dispose={null} scale={[2, 2, 2]}>
       <primitive object={nodes.Scene}
-       scale= {0.09}
+       scale= {0.32}
        position={[-1, 0, 0]}
        rotation={[-0.1, 0.4, 0]}
         />
+
+  
+    
 
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />

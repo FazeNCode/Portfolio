@@ -151,7 +151,7 @@ const Contact = () => {
       >
         <div className="h-full ">
           <Canvas
-            dpr={[4, 4]}
+            // dpr={[4, 4]}
             camera={{
               fov: 45,
               near: 5,

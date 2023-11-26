@@ -26,12 +26,11 @@ const OrangeMushroom = () => {
   }, [actions, animationIndex]);
 
 
-  
   return (
     
     <group ref={group} dispose={null} scale={[2, 2, 3]}>
       <primitive object={nodes.Scene}
-       scale= {0.3}
+       scale= {1.7}
        position={[0.7, -4.3, -7]}
        rotation={[-0.2, 0, 0]}  
         />

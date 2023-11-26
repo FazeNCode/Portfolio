@@ -1,14 +1,12 @@
-import React, { useRef, useEffect, Suspense } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
-import { OrbitControls, Preload } from "@react-three/drei";
-
+import { OrbitControls } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 
 const Bird = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./birds_scene/birds2.glb',
-
-  );
+  const { nodes, animations } = useGLTF('./birds_scene/birds2.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -17,49 +15,72 @@ const Bird = () => {
   }, [names]);
 
   useEffect(() => {
-    console.log("Names:", names);
     actions[names[animationIndex]].reset().fadeIn(1).play('Scene');
     return () => {
       actions[names[animationIndex]].fadeOut(0.5);
     };
   }, [actions, animationIndex]);
+
+  // // Adjust 'speed' and 'resetThreshold' accordingly
+  // const speed = 1;
+  // const resetThreshold = -1.1;
+
+  // // useFrame allows the component to subscribe to the render-loop
+  // useFrame((state, delta) => {
+  //   // Update the position of the bird along the x-axis
+  //   group.current.position.x += delta * speed;
+
+  //   // Check if the bird is beyond the reset threshold
+  //   if (group.current.position.x < resetThreshold) {
+  //     // Reset the bird's position to the starting point
+  //     group.current.position.x = 1; // Adjust this based on your scene
+  //   }
+  // });
+
+
+  const speed = 0.5;
+  const resetThreshold = 7;
+
+  useFrame((state, delta) => {
+    group.current.position.x -= delta * speed;
+
+    // Check if the bird is beyond the reset threshold
+    if (group.current.position.x < -resetThreshold) {
+      // Reset the bird's position to the starting point
+      group.current.position.x = resetThreshold;
+    }
+  });
+
+
+
+
   
+  
+
+
   return (
-    <group ref={group} dispose={null} scale={[3, 3, 3]}>
-    <primitive object={nodes.Scene}
-     scale= {1}
-     position={[1.1, -0.5, -0.4]} 
-    rotation={[0, 1.5, 60]}  
-     />
-
+    <group ref={group} dispose={null} scale={[5, 5, 5]}>
+      <primitive object={nodes.Scene} scale={1} position={[-0.5, 0, 0]} rotation={[0, 1.5, 0]} />
       <ambientLight />
-       <hemisphereLight intensity={0} groundColor="" />
-        <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
+      <hemisphereLight intensity={0} groundColor="" />
+      <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
       <pointLight intensity={1} />
-     <spotLight
-          position={[-60, 90, 40]}
-          angle={0.7}
-          penumbra={1}
-          intensity={0.1}
-          castShadow
-          shadow-mapSize={1024}
-        />
+      <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />
 
-<OrbitControls
+      <OrbitControls
         enableRotate={true}
         autoRotate={false}
-        autoRotateSpeed={3}
+        autoRotateSpeed={0.5}
         enableZoom={false}
         enablePan={true}
         enableDamping={true}
         dampingFactor={1}
         maxPolarAngle={Math.PI / 2.5}
         minPolarAngle={Math.PI / 2.5}
-        position={[0, 0, 0]} // Adjust the camera position here
+        position={[0, 0, 0]}
       />
-  
     </group>
   );
 };
-export default Bird;
 
+export default Bird;
