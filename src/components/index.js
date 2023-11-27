@@ -32,5 +32,4 @@ export {
   Slime,
   HornyMushroom,
   Banner
-
 }

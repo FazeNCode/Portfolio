@@ -20,12 +20,11 @@ body.custom-cursor {
 
 /* FAISAL THIS IS FOR THE BACKGROUND IMAGE THAT IS DYNAMIC FOR PHONE AND BIG SCREEN */
 .bg-hero-pattern {
-  /* Other background properties */
   background-repeat: no-repeat;
   background-position: bottom ;
-  background-size: auto; /* Start with 'auto' for smooth transition */
+  background-size: auto; 
 
-  /* background-attachment: fixed; Ensure the background stays fixed */
+  /* background-attachment: fixed;  */
 }
 
 
@@ -33,16 +32,18 @@ body.custom-cursor {
 
 @media (min-width: 200px) {
   .bg-hero-pattern {
-    background-size: cover; /* Apply 'bg-cover' on xl screens */
+    background-size: cover; 
     background-position: bottom ;
   }
-} 
+}  
 
-@media (min-width: 1920px) {
+
+
+/* @media (min-width: 1920px) {
   .bg-hero-pattern {
-    background-size: cover; /* Apply 'bg-cover' on xl screens */
+    background-size: cover; 
   }
-} 
+}  */
 /*  */
 
 

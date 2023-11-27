@@ -2,6 +2,7 @@ import React, { useRef, useEffect, Suspense } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
 import { OrbitControls, Preload } from "@react-three/drei";
+import * as TWEEN from 'tween.js';
 import Loader from '../Loader';
 
 const OrangeMushroom = () => {
@@ -25,9 +26,7 @@ const OrangeMushroom = () => {
     };
   }, [actions, animationIndex]);
 
-
   return (
-    
     <group ref={group} dispose={null} scale={[2, 2, 3]}>
       <primitive object={nodes.Scene}
        scale= {1.7}
@@ -42,7 +41,6 @@ const OrangeMushroom = () => {
        rotation={[-0.1, 0.4, 0]}
         /> */}
 
-
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />
         <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
@@ -56,7 +54,6 @@ const OrangeMushroom = () => {
           shadow-mapSize={1024}
         />
 
-
 <OrbitControls
         enableRotate={false}
         enableZoom={false}
@@ -68,11 +65,7 @@ const OrangeMushroom = () => {
         minPolarAngle={Math.PI / 2.5}
         position={[-0, 0, 0]} // Adjust the camera position here
       />
-  
-
     </group>
   );
 };
-
 export default OrangeMushroom;
-

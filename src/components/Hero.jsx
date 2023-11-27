@@ -66,20 +66,20 @@ const Hero = () => {
 
   return (
     <section className={`relative w-full h-screen m ${expanded ? "expanded" : ""}`}>
-      <div className="h-30 absolute top-40 left-1/2 transform -translate-x-1/2">
+    <div className=" absolute top-40 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-3/4 lg:w-1/2 xl:w-1/3 ">
         <Canvas className="">
           <Bird />
         </Canvas>
       </div>
 
-      <div className="h-30 absolute bottom-0 left-1/2 transform -translate-x-1/2">
-        <Canvas className="">
-          <OrangeMushroom position={[-2, 0, 0]} />
-          <HornyMushroom position={[0, 0, 0]} />
-          <Slime position={[2, 0, 0]} />
-          <Stump position={[4, 0, 0]} />
-        </Canvas>
-      </div>
+  <div className=" h-36 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
+  <Canvas className="w-full">
+    <OrangeMushroom />
+    <HornyMushroom />
+    <Slime />
+    <Stump />
+  </Canvas>
+</div>
     </section>
   );
 };

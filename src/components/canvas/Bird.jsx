@@ -21,25 +21,8 @@ const Bird = () => {
     };
   }, [actions, animationIndex]);
 
-  // // Adjust 'speed' and 'resetThreshold' accordingly
-  // const speed = 1;
-  // const resetThreshold = -1.1;
-
-  // // useFrame allows the component to subscribe to the render-loop
-  // useFrame((state, delta) => {
-  //   // Update the position of the bird along the x-axis
-  //   group.current.position.x += delta * speed;
-
-  //   // Check if the bird is beyond the reset threshold
-  //   if (group.current.position.x < resetThreshold) {
-  //     // Reset the bird's position to the starting point
-  //     group.current.position.x = 1; // Adjust this based on your scene
-  //   }
-  // });
-
-
   const speed = 0.5;
-  const resetThreshold = 7;
+  const resetThreshold = 9;
 
   useFrame((state, delta) => {
     group.current.position.x -= delta * speed;
@@ -50,13 +33,6 @@ const Bird = () => {
       group.current.position.x = resetThreshold;
     }
   });
-
-
-
-
-  
-  
-
 
   return (
     <group ref={group} dispose={null} scale={[5, 5, 5]}>
@@ -82,5 +58,4 @@ const Bird = () => {
     </group>
   );
 };
-
 export default Bird;
