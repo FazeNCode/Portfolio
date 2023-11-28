@@ -64,14 +64,18 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <div className="absolute justify-end right-8 ">
+        <div className=" flex justify-between ">
+        <h2 className={styles.sectionHeadText}>Connect</h2>
+    
           <img
             src={profile}
             alt="profile"
             className="rounded-full object-cover w-16 h-16 xs:w-20 xs:h-20 transition-all ease-in-out duration-1000"
           />
         </div>
-        <h2 className={styles.sectionHeadText}>Connect</h2>
+
+        
+       
 
         <form
           ref={formRef}
@@ -147,7 +151,7 @@ const Contact = () => {
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[450px] h-[350px"
+        className=" transform -translate-x-1/2 w-full xl:w-3/6 xl:h-auto  h-[42em]"
       >
         <div className="h-full ">
           <Canvas
@@ -156,7 +160,7 @@ const Contact = () => {
               fov: 45,
               near: 5,
               far: -200,
-              position: [-2, 3, 6],
+              position: [-2, 3, 10],
             }}
           >
             <Thief />

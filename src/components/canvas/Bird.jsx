@@ -21,8 +21,8 @@ const Bird = () => {
     };
   }, [actions, animationIndex]);
 
-  const speed = 0.5;
-  const resetThreshold = 9;
+  const speed = 4;
+  const resetThreshold = 30;
 
   useFrame((state, delta) => {
     group.current.position.x -= delta * speed;
@@ -35,8 +35,8 @@ const Bird = () => {
   });
 
   return (
-    <group ref={group} dispose={null} scale={[5, 5, 5]}>
-      <primitive object={nodes.Scene} scale={1} position={[-0.5, 0, 0]} rotation={[0, 1.5, 0]} />
+    <group ref={group} dispose={null} scale={[10, 10, 10]}>
+      <primitive object={nodes.Scene} scale={0.6} position={[-0.5, 0, 0]} rotation={[0, 1.5, 0]} />
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="" />
       <directionalLight position={[1, 1, 1]} castShadow intensity={1} />

@@ -50,8 +50,6 @@ const About = () => {
       >
 
         {/* <Linuxs /> */}
-
-
         Experienced Linux administrator proficient in managing and maintaining
         Linux-based computer systems, ensuring stability, security, and
         efficiency. Skilled in installation, configuration, monitoring, and
@@ -62,14 +60,14 @@ const About = () => {
         Proficient in automation and scripting for streamlined system
         management. Adept at collaborating with teams and generating reports.
         <br/> <br/> 
-     
+
         Self-taught Web Developer proficient in HTML, CSS,
         JavaScript, and various web development frameworks. such as, React |
         Tailwindcss | Nodejs. <br/> Experienced in responsive design, cross-browser
         compatibility, and optimizing website performance.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 ">
         {/* loop over the services, get each indivdual service  */}
         {services.map((service, index) => (
           // for each service, render a custom ServiceCard

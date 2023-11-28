@@ -46,7 +46,7 @@
 
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { Bird, Stump, OrangeMushroom, Slime, HornyMushroom, Thief } from "./canvas";
+import { Bird, Stump, OrangeMushroom, Slime, HornyMushroom, Thief, MushroomHouse } from "./canvas";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
@@ -66,18 +66,27 @@ const Hero = () => {
 
   return (
     <section className={`relative w-full h-screen m ${expanded ? "expanded" : ""}`}>
-    <div className=" absolute top-40 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-3/4 lg:w-1/2 xl:w-1/3 ">
+    <div className=" absolute top-40 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-3/4 lg:w-1/2 xl:w-1/3 overflow-visible ">
         <Canvas className="">
           <Bird />
         </Canvas>
       </div>
 
-  <div className=" h-36 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
+  {/* <div className=" h-36 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
   <Canvas className="w-full">
     <OrangeMushroom />
     <HornyMushroom />
     <Slime />
     <Stump />
+  </Canvas>
+</div> */}
+
+
+
+<div className=" h-60 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
+  {/* <div className=" h-80 absolute bottom-0 left-2/6 transform -translate-x-1/4 w-full sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-1/4"> */}
+<Canvas>
+  <MushroomHouse/>
   </Canvas>
 </div>
     </section>
