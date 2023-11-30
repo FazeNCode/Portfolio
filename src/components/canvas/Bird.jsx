@@ -21,7 +21,7 @@ const Bird = () => {
     };
   }, [actions, animationIndex]);
 
-  const speed = 4;
+  const speed = 0;
   const resetThreshold = 30;
 
   useFrame((state, delta) => {
@@ -35,8 +35,8 @@ const Bird = () => {
   });
 
   return (
-    <group ref={group} dispose={null} scale={[10, 10, 10]}>
-      <primitive object={nodes.Scene} scale={0.6} position={[-0.5, 0, 0]} rotation={[0, 1.5, 0]} />
+    <group ref={group} dispose={null} scale={[6, 6, 6]}>
+      <primitive object={nodes.Scene} scale={0.7} position={[2, 0, 0]} rotation={[0, 1.5, 0]} />
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="" />
       <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
@@ -44,16 +44,16 @@ const Bird = () => {
       <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />
 
       <OrbitControls
-        enableRotate={true}
+        enableRotate={false}
         autoRotate={false}
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={0}
         enableZoom={false}
         enablePan={true}
         enableDamping={true}
         dampingFactor={1}
         maxPolarAngle={Math.PI / 2.5}
         minPolarAngle={Math.PI / 2.5}
-        position={[0, 0, 0]}
+        position={[1, 0, 0]}
       />
     </group>
   );

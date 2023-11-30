@@ -77,11 +77,14 @@ import { useCharacterAnimations } from './useCharacterAnimations';
 import { OrbitControls } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
+
+
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/mushroomhouse_test6.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown4.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
+
 
   useEffect(() => {
     setAnimations(names);
@@ -97,6 +100,8 @@ const MushroomHouse = () => {
       action.fadeIn(1).play(); // Fade in and play each animation
     });
 
+
+  
     return () => {
       // Fade out all animations
       animations.forEach((clip) => {
@@ -108,8 +113,11 @@ const MushroomHouse = () => {
 
 
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1]}>
-      <primitive object={nodes.Scene} scale={1} position={[0.7, -4.3, -7]} rotation={[-0.2, 0, 0]} />
+    <group ref={group} dispose={null} scale={[2, 2, 2]}>
+      <primitive object={nodes.Scene} scale={0.6} position={[0, -0.5, -0]} rotation={[0, 0, 0]} />
+
+
+      {/* <primitive object={nodes.Scene} scale={2} position={[0.4, -2, -15]} rotation={[0, 0, 0]} /> */}
 
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
@@ -118,19 +126,23 @@ const MushroomHouse = () => {
       <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />
 
       <OrbitControls
-        enableRotate={false}
-        enableZoom={false}
+        enableRotate={true}
+        enableZoom={true}
         enablePan={false}
         enableDamping={true}
         dampingFactor={0.25}
         autoRotate={false}
         maxPolarAngle={Math.PI / 2.5}
         minPolarAngle={Math.PI / 2.5}
-        position={[0, 0, 0]}
+        position={[10, 30, 0]}
+       
+    
       />
     </group>
+     
   );
 };
 
 export default MushroomHouse;
+
 
