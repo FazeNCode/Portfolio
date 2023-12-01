@@ -81,7 +81,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown4.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown79.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -113,11 +113,18 @@ const MushroomHouse = () => {
 
 
   return (
-    <group ref={group} dispose={null} scale={[2, 2, 2]}>
-      <primitive object={nodes.Scene} scale={0.6} position={[0, -0.5, -0]} rotation={[0, 0, 0]} />
+    
+    <group ref={group} dispose={null} scale={[1, 1, 1]}>
+    
+
+{/* MushroomTown79 */}
+      <primitive object={nodes.Scene} scale={1} position={[0, -1.5, -0.9]} rotation={[-0.15, 0, 0]} />
 
 
-      {/* <primitive object={nodes.Scene} scale={2} position={[0.4, -2, -15]} rotation={[0, 0, 0]} /> */}
+      {/* <primitive object={nodes.Scene} scale={1} position={[0, -1.5, -0.5]} rotation={[-0.35, 0, 0]} /> */}
+
+      
+
 
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
@@ -126,16 +133,31 @@ const MushroomHouse = () => {
       <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />
 
       <OrbitControls
-        enableRotate={true}
-        enableZoom={true}
-        enablePan={false}
-        enableDamping={true}
-        dampingFactor={0.25}
-        autoRotate={false}
-        maxPolarAngle={Math.PI / 2.5}
-        minPolarAngle={Math.PI / 2.5}
-        position={[10, 30, 0]}
+        // enableRotate={false}
+        // enableZoom={false}
+        // enablePan={false}
+        // enableDamping={true}
+        // dampingFactor={0.25}
+        // autoRotate={false}
+        // maxPolarAngle={Math.PI / 2.5}
+        // minPolarAngle={Math.PI / 2.5}
+        // position={[10, 30, 0]}
        
+
+
+    
+        enableRotate={false}
+        enableZoom={false}
+        enablePan={true}
+        enableDamping={true}
+        dampingFactor={false}
+        autoRotate={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      
+        position={[10, 30, 0]}
+
+     
     
       />
     </group>
