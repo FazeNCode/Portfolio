@@ -72,8 +72,8 @@ const Hero = () => {
           <Bird />
         </Canvas>
       </div>
-
-  {/* <div className=" h-36 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
+{/* 
+  <div className=" h-36 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
   <Canvas className="w-full">
     <OrangeMushroom />
     <HornyMushroom />
@@ -87,7 +87,7 @@ const Hero = () => {
 {/* ORIGINAL CODE BEFORE HEIGHT AND WIDTH ADJUST FOR AUTO SCALING */}
 {/* <div className=" h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3"> */}
 
-<div className=" h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full">
+<div className=" h-[20em] sm:h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full ">
 
 
 <Canvas>
