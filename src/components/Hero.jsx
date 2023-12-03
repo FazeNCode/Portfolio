@@ -84,8 +84,12 @@ const Hero = () => {
 
 
 
-<div className=" h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3">
-  {/* <div className=" h-80 absolute bottom-0 left-2/6 transform -translate-x-1/4 w-full sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-1/4"> */}
+{/* ORIGINAL CODE BEFORE HEIGHT AND WIDTH ADJUST FOR AUTO SCALING */}
+{/* <div className=" h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3"> */}
+
+<div className=" h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full">
+
+
 <Canvas>
   <MushroomHouse/>
   </Canvas>

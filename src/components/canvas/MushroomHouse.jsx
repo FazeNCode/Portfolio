@@ -81,7 +81,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown79.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown83.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -117,19 +117,24 @@ const MushroomHouse = () => {
     <group ref={group} dispose={null} scale={[1, 1, 1]}>
     
 
-{/* MushroomTown79 */}
+
+{/* With MaxPolarAngle / 2 */}
       <primitive object={nodes.Scene} scale={1} position={[0, -1.5, -0.9]} rotation={[-0.15, 0, 0]} />
 
 
-      {/* <primitive object={nodes.Scene} scale={1} position={[0, -1.5, -0.5]} rotation={[-0.35, 0, 0]} /> */}
+
+
+{/* With MaxPolarAngle / 2.5 */}
+{/* NEED TO COME BACK TO THIS */}
+      {/* <primitive object={nodes.Scene} scale={1} position={[0, -1.7, -0.5]} rotation={[-0.35, 0, 0]} /> */}
 
       
 
 
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
-      <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
-      <pointLight intensity={1} />
+      <directionalLight position={[1, 1, 1]} castShadow intensity={0.1} />
+      <pointLight intensity={-0.7} />
       <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />
 
       <OrbitControls
