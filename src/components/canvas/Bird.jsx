@@ -23,7 +23,7 @@ const Bird = () => {
   }, [actions, animationIndex]);
 
 
-  const speed = 2;
+  const speed = 1;
   const resetThreshold = 30;
   useFrame((state, delta) => {
     group.current.position.x -= delta * speed;

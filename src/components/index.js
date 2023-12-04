@@ -1,4 +1,4 @@
-import { BallCanvas, Linuxs, Bird, Slime, Stump, Thief, OrangeMushroom, HornyMushroom, MushroomHouse, Banner} from './canvas';
+import { BallCanvas, Linuxs, Bird, Slime, Stump, Thief, OrangeMushroom, HornyMushroom, MushroomHouse,  MapleModels, Banner} from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -32,6 +32,8 @@ export {
   OrangeMushroom,
   HornyMushroom,
   MushroomHouse,
+  MapleModels,
   Banner,
+
  
 }

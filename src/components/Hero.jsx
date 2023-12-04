@@ -46,7 +46,7 @@
 
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { Bird, Stump, OrangeMushroom, Slime, HornyMushroom, Thief, MushroomHouse } from "./canvas";
+import { Bird, Stump, OrangeMushroom, Slime, HornyMushroom, Thief, MushroomHouse, MapleModels } from "./canvas";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
@@ -79,6 +79,14 @@ const Hero = () => {
   <MushroomHouse/>
   </Canvas>
 </div>
+
+
+{/* <div className="absolute left-1/2 transform bottom-[-2.6em] -translate-x-1/2 w-full h-[20em] sm:h-[27em] sm:bottom-[-6.7em] md:h-[35em] md:bottom-[-9.2em] ">
+<Canvas>
+  <MapleModels/>
+  </Canvas>
+</div> */}
+
 {/* 
   <div className=" h-60 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full ">
   <Canvas className="">
@@ -88,6 +96,8 @@ const Hero = () => {
     <Stump />
   </Canvas>
 </div> */}
+
+
 
 
 

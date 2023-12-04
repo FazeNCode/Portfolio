@@ -37,7 +37,7 @@ const MushroomHouse = () => {
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
     
     if (windowHeight > 600) {
-      return [-1.5, -1.5, -1.5]; // Small screens
+      return [-1.5, -1.5, -2]; // Small screens
     } else if (windowHeight > 1200) {
       return [-4, -4, -1.5]; // Medium screens
     } else {
