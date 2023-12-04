@@ -35,7 +35,7 @@ const HornyMushroom = () => {
 
       <group ref={group} dispose={null} scale={[2, 2, 3]}>
       <primitive object={nodes.Scene}
-       scale= {0.4}
+       scale= {2}
        position={[2.7, -4.3, -7]}
        rotation={[-0.2, 0, 0]}  
         />

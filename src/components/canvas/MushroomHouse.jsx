@@ -1,90 +1,14 @@
-// import React, { useRef, useEffect, Suspense } from 'react';
-// import { useGLTF, useAnimations } from '@react-three/drei';
-// import { useCharacterAnimations } from './useCharacterAnimations';
-// import { OrbitControls, Preload } from "@react-three/drei";
-// import * as TWEEN from 'tween.js';
-// import Loader from '../Loader';
-
-// const MushroomHouse = () => {
-//   const group = useRef();
-//   const { nodes, materials, animations } = useGLTF('./mushroomhouse_scene/mushroomhouse_test6.glb',
-//   );
-//   const { setAnimations, animationIndex } = useCharacterAnimations();
-//   const { actions, names } = useAnimations(animations, group);
-
-//   useEffect(() => {
-//     setAnimations(names);
-//   }, [names]);
-
-//   useEffect(() => {
-
-//     console.log("Names:", names);
-//     actions[names[animationIndex]].reset().fadeIn(1).play('Armature.001|Idle, Armature|Damage,  Armature|Death');
-//     return () => {
-//       actions[names[animationIndex]].fadeOut(0.5);
-//     };
-//   }, [actions, animationIndex]);
-
-//   return (
-//     <group ref={group} dispose={null} scale={[1, 1, 1]}>
-//       <primitive object={nodes.Scene}
-//        scale= {1}
-//        position={[0.7, -4.3, -7]}
-//        rotation={[-0.2, 0, 0]}  
-//         />
-      
-//       {/* <group ref={group} dispose={null} scale={[2, 2, 2]}>
-//       <primitive object={nodes.Scene}
-//        scale= {0.09}
-//        position={[-1, 0, 0]}
-//        rotation={[-0.1, 0.4, 0]}
-//         /> */}
-
-//       <ambientLight />
-//        <hemisphereLight intensity={0} groundColor="black" />
-//         <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
-//       <pointLight intensity={1} />
-//      <spotLight
-//           position={[-60, 90, 40]}
-//           angle={0.7}
-//           penumbra={1}
-//           intensity={0.1}
-//           castShadow
-//           shadow-mapSize={1024}
-//         />
-
-// <OrbitControls
-//         enableRotate={false}
-//         enableZoom={false}
-//         enablePan={false}
-//         enableDamping={true}
-//         dampingFactor={0.25}
-//         autoRotate={false}
-//         maxPolarAngle={Math.PI / 2.5}
-//         minPolarAngle={Math.PI / 2.5}
-//         position={[-0, 0, 0]} // Adjust the camera position here
-//       />
-//     </group>
-//   );
-// };
-// export default MushroomHouse;
-
-
-
 import React, { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useGLTF, useAnimations, OrbitControls} from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
-import { OrbitControls } from '@react-three/drei';
+// import { OrbitControls } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-
-
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/mushroomtown.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
-
 
   useEffect(() => {
     setAnimations(names);
@@ -100,8 +24,6 @@ const MushroomHouse = () => {
       action.fadeIn(1).play(); // Fade in and play each animation
     });
 
-
-  
     return () => {
       // Fade out all animations
       animations.forEach((clip) => {
@@ -111,65 +33,55 @@ const MushroomHouse = () => {
     };
   }, [actions, animations, animationIndex]);
 
+  const getPosition = () => {
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    if (windowHeight > 600) {
+      return [-1.5, -1.5, -1.5]; // Small screens
+    } else if (windowHeight > 1200) {
+      return [-4, -4, -1.5]; // Medium screens
+    } else {
+      return [-5, -5, -2]; // Large screens
+    }
+  };
+
+
+  //  // Use useFrame to animate the models
+  //  useFrame((state, delta) => {
+  //   // You can adjust the speed and range as needed
+  //   const speed = .1;
+  //   const range = 1;
+
+  //   // Move the group left and right
+  //   group.current.position.x = getPosition()[0] + range * Math.sin(state.clock.elapsedTime * speed);
+  // });
+
+// position={[-2, -1.5, -1.5]}  
 
   return (
-    
     <group ref={group} dispose={null} scale={[1, 1, 1]}>
-    
-
-
-{/* With MaxPolarAngle / 2 */}
-      <primitive object={nodes.Scene} scale={1} position={[0, -1.5, -0.9]} rotation={[-0.15, 0, 0]} />
-
-
-
-
-{/* With MaxPolarAngle / 2.5 */}
-{/* NEED TO COME BACK TO THIS */}
-      {/* <primitive object={nodes.Scene} scale={1} position={[0, -1.7, -0.5]} rotation={[-0.35, 0, 0]} /> */}
-
-      
-
-
+   <primitive object={nodes.Scene} scale={1}  position={getPosition()} rotation={[-0.15, 0, 0]} />
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
-      <directionalLight position={[1, 1, 1]} castShadow intensity={0.1} />
-      <pointLight intensity={-0.7} />
-      <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />
+      <directionalLight position={[-5, 5, -5]} castShadow intensity={0.4} />
+      <pointLight intensity={-0.5} />
+      <spotLight position={[100, 100, -100]} angle={0.7} penumbra={1} intensity={0.5} castShadow shadow-mapSize={1024} />
 
       <OrbitControls
-        // enableRotate={false}
-        // enableZoom={false}
-        // enablePan={false}
-        // enableDamping={true}
-        // dampingFactor={0.25}
-        // autoRotate={false}
-        // maxPolarAngle={Math.PI / 2.5}
-        // minPolarAngle={Math.PI / 2.5}
-        // position={[10, 30, 0]}
-       
-
-
-    
         enableRotate={false}
         enableZoom={false}
         enablePan={true}
         enableDamping={true}
-        dampingFactor={false}
+        dampingFactor={0.25}
         autoRotate={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
-      
         position={[10, 30, 0]}
-
-     
     
       />
     </group>
-     
   );
 };
-
 export default MushroomHouse;
 
 

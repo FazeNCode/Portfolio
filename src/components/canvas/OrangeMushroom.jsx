@@ -18,16 +18,16 @@ const OrangeMushroom = () => {
   }, [names]);
 
   useEffect(() => {
-
     console.log("Names:", names);
     actions[names[animationIndex]].reset().fadeIn(1).play('Idle');
+
     return () => {
       actions[names[animationIndex]].fadeOut(0.5);
     };
   }, [actions, animationIndex]);
 
   return (
-    <group ref={group} dispose={null} scale={[2, 2, 3]}>
+    <group ref={group} dispose={null} scale={[1, 1, 1]}>
       <primitive object={nodes.Scene}
        scale= {1.7}
        position={[0.7, -4.3, -7]}
@@ -61,8 +61,8 @@ const OrangeMushroom = () => {
         enableDamping={true}
         dampingFactor={0.25}
         autoRotate={false}
-        maxPolarAngle={Math.PI / 2.5}
-        minPolarAngle={Math.PI / 2.5}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
         position={[-0, 0, 0]} // Adjust the camera position here
       />
     </group>
