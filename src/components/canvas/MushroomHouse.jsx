@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/mushroomtown.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/MushroomTown79.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
