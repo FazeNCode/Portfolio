@@ -7,7 +7,7 @@ import Loader from '../Loader';
 
 const MapleModels = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./mushroomhouse_scene/maplemodels.glb',
+  const { nodes, materials, animations } = useGLTF('./mushroomhouse_scene/4models.glb',
  
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();
@@ -42,14 +42,14 @@ const MapleModels = () => {
         /> */}
 
       <ambientLight />
-       <hemisphereLight intensity={0} groundColor="black" />
-        <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
+       <hemisphereLight intensity={0} groundColor="none" />
+        <directionalLight position={[-0.1, -0.1, 1]} castShadow intensity={-1} />
       <pointLight intensity={1} />
      <spotLight
-          position={[-60, 90, 40]}
-          angle={0.7}
+          position={[-60, 9, 10]}
+          angle={-0.1}
           penumbra={1}
-          intensity={0.1}
+          intensity={-1}
           castShadow
           shadow-mapSize={1024}
         />

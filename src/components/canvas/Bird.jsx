@@ -24,7 +24,7 @@ const Bird = () => {
 
 
   const speed = 1;
-  const resetThreshold = 30;
+  const resetThreshold = 28;
   useFrame((state, delta) => {
     group.current.position.x -= delta * speed;
 

@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Banner, Bird} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Bird} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 
@@ -29,12 +29,7 @@ const App = () => {
     <About/>
     <Experience/>
 
-<div className="h-[300px] mt-24 ">
-<Canvas>
-      <Banner/>
-  </Canvas>
-</div>
-     
+
   
   
     <Tech/>

@@ -7,7 +7,7 @@ import Loader from '../Loader';
 
 const OrangeMushroom = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom.glb',
+  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom_move2.glb',
  
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();

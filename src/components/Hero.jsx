@@ -74,28 +74,28 @@ const Hero = () => {
       </div>
 
 
-      <div className="absolute left-1/2 transform bottom-[-4.6em] -translate-x-1/2 w-full h-[20em] sm:h-[27em] sm:bottom-[-6.7em] md:h-[35em] md:bottom-[-9.2em] ">
+      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5.7em] w-full h-[22em] sm:h-[27em] sm:bottom-[-7.3em] md:h-[35em] md:bottom-[-10em] lg:bottom-[-9.5em] ">
 <Canvas>
   <MushroomHouse/>
   </Canvas>
 </div>
 
 
-{/* <div className="absolute left-1/2 transform bottom-[-2.6em] -translate-x-1/2 w-full h-[20em] sm:h-[27em] sm:bottom-[-6.7em] md:h-[35em] md:bottom-[-9.2em] ">
+ <div className="absolute left-1/2 transform bottom-[-2.6em] -translate-x-1/2 w-full h-[20em] sm:h-[27em] sm:bottom-[-6.7em] md:h-[35em] md:bottom-[-9.2em] ">
 <Canvas>
   <MapleModels/>
   </Canvas>
-</div> */}
+</div> 
 
-{/* 
-  <div className=" h-60 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full ">
+
+  {/* <div className=" h-60 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full ">
   <Canvas className="">
     <OrangeMushroom />
     <HornyMushroom />
     <Slime />
     <Stump />
   </Canvas>
-</div> */}
+</div>  */}
 
 
 

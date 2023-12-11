@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/mushroomtowns.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/mushroomworld.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -33,34 +33,48 @@ const MushroomHouse = () => {
     };
   }, [actions, animations, animationIndex]);
 
-  const getPosition = () => {
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  // const getPosition = () => {
+  //   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
     
-    if (windowHeight > 600) {
-      return [-1.5, -1.5, -2]; // Small screens
-    } else if (windowHeight > 1200) {
-      return [-4, -4, -1.5]; // Medium screens
-    } else {
-      return [-5, -5, -2]; // Large screens
-    }
-  };
+  //     if (windowHeight >= 370) {
+  //       return [-1.5, -3.1, -2.5]; // Small screens
+  //     } else if (windowHeight >= 1200) {
+  //       return [-4, -4, -1.5]; // Medium screens
+  //     } else {
+  //       return [-5, -5, -2]; // Large screens
+  //     }
+  //   };
 
 
-  //  // Use useFrame to animate the models
-  //  useFrame((state, delta) => {
-  //   // You can adjust the speed and range as needed
-  //   const speed = .1;
-  //   const range = 1;
+  
 
-  //   // Move the group left and right
-  //   group.current.position.x = getPosition()[0] + range * Math.sin(state.clock.elapsedTime * speed);
-  // });
+    // const getPosition = () => {
+    //   const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    //   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    //   if (windowWidth === 360 && windowHeight === 360) {
+    //     return [-1, -2.955, -3]; // For width 360 and height 360
+    //   } else if (windowWidth === 480 && windowHeight === 480) {
+    //     return [-1, -2.555, -2.5]; // For width 480 and height 480
+    //   } else if (windowWidth === 720 && windowHeight === 720) {
+    //     return [-1, -2.3, -2.5]; // For width 720 and height 720
+    //   } else if (windowWidth === 1080 && windowHeight === 1080) {
+    //     return [-1.5, -2, -2.5]; // For width 1080 and height 1080
+    //   } else if (windowWidth <= 375 && windowHeight <= 700) {
+    //     return [-1.5, -2.2, -2.5]; // Small screens
+    //   } else if (windowWidth >= 720 && windowHeight >= 800) {
+    //     return [-4, -1, -1.5]; // Medium screens
+    //   } else {
+    //     return [-1, -2, -2]; // Large screens
+    //   }
+    // };
 
-// position={[-2, -1.5, -1.5]}  
+
+  
 
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1]}>
-   <primitive object={nodes.Scene} scale={1}  position={getPosition()} rotation={[-0.15, 0, 0]} />
+    <group ref={group} dispose={null} scale={[1, 1, 1.2]}>
+   <primitive object={nodes.Scene} scale={1} position={[-2, -1.5, -1.5]} rotation={[-0.15, 0, 0]} />
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
       <directionalLight position={[-5, 5, -5]} castShadow intensity={0.4} />
@@ -70,7 +84,7 @@ const MushroomHouse = () => {
       <OrbitControls
         enableRotate={false}
         enableZoom={false}
-        enablePan={true}
+        enablePan={false}
         enableDamping={true}
         dampingFactor={0.25}
         autoRotate={false}
