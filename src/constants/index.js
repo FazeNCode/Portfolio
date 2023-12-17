@@ -34,7 +34,16 @@ export const navLinks = [
   {
     id: "contact",
     title: "Contact",
+
   },
+
+  {
+    id: "resume",
+    title: "Resume",
+
+  },
+
+  
 ];
 
 
@@ -115,7 +124,7 @@ const experiences = [
     iconBg: "#383E56",
     date: "March 2018 - April 2020",
     points: [
-      "Daily task goes here.",
+      "W.",
       "Daily task goes here.",
       "Daily task goes here.",
       "Daily task goes here.",
@@ -129,10 +138,11 @@ const experiences = [
     iconBg: "#383E56",
     date: "March 2021 - April 2022",
     points: [
-      "Daily task goes here.",
-      "Daily task goes here.",
-      "Daily task goes here.",
-      "Daily task goes here.",
+      "Configured and managed Active Directory.",
+      "Experienced in Centrify AD",
+      "Managed and deployed Jira cases regarding system issues. ",
+      "DNS OOM-Killer |",
+      "Conifugre DNS records",
     ],
   },
 
@@ -143,9 +153,9 @@ const experiences = [
     iconBg: "#383E56",
     date: "March 2022 - April 2023",
     points: [
-      "Daily task goes here.",
-      "Daily task goes here.",
-      "Daily task goes here.",
+      "Experienced in Html | Css | JavaScript",
+      "Fimialiar and well versed with various react hooks.",
+      "A good understanding in .",
       "Daily task goes here.",
     ],
   },

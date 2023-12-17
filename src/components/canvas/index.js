@@ -8,6 +8,7 @@ import HornyMushroom from "./HornyMushroom";
 import Thief from "./Thief";
 import MushroomHouse from "./MushroomHouse";
 import MapleModels from "./MapleModels";
+import Cloud from "./Cloud";
 
-export {BallCanvas, Linuxs, Bird, Stump, Slime, OrangeMushroom, HornyMushroom, MushroomHouse, MapleModels, Thief};
+export {BallCanvas, Linuxs, Bird, Stump, Slime, OrangeMushroom, HornyMushroom, Thief, MushroomHouse, MapleModels, Cloud};
 

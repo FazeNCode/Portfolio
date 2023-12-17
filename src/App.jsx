@@ -1,10 +1,12 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Bird} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Thief, OrangeMushroom, Bird, Cloud} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 
 const App = () => {
 
+  //  GOTTA COME BACK TO THIS THE CURSOR NEEDS TO TURN RED WHEN CLICKING!!
+  
   // useEffect(() => {
   //   const handleClick = () => {
   //     const body = document.querySelector("body");
@@ -26,6 +28,11 @@ const App = () => {
       <Navbar/>
       <Hero/>
     </div>
+    <Canvas>
+    <Cloud/>
+
+    </Canvas>
+   
     <About/>
     <Experience/>
 

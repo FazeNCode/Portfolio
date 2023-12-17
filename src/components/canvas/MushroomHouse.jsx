@@ -71,10 +71,13 @@ const MushroomHouse = () => {
 
 
   
+// CHANGE THE X-AXIS TO 10 FOR ANYTHING WHENS SCREEN SIZE IS BIGGER THAN IPHONE 12 PRO COPY THE BELOW
+//  position={[10, -3.5, -60]} 
 
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1.2]}>
-   <primitive object={nodes.Scene} scale={1} position={[-2, -1.5, -1.5]} rotation={[-0.15, 0, 0]} />
+    <group ref={group} dispose={null} scale={[3, 3, 1]}>
+   <primitive object={nodes.Scene} scale={2} position={[5, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
+   
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
       <directionalLight position={[-5, 5, -5]} castShadow intensity={0.4} />
@@ -85,7 +88,7 @@ const MushroomHouse = () => {
         enableRotate={false}
         enableZoom={false}
         enablePan={false}
-        enableDamping={true}
+        enableDamping={false}
         dampingFactor={0.25}
         autoRotate={false}
         maxPolarAngle={Math.PI / 2}

@@ -87,7 +87,7 @@ import * as THREE from 'three';
 
 const MapleModels = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/4modelss.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/4models_walks.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 

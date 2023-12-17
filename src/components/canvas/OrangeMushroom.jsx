@@ -7,7 +7,7 @@ import Loader from '../Loader';
 
 const OrangeMushroom = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom_move2.glb',
+  const { nodes, materials, animations } = useGLTF('./orangemushroom_scene/orangemushroom.glb',
  
   );
   const { setAnimations, animationIndex } = useCharacterAnimations();
@@ -29,7 +29,7 @@ const OrangeMushroom = () => {
   return (
     <group ref={group} dispose={null} scale={[1, 1, 1]}>
       <primitive object={nodes.Scene}
-       scale= {1.7}
+       scale= {4}
        position={[0.7, -4.3, -7]}
        rotation={[-0.2, 0, 0]}  
         />
@@ -44,9 +44,9 @@ const OrangeMushroom = () => {
       <ambientLight />
        <hemisphereLight intensity={0} groundColor="black" />
         <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
-      <pointLight intensity={1} />
+      <pointLight intensity={0.1} />
      <spotLight
-          position={[-60, 90, 40]}
+          position={[-6, 9, 40]}
           angle={0.7}
           penumbra={1}
           intensity={0.1}

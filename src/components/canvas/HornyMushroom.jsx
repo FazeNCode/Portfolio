@@ -34,10 +34,10 @@ const HornyMushroom = () => {
     //  />
 
       <group ref={group} dispose={null} scale={[2, 2, 3]}>
-      <primitive object={nodes.Scene}
-       scale= {2}
-       position={[2.7, -4.3, -7]}
-       rotation={[-0.2, 0, 0]}  
+      <primitive object={nodes.Scene} 
+       scale= {1.5}
+       position={[20, -4.3, -7]}
+       rotation={[-0.2, -0.9, 0]}  
         />
 
       <ambientLight />
