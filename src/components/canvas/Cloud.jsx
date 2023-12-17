@@ -17,7 +17,7 @@ const Cloud = () => {
       <CameraControls />
 
       {/* Add stats for performance monitoring (optional) */}
-      <StatsGl />
+      {/* <StatsGl /> */}
     </>
   );
 };
