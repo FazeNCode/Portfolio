@@ -79,6 +79,7 @@
 
 
 
+
 import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
@@ -151,3 +152,9 @@ const MapleModels = () => {
 };
 
 export default MapleModels;
+
+
+
+
+
+

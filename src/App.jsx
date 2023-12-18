@@ -28,10 +28,10 @@ const App = () => {
       <Navbar/>
       <Hero/>
     </div>
-    <Canvas>
-    <Cloud/>
 
-    </Canvas>
+    {/* <Canvas>
+    <Cloud/>
+    </Canvas> */}
    
     <About/>
     <Experience/>
