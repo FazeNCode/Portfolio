@@ -33,18 +33,83 @@ body.custom-cursor {
 @media (min-width: 200px) {
   .bg-hero-pattern {
     background-size: cover; 
-    background-position: bottom ;
+    background-position: bottom;
   }
 }  
 
 
 
-/* @media (min-width: 1920px) {
-  .bg-hero-pattern {
-    background-size: cover; 
+
+
+
+
+
+/* Default styling */
+.absolute-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+
+@media (max-width: 600px) {
+  .absolute-container {
+    bottom: -0.1em;
   }
-}  */
-/*  */
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .absolute-container {
+    bottom: -0.15em;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .absolute-container {
+    bottom: -0.3em;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .absolute-container {
+    bottom: -0.2em;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .absolute-container {
+    bottom: 0.3em;
+  }
+}
+
+@media (min-width: 1921px) {
+  .absolute-container {
+    bottom: -0.5em;
+  }
+}
+@media (min-width: 1840px) and (max-width: 2240px) {
+  .absolute-container {
+    bottom: 0.3em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Canvas Loader */
@@ -98,11 +163,24 @@ body.custom-cursor {
 /*  */
 
 
+
+
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
   display: block;
 }
+
+
+
+.hash-span2 {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+
 
 .black-gradient {
   background: #000000; /* fallback for old browsers */

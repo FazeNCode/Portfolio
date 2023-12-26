@@ -1,66 +1,73 @@
-
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { Bird, Stump, OrangeMushroom, Slime, HornyMushroom, Thief, MushroomHouse, MapleModels } from "./canvas";
+import { Bird, MushroomHouse, MapleModels, Thief } from "./canvas";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 const Hero = () => {
   const [expanded, setExpanded] = useState(false);
-  const toggleSection = () => {
-    setExpanded(!expanded);
+  const [screenDimensions, setScreenDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const updateScreenDimensions = () => {
+    setScreenDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
   };
 
   useEffect(() => {
-    window.addEventListener("resize", toggleSection);
+    window.addEventListener("resize", updateScreenDimensions);
     return () => {
-      window.removeEventListener("resize", toggleSection);
+      window.removeEventListener("resize", updateScreenDimensions);
     };
   }, []);
 
   return (
-    <section className={`relative w-full h-screen m ${expanded ? "expanded" : ""}`}>
+    <section className={`relative w-full h-screen ${expanded ? "expanded" : ""}`}>
 
-    <div className=" absolute top-20 left-1/2 transform -translate-x-1/2 w-full ">
-      {/* sm:w-3/4 md:w-3/4 lg:w-1/2 xl:w-1/3 overflow-visible  */}
+    <div className=" absolute top-20 left-1/2 transform -translate-x-1/2 w-full  ">
         <Canvas className="">
           <Bird />
         </Canvas>
-        {/* <p className="bg-yellow-300">Test</p> */}
+      </div>
+
+<div className="">
+
+<div className="absolute left-1/2 transform -translate-x-1/2 w-full
+       bottom-[-6.7em] h-[20em] sm:h-[30em] sm:bottom-[-10.9em] md:h-[35em] md:bottom-[-12.9em] lg:bottom-[-17.1em] lg:h-[45em] xl:bottom-[-21.2em] xl:h-[55em]  ">
+        <Canvas className="absolute-container">
+          
+          <MushroomHouse/>
+        </Canvas>   
+      </div>
+
+</div>
+      
+
+      
+
+       <div className="absolute left-1/2 transform bottom-[-3em] -translate-x-1/2 w-full h-[20em] sm:h-[27em] sm:bottom-[-6.7em] md:h-[35em] md:bottom-[-9.2em] ">
+        <Canvas>
+          {/* <MapleModels screenDimensions={screenDimensions} /> */}
+        
+        </Canvas>
       </div>
 
 
-      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-6.3em] w-full h-[22em] sm:h-[27em] sm:bottom-[-7.3em] md:h-[35em] md:bottom-[-10em] lg:bottom-[-9.5em] ">
-<Canvas>
-  <MushroomHouse/>
-  </Canvas>
-</div>
+{/* <div className="absolute-container w-full h-[18em] ">
+        <Canvas>
+          <MushroomHouse screenDimensions={screenDimensions} />
+        </Canvas>   
+      </div> */}
 
+      {/* <div className="absolute-container w-full h-[18em]  ">
+      <Canvas>
+          <MapleModels screenDimensions={screenDimensions} />
+        </Canvas>
+        </div> */}
 
- <div className="absolute left-1/2 transform bottom-[-2.6em] -translate-x-1/2 w-full h-[20em] sm:h-[27em] sm:bottom-[-6.7em] md:h-[35em] md:bottom-[-9.2em] ">
-<Canvas>
-  <MapleModels/>
-  </Canvas>
-
-</div> 
-
-
-
-  {/* <div className=" h-60 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full ">
-  <Canvas className="">
-    <OrangeMushroom />
-    <HornyMushroom />
-    <Slime />
-    <Stump />
-  </Canvas>
-</div>  */}
-
-
-
-{/* ORIGINAL CODE BEFORE HEIGHT AND WIDTH ADJUST FOR AUTO SCALING */}
-{/* <div className=" h-[20em] absolute bottom-[-4.4em] left-1/2 transform -translate-x-1/2 w-full sm:w-3/4 md:w-2/4 lg:w-1/2 xl:w-1/3"> */}
-
+     
 
 
     </section>
@@ -68,3 +75,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+

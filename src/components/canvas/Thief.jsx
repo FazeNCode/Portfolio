@@ -5,12 +5,9 @@ import { OrbitControls, Preload } from "@react-three/drei";
 
 const Thief = () => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(
-    "./maplethief_scene/thief_idle.glb",
- 
-  );
+  const { nodes, materials, animations } = useGLTF("./maplethief_scene/thief_idle.glb");
   const { setAnimations, animationIndex } = useCharacterAnimations();
-  const { actions, names } = useAnimations(animations, group);
+  const { actions, names } = useAnimations(animations, group); 
 
   useEffect(() => {
     setAnimations(names);
@@ -18,9 +15,9 @@ const Thief = () => {
 
   useEffect(() => {
     console.log("Names:", names);
-    actions[names[animationIndex]].reset().fadeIn(0.5).play("Idle");
+    actions[names[animationIndex]].reset().fadeIn(1).play("Idle");
     return () => {
-      // actions[names[animationIndex]].fadeOut(0.5);
+      actions[names[animationIndex]].fadeOut(2);
     };
   }, [actions, animationIndex]);
 

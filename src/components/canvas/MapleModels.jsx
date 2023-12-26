@@ -78,15 +78,97 @@
 
 
 
+// Original code
+
+// import React, { useRef, useEffect } from 'react';
+// import { useGLTF, useAnimations } from '@react-three/drei';
+// import { useCharacterAnimations } from './useCharacterAnimations';
+// import { OrbitControls } from "@react-three/drei";
+// import * as THREE from 'three';
+
+// const MapleModels = () => {
+//   const group = useRef();
+//   const { nodes, animations } = useGLTF('./mushroomhouse_scene/4models_walks.glb');
+//   const { setAnimations, animationIndex } = useCharacterAnimations();
+//   const { actions, names } = useAnimations(animations, group);
+
+//   useEffect(() => {
+//     setAnimations(names);
+//   }, [names]);
+
+//   useEffect(() => {
+//     console.log("Names:", names);
+
+//     // Play all animations simultaneously
+//     names.forEach((name) => {
+//       actions[name].reset().fadeIn(1).play('');
+//     });
+
+//     return () => {
+//       // Fade out all animations
+//       names.forEach((name) => {
+//         actions[name].fadeOut(0.5);
+//       });
+//     };
+//   }, [actions, names]);
+
+//   return (
+//     <group ref={group} dispose={null} scale={[1, 1, 1]}>
+//       {/* Add your 3D models here */}
+//       <primitive object={nodes.Scene}
+//         scale={1.7}
+//         position={[0.7, -4.3, -7]}
+//         rotation={[-0.2, 0, 0]}
+//       />
+
+//       {/* Add other 3D models similarly */}
+
+//       <ambientLight />
+//       <hemisphereLight intensity={0} groundColor="" />
+//       <directionalLight position={[-0.1, -0.1, 1]} castShadow intensity={-1} />
+//       <pointLight intensity={1} />
+//       <spotLight
+//         position={[-60, 9, 10]}
+//         angle={-0.1}
+//         penumbra={1}
+//         intensity={-1}
+//         castShadow
+//         shadow-mapSize={1024}
+//       />
+
+//       <OrbitControls
+//         enableRotate={false}
+//         enableZoom={false}
+//         enablePan={false}
+//         enableDamping={true}
+//         dampingFactor={0.25}
+//         autoRotate={false}
+//         maxPolarAngle={Math.PI / 2}
+//         minPolarAngle={Math.PI / 2}
+//         position={[-0, 0, 0]} // Adjust the camera position here
+//       />
+//     </group>
+//   );
+// };
+
+// export default MapleModels;
+
+
+
+
+
+
+
+// Below is the code with screen dimension change with screen size change
 
 
 import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useCharacterAnimations } from './useCharacterAnimations';
 import { OrbitControls } from "@react-three/drei";
-import * as THREE from 'three';
 
-const MapleModels = () => {
+
+const MapleModels = ({ screenDimensions }) => {
   const group = useRef();
   const { nodes, animations } = useGLTF('./mushroomhouse_scene/4models_walks.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
@@ -112,8 +194,11 @@ const MapleModels = () => {
     };
   }, [actions, names]);
 
+  // Adjust the scale based on screen width
+  const scaleFactor = screenDimensions.width < 768 ? 1 : 1.5;
+
   return (
-    <group ref={group} dispose={null} scale={[1, 1, 1]}>
+    <group ref={group} dispose={null} scale={[scaleFactor, scaleFactor, scaleFactor]}>
       {/* Add your 3D models here */}
       <primitive object={nodes.Scene}
         scale={1.7}
@@ -152,9 +237,3 @@ const MapleModels = () => {
 };
 
 export default MapleModels;
-
-
-
-
-
-
