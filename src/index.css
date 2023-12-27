@@ -19,12 +19,13 @@ body.custom-cursor {
 }
 
 /* FAISAL THIS IS FOR THE BACKGROUND IMAGE THAT IS DYNAMIC FOR PHONE AND BIG SCREEN */
+
 .bg-hero-pattern {
   background-repeat: no-repeat;
   background-position: bottom ;
   background-size: auto; 
-
   /* background-attachment: fixed;  */
+  
 }
 
 
@@ -44,64 +45,74 @@ body.custom-cursor {
 
 
 
-/* Default styling */
-.absolute-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+
+
+
+
+
+@media (max-height: 400px) {
+  .absolute-container {
+    bottom: 0.5em;
+  }
 }
 
 
-@media (max-width: 600px) {
+
+
+@media (min-height: 401px) and (max-height: 600px) {
+  .absolute-container {
+    bottom: -0.4em;
+  }
+}
+
+
+@media (min-height: 600px) and (max-height: 700px) {
   .absolute-container {
     bottom: -0.1em;
   }
 }
 
-@media (min-width: 601px) and (max-width: 768px) {
+
+
+@media (min-height: 701px) and (max-height: 800px) {
   .absolute-container {
-    bottom: -0.15em;
+    bottom: -0.1em;
   }
 }
 
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-height: 801px) and (max-height: 900px) {
   .absolute-container {
-    bottom: -0.3em;
+    bottom: 0.1em;
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .absolute-container {
-    bottom: -0.2em;
-  }
-}
-
-@media (min-width: 1441px) and (max-width: 1920px) {
-  .absolute-container {
-    bottom: 0.3em;
-  }
-}
-
-@media (min-width: 1921px) {
+@media (min-height: 901px) and (min-height: 1000px) {
   .absolute-container {
     bottom: -0.5em;
   }
 }
-@media (min-width: 1840px) and (max-width: 2240px) {
+
+@media (min-height: 1001px) and (max-height: 1100px) {
   .absolute-container {
-    bottom: 0.3em;
+    bottom: 0.1em;
   }
 }
 
 
 
+@media (min-height: 1101px) and (max-height: 1200px) {
+  .absolute-container {
+    bottom: 0.8em;
+  }
+}
 
 
-
-
-
+@media (min-height: 1201px) and (max-height: 1300px) {
+  .absolute-container {
+    bottom: 0.7em;
+  }
+}
 
 
 
