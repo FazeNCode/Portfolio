@@ -122,15 +122,26 @@ const Hero = () => {
 
 
 
+{/* 
 <div className="absolute left-1/2 transform -translate-x-1/2 w-full
-       bottom-[-6.7em] h-[20em] sm:h-[30em] sm:bottom-[-10.9em] md:h-[35em] md:bottom-[-12.9em] lg:bottom-[-17.1em] lg:h-[45em] xl:bottom-[-21em] xl:h-[55em]   2xl:h-[59em] 2xl:bottom-[-22.6em]  ">
+       bottom-[-6.7em] h-[20em] sm:h-[30em] sm:bottom-[-10.9em] md:h-[35em] md:bottom-[-12.9em] lg:bottom-[-17.1em] lg:h-[45em] xl:bottom-[-21em] xl:h-[55em] 2xl:h-[59em] 2xl:bottom-[-22.6em] ">
+        <Canvas className="absolute-container">
+          <MushroomHouse />
+        </Canvas>   
+      </div> */}
+
+
+
+      
+<div className=" transition-all duration-500 ease-in-out absolute left-1/2 transform -translate-x-1/2 w-full
+       bottom-[-6.7em] h-[20em] sm:h-[30em] sm:bottom-[-10.5em] md:h-[35em] md:bottom-[-12.5em] lg:bottom-[-16.7em] lg:h-[45em] xl:bottom-[-21em] xl:h-[55em] 2xl:h-[59em] 2xl:bottom-[-22.6em] ">
         <Canvas className="absolute-container">
           <MushroomHouse />
         </Canvas>   
       </div>
 
 
-      
+
       {/* Empty div over-lapping MushroomHouse, allows the functionalty of scorll down from anywhere on mobile */}
        <div className="absolute  w-full h-full">
       </div>

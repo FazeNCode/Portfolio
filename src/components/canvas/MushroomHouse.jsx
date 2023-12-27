@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/m2.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/m3.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -39,7 +39,7 @@ const MushroomHouse = () => {
 //  position={[10, -3.5, -60]} 
 
   return (
-    <group ref={group} dispose={null} scale={[3, 3, 1.6]}>
+    <group ref={group} dispose={null} scale={[3, 3, 1.6]} >
    <primitive object={nodes.Scene} scale={2.5} position={[5, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
    
       <ambientLight />

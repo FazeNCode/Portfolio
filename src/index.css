@@ -58,7 +58,6 @@ body.custom-cursor {
 
 
 
-
 @media (min-height: 401px) and (max-height: 600px) {
   .absolute-container {
     bottom: -0.4em;
@@ -116,9 +115,32 @@ body.custom-cursor {
 
 
 
+@media (min-height: 1301px) and (max-height: 1400px) {
+  .absolute-container {
+    bottom: 0.7em;
+  }
+}
 
 
+@media (min-height: 1401px) and (max-height: 1500px) {
+  .absolute-container {
+    bottom: 0.7em;
+  }
+}
 
+
+@media (min-height: 1501px) and (max-height: 1600px) {
+  .absolute-container {
+    bottom: 1.3em;
+  }
+}
+
+
+@media (min-height: 1601px) and (max-height: 1700px) {
+  .absolute-container {
+    bottom: 1.3em;
+  }
+}
 
 
 

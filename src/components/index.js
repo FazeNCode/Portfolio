@@ -10,7 +10,6 @@ import Contact from './Contact';
 import Loader from './Loader';
 
 
-
 export {
   Hero,
   Navbar,
