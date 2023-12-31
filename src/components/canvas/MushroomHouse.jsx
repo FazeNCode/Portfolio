@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/m3.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/O64.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -34,13 +34,18 @@ const MushroomHouse = () => {
   }, [actions, animations, animationIndex]);
 
 
-  
-// CHANGE THE X-AXIS TO 10 FOR ANYTHING WHENS SCREEN SIZE IS BIGGER THAN IPHONE 12 PRO COPY THE BELOW
-//  position={[10, -3.5, -60]} 
+
+// ORIGINAL CODE
+    //   <group ref={group} dispose={null} scale={[3, 3, 1.6]} >
+  //  <primitive object={nodes.Scene} scale={2.5} position={[5, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
+
 
   return (
     <group ref={group} dispose={null} scale={[3, 3, 1.6]} >
-   <primitive object={nodes.Scene} scale={2.5} position={[5, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
+   <primitive object={nodes.Scene} scale={2} position={[8, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
+
+
+
    
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="black" />
