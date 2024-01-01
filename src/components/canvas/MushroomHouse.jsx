@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 
 const MushroomHouse = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./mushroomhouse_scene/O64.glb');
+  const { nodes, animations } = useGLTF('./mushroomhouse_scene/T10.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -26,7 +26,7 @@ const MushroomHouse = () => {
 
     return () => {
       // Fade out all animations
-      animations.forEach((clip) => {
+      animations.forEach((clip) => {  
         const action = actions[clip.name];
         action.fadeOut(0.5);
       });
@@ -42,7 +42,7 @@ const MushroomHouse = () => {
 
   return (
     <group ref={group} dispose={null} scale={[3, 3, 1.6]} >
-   <primitive object={nodes.Scene} scale={2} position={[8, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
+   <primitive object={nodes.Scene} scale={2} position={[2, -3.5, -60]} rotation={[-0.05, -0.2, 0]} />
 
 
 
