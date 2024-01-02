@@ -153,19 +153,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className=" transform -translate-x-1/2 w-full xl:w-3/6 xl:h-auto  h-[42em]"
       >
-        <div className="h-full ">
-          <Canvas
-            // dpr={[4, 4]}
-            camera={{
-              fov: 45,
-              near: 5,
-              far: -200,
-              position: [-2, 3, 10],
-            }}
-          >
-            <Thief />
-          </Canvas>
-        </div>
+ 
 
 {/* AN IDEA! CAN BE USED TO TAKE THE USER TO THE TOP OF THE SCREEN FROM THE BOTTOM */}
         <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
