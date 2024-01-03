@@ -86,7 +86,7 @@
 
 
 
-import { Bird, MushroomHouse, MapleModels, Thief } from "./canvas";
+import { Bird, MushroomHouse } from "./canvas";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 

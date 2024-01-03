@@ -5,7 +5,6 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { profile, youtube, github, youtube_circle } from "../assets";
-import { Thief } from "./canvas";
 import { Canvas } from "@react-three/fiber";
 
 const Contact = () => {
