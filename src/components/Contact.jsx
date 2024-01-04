@@ -26,8 +26,8 @@ const Contact = () => {
     setLoading(true);
     emailjs
       .send(
-        //  For faisal_chaudhry@outlook.com 'service_amb9kvp',
-        // For faisal_chaudhry@outlook.com 'template_lpwtltr',
+        //  For email_chaud@outlook.com 'service_amb9kvp',
+        // For email_chaud@outlook.com 'template_lpwtltr',
 
         "service_kjo0u19",
         "template_1tk6s5o",

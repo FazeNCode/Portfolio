@@ -124,10 +124,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "March 2018 - April 2020",
     points: [
-      "W.",
-      "Daily task goes here.",
-      "Daily task goes here.",
-      "Daily task goes here.",
+      "User Management:",
+      "System Architecture Understanding.",
+      "Performance Diagnostics.",
+      "DNS Records Management:",
     ],
   },
 
@@ -153,10 +153,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "March 2022 - April 2023",
     points: [
-      "Experienced in Html | Css | JavaScript",
-      "Fimialiar and well versed with various react hooks.",
-      "A good understanding in .",
-      "Daily task goes here.",
+      "Solid grounding in the fundamentals of HTML, CSS, and JavaScript.",
+      "Proficient in utilizing a variety of React hooks for enhanced functionality. ",
+      "Dabble in 3d web desgin",
+      "",
     ],
   },
 ];

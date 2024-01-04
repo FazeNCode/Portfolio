@@ -7,7 +7,7 @@ import { useFrame } from '@react-three/fiber';
 
 const Bird = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./birds_scene/birds2.glb');
+  const { nodes, animations } = useGLTF('./birds_scene/birds4.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -23,17 +23,17 @@ const Bird = () => {
   }, [actions, animationIndex]);
 
 
-  const speed = 1;
-  const resetThreshold = 28;
-  useFrame((state, delta) => {
-    group.current.position.x -= delta * speed;
+  // const speed = 1;
+  // const resetThreshold = 28;
+  // useFrame((state, delta) => {
+  //   group.current.position.x -= delta * speed;
 
-    // Check if the bird is beyond the reset threshold
-    if (group.current.position.x < -resetThreshold) {
-      // Reset the bird's position to the starting point
-      group.current.position.x = resetThreshold;
-    }
-  });
+  //   // Check if the bird is beyond the reset threshold
+  //   if (group.current.position.x < -resetThreshold) {
+  //     // Reset the bird's position to the starting point
+  //     group.current.position.x = resetThreshold;
+  //   }
+  // });
 
 
   // const resetThreshold = 20;
