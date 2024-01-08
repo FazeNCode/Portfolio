@@ -7,7 +7,7 @@ import { useFrame } from '@react-three/fiber';
 
 const Bird = () => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('./birds_scene/birds4.glb');
+  const { nodes, animations } = useGLTF('./birds_scene/birds.glb');
   const { setAnimations, animationIndex } = useCharacterAnimations();
   const { actions, names } = useAnimations(animations, group);
 
@@ -36,41 +36,13 @@ const Bird = () => {
   // });
 
 
-  // const resetThreshold = 20;
-  // const verticalRange = 5; // Set the range for vertical movement
 
-  // // Use Tween.js to animate the bird's position horizontally and vertically
-  // const animateBird = () => {
-  //   new TWEEN.Tween(group.current.position)
-  //     .to({ x: -resetThreshold, y: verticalRange }, 20000)
-  //     .easing(TWEEN.Easing.Quadratic.InOut)
-  //     .onComplete(() => {
-  //       // Reverse the vertical movement
-  //       new TWEEN.Tween(group.current.position)
-  //         .to({ x: -resetThreshold, y: -verticalRange }, 10000)
-  //         .easing(TWEEN.Easing.Quadratic.InOut)
-  //         .onComplete(() => {
-  //           group.current.position.x = resetThreshold;
-  //           animateBird(); // Restart the animation
-  //         })
-  //         .start();
-  //     })
-  //     .start();
-  // };
 
-  // useEffect(() => {
-  //   animateBird(); // Start the animation when the component mounts
-  // }, []);
-
-  // // Update Tween.js on each frame
-  // useFrame(() => {
-  //   TWEEN.update();
-  // });
 
 
   return (
-    <group ref={group} dispose={null} scale={[6, 6, 6]}>
-      <primitive object={nodes.Scene} scale={0.7} position={[2, -.2, 0]} rotation={[0, 1.5, 0]} />
+    <group ref={group} dispose={null} scale={[3, 3, 3]}>
+      <primitive object={nodes.Scene} scale={0.4} position={[2, -0.2, 0]} rotation={[0, 1.5, 0]} />
       <ambientLight />
       <hemisphereLight intensity={0} groundColor="" />
       <directionalLight position={[1, 1, 1]} castShadow intensity={1} />

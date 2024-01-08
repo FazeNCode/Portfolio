@@ -36,7 +36,7 @@ const Contact = () => {
           to_name: "Faisal",
           message: form.message,
         },
-        // For faisal_chaudhry@outlook.com '4gm9wXJL6S8BOi5ad'
+        // For email_chaudhry@outlook.com '4gm9wXJL6S8BOi5ad'
         "fPObwnyx_kC1knyTz"
       )
       .then(
