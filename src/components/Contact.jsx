@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <div className="xl::mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        variants={slideIn("right", "tween", 0.2, 4)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <div className=" flex justify-between ">
@@ -75,7 +75,6 @@ const Contact = () => {
 
         
        
-
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -87,6 +86,7 @@ const Contact = () => {
               type="text"
               name="name"
               value={form.name}
+              required
               onChange={handleChange}
               placeholder="Enter Name"
               className="form-input"
@@ -99,6 +99,7 @@ const Contact = () => {
               type="text"
               name="email"
               value={form.email}
+              required
               onChange={handleChange}
               placeholder="Enter Email"
               className="form-input"
@@ -111,6 +112,7 @@ const Contact = () => {
               rows="7"
               name="message"
               value={form.message}
+              required
               onChange={handleChange}
               placeholder="Write me a message"
               className="form-input"
@@ -120,7 +122,7 @@ const Contact = () => {
           <div className="flex items-center justify-between">
             <button
               type="submit"
-              className="bg-tertiary py-3 px-10 outline-none w-fit text-white font-bold shadow-2xl shadow-primary rounded-lg"
+              className="bg-tertiary py-3 px-10 outline-none w-fit text-white font-bold shadow-2xl rounded-lg hover:bg-white hover:text-black"
             >
               {loading ? "Sending..." : "Send"}
             </button>
@@ -134,7 +136,7 @@ const Contact = () => {
                 <img
                   src={github}
                   alt="profile"
-                  className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover"
+                  className="w-10 h-10 sm:w-[4em] sm:h-[4em] rounded-full object-cover hover:cursor-pointer"
                 />
               </a>
 
@@ -142,22 +144,28 @@ const Contact = () => {
               <img
                 src={youtube_circle}
                 alt="profile"
-                className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover"
+                className="w-10 h-10 sm:w-[3.45em] sm:h-[3.45em] rounded-full object-cover hover:cursor-pointer"
               />
             </div>
           </div>
         </form>
+
+
       </motion.div>
+
+      {/* Below Framer-motion is for contact page sliding in from the right,and form size change   */}
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className=" transform -translate-x-1/2 w-full xl:w-3/6 xl:h-auto  h-[42em]"
+        variants={slideIn("left", "tween", 0.2, 3)}
+        className=" transform -translate-x-1/2 w-full xl:w-2/6 xl:h-auto  h-auto"
       >
  
 
 {/* AN IDEA! CAN BE USED TO TAKE THE USER TO THE TOP OF THE SCREEN FROM THE BOTTOM */}
-        <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+
+<div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center"> 
         <a href="#about">
           <div className="w-[35px] h-[60px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+            
             <motion.div
               animate={{
                 y: [0, 24, 0]
@@ -169,11 +177,13 @@ const Contact = () => {
               }}
               className="w-3 h-3 rounded-full bg-secondary mb-1 "
             />
+            
           </div>
         </a>
       </div>
       
       </motion.div>
+       
     </div>
   );
 };

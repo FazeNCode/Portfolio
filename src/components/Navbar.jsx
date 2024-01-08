@@ -27,6 +27,8 @@ const MobileNav = ({ toggle, setToggle, isScrolling }) => (
   </div>
 );
 
+
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -47,7 +49,7 @@ const Navbar = () => {
 
       scrollTimeout = setTimeout(() => {
         setIsScrolling(false);
-      }, 200);
+      }, 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -61,7 +63,7 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center ${
-        isLargeScreen ? "py-5" : "py-2"
+        isLargeScreen ? "py-5"  : "py-2 "
       } top-0 z-20 bg-primary transition-all duration-1000 ${
         (isScrolling || toggle) ? "bg-opacity-0" : "bg-opacity-80"
       } fixed`}

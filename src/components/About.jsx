@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
-import { Linuxs} from "./canvas";
+
 
 // import {Reacts} from './canvas';
 
@@ -49,7 +49,6 @@ const About = () => {
         className="mt-2 text-secondary text-[21px] max-w-3xl leading-[30px]"
       >
 
-        {/* <Linuxs /> */}
         Experienced Linux administrator proficient in managing and maintaining
         Linux-based computer systems, ensuring stability, security, and
         efficiency. Skilled in installation, configuration, monitoring, and
