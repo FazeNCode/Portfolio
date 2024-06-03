@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech,} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, End} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 
@@ -45,10 +45,14 @@ const App = () => {
     <Feedbacks/> */}
     <div className="relative z-0">
  
-
-
     <Contact/>
     </div>
+
+  
+  <div className="">
+    <End/>
+  </div>
+  
 
     
     

@@ -118,31 +118,32 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Linux Admin",
-    company_name: "TexadaSoftware",
+    title: "Linux Engineer",
+    company_name: "ANCSystems Soloutions",
       icon: '',
     iconBg: "#383E56",
-    date: "March 2018 - April 2020",
+    date: "Feburary 2023 - May 2024",
     points: [
-      "User Management:",
-      "System Architecture Understanding.",
-      "Performance Diagnostics.",
-      "DNS Records Management:",
-    ],
-  },
-
-  {
-    title: "Linux Engineer",
-    company_name: "Agio",
-    icon: '',
-    iconBg: "#383E56",
-    date: "March 2021 - April 2022",
-    points: [
+    
       "Configured and managed Active Directory.",
       "Experienced in Centrify AD",
       "Managed and deployed Jira cases regarding system issues. ",
       "DNS OOM-Killer |",
       "Conifugre DNS records",
+    ],
+  },
+
+  {
+    title: "Linux Admin",
+    company_name: "EngHouse",
+    icon: '',
+    iconBg: "#383E56",
+    date: "Feburary 2020 - July 2022",
+    points: [
+      "User Management:",
+      "System Architecture Understanding.",
+      "Performance Diagnostics.",
+      "DNS Records Management:",
     ],
   },
 

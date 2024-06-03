@@ -8,6 +8,7 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Loader from './Loader';
+import End from './End';
 
 
 export {
@@ -24,6 +25,7 @@ export {
   // Linuxs,
   Bird,
   MushroomHouse,
+  End,
   
 
 

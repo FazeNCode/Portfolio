@@ -144,7 +144,7 @@ const Contact = () => {
               <img
                 src={youtube_circle}
                 alt="profile"
-                className="w-10 h-10 sm:w-[3.45em] sm:h-[3.45em] rounded-full object-cover hover:cursor-pointer"
+                className="w-9 h-9 sm:w-[3.42em] sm:h-[3.42em] rounded-full object-cover hover:cursor-pointer"
               />
             </div>
           </div>
@@ -162,7 +162,7 @@ const Contact = () => {
 
 {/* AN IDEA! CAN BE USED TO TAKE THE USER TO THE TOP OF THE SCREEN FROM THE BOTTOM */}
 
-<div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center"> 
+{/* <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center"> 
         <a href="#about">
           <div className="w-[35px] h-[60px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             
@@ -180,11 +180,16 @@ const Contact = () => {
             
           </div>
         </a>
-      </div>
+      </div> */}
       
       </motion.div>
+
+      <div>
+        
+      </div>
        
     </div>
+    
   );
 };
 
