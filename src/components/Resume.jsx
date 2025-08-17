@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
 import { SectionWrapper } from '../hoc'
@@ -71,3 +72,13 @@ const Resume = () => {
 }
 
 export default SectionWrapper(Resume, "resume")
+=======
+
+const Works = () => {
+  return (
+    <div>Works</div>
+  )
+}
+
+export default Works
+>>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648

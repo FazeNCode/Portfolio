@@ -1,7 +1,10 @@
 import flogo from "./flogo.png";
 import github from "./github.png";
+<<<<<<< HEAD
 import cursor from "./cursor.png";
 import cursor_red from "./cursor_red.png";
+=======
+>>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648
 
 
 import cloud from "./cloud.png";
@@ -37,8 +40,11 @@ import Texada from "./company/Texada.jpg";
 export {
   flogo,
   github,
+<<<<<<< HEAD
   cursor,
   cursor_red,
+=======
+>>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648
   css,
   docker,
   figma,
@@ -61,5 +67,9 @@ export {
   Agio,
   Texada,
   profile
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648
 };
