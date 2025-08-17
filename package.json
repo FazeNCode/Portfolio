@@ -26,11 +26,7 @@
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
     "styled-components": "^6.1.1",
-<<<<<<< HEAD
     "three": "^0.157.0",
-=======
-    "three": "^0.153.0",
->>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648
     "tween.js": "^16.6.0"
   },
   "devDependencies": {

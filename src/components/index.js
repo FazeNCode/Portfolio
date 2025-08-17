@@ -9,10 +9,7 @@ import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Loader from './Loader';
 import End from './End';
-<<<<<<< HEAD
 import Resume from './Resume';
-=======
->>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648
 
 
 export {
@@ -30,13 +27,10 @@ export {
   Bird,
   MushroomHouse,
   End,
-<<<<<<< HEAD
   Resume,
-=======
->>>>>>> 9091d0d3febc560e3870c3cacadeec563c1d7648
-  
 
 
 
- 
+
+
 }
