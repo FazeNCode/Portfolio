@@ -43,8 +43,8 @@ const Bird = () => {
   return (
     <group ref={group} dispose={null} scale={[3, 3, 3]}>
       <primitive object={nodes.Scene} scale={0.4} position={[2, -0.2, 0]} rotation={[0, 1.5, 0]} />
-      <ambientLight />
-      <hemisphereLight intensity={0} groundColor="" />
+      <ambientLight intensity={0.6} />
+      <hemisphereLight intensity={0.8} groundColor="#87CEEB" />
       <directionalLight position={[1, 1, 1]} castShadow intensity={1} />
       <pointLight intensity={1} />
       <spotLight position={[-60, 90, 40]} angle={0.7} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024} />

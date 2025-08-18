@@ -46,10 +46,10 @@ const MushroomHouse = () => {
 
 
    
-      <ambientLight />
-      <hemisphereLight intensity={0} groundColor="black" />
-      <directionalLight position={[-5, 5, -5]} castShadow intensity={0.4} />
-      <pointLight intensity={-0.5} />
+      <ambientLight intensity={0.6} />
+      <hemisphereLight intensity={0.8} groundColor="#444444" />
+      <directionalLight position={[-5, 5, -5]} castShadow intensity={0.8} />
+      <pointLight intensity={0.3} />
       <spotLight position={[100, 100, -100]} angle={0.7} penumbra={1} intensity={0.5} castShadow shadow-mapSize={1024} />
 
       <OrbitControls
