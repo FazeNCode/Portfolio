@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, End, Resume} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, End, Resume, Projects} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 import { cursor, cursor_red } from './assets';
@@ -52,20 +52,21 @@ const App = () => {
    
     <About/>
     <Experience/>
+    <Projects/>
 
 
-  
-  
+
+
     <Tech/>
-  
+
     {/* <Works/>
     <Feedbacks/> */}
-    <div className="relative z-0">
-
-    <Contact/>
-    </div>
 
     <Resume/>
+
+    <div className="relative z-0">
+    <Contact/>
+    </div>
 
   <div className="">
     <End/>

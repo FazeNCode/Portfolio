@@ -10,6 +10,7 @@ import Contact from './Contact';
 import Loader from './Loader';
 import End from './End';
 import Resume from './Resume';
+import Projects from './Projects';
 
 
 export {
@@ -28,6 +29,7 @@ export {
   MushroomHouse,
   End,
   Resume,
+  Projects,
 
 
 

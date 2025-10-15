@@ -1,10 +1,8 @@
 import {
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
@@ -17,8 +15,6 @@ import {
   linux,
   youtube,
   vmware,
-  Texada,
-  Agio,
 
 } from "../assets";
 
@@ -42,8 +38,13 @@ export const navLinks = [
     title: "Resume",
 
   },
+  {
+    id: "projects",
+    title: "Projects",
 
-  
+  },
+
+
 ];
 
 
@@ -113,51 +114,79 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
+  {
+    name: "Linux",
+    icon: linux,
+  },
+  {
+    name: "VMware",
+    icon: vmware,
+  },
+  {
+    name: "AWS Cloud",
+    icon: cloud,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "Active Directory",
+    icon: figma, // Placeholder - will be replaced with proper AD icon
+  },
 
 ];
 
 const experiences = [
   {
-    title: "Linux Engineer",
-    company_name: "ANCSystems Soloutions",
-      icon: '',
-    iconBg: "#383E56",
-    date: "Feburary 2023 - May 2024",
-    points: [
-    
-      "Configured and managed Active Directory.",
-      "Experienced in Centrify AD",
-      "Managed and deployed Jira cases regarding system issues. ",
-      "DNS OOM-Killer |",
-      "Conifugre DNS records",
-    ],
-  },
-
-  {
-    title: "Linux Admin",
-    company_name: "EngHouse",
+    title: "Linux Administrator",
+    company_name: "ANC System Solutions",
     icon: '',
     iconBg: "#383E56",
-    date: "Feburary 2020 - July 2022",
+    date: "06/2022 - 06/2025",
     points: [
-      "User Management:",
-      "System Architecture Understanding.",
-      "Performance Diagnostics.",
-      "DNS Records Management:",
+      "Installed, configured, and maintained Linux servers (Ubuntu, RHEL, CentOS) including software packages and updates.",
+      "Automated day-to-day server tasks with Ansible playbooks and Ansible Tower, cutting down manual administration.",
+      "Oversaw VMware/vSphere virtualization, including provisioning VMs, snapshots, and system recovery.",
+      "Configured and maintained Samba, CIFS, and NFS protocols to ensure secure and seamless cross-platform file access.",
+      "Troubleshot operating system and application issues, resolving hardware/software problems quickly to minimize downtime.",
+      "Performed routine system maintenance, package installations, and patching.",
+      "Conducted root cause analysis and diagnostics on Ubuntu, RedHat, and CentOS systems, ensuring uptime and system stability.",
+      "Strengthened security with sudosh session logging, enabling detailed auditing and forensic analysis of user terminal activity.",
+      "Collaborated on release management and CI/CD workflows using Bitbucket and Ansible Tower for version control, automation workflows, and infrastructure orchestration.",
     ],
   },
 
   {
-    title: "Web Developer",
-    company_name: "Self-Taught",
-    //   icon: ,
+    title: "Linux Administrator",
+    company_name: "Agio",
+    icon: '',
     iconBg: "#383E56",
-    date: "March 2022 - April 2023",
+    date: "05/2020 - 05/2022",
     points: [
-      "Solid grounding in the fundamentals of HTML, CSS, and JavaScript.",
-      "Proficient in utilizing a variety of React hooks for enhanced functionality. ",
-      "Dabble in 3d web desgin",
-      "",
+      "Monitored production and development systems using LogicMonitor and Datadog, identifying performance issues and reducing performance incidents through proactive monitoring.",
+      "Performed regular patching, applied kernel upgrades, and implemented security hardening.",
+      "Responded to incidents and outages, troubleshooting root cause analysis (RCA) and restoring services under tight SLAs.",
+      "Managed VMware/vSphere virtualization, including VM creation, snapshots, capacity planning, VM provisioning, and disaster recovery.",
+      "Deployed and maintained Foreman for repository management and provisioning, streamlining updates and version control across environments.",
+      "Managed Identity and Access Management (IAM) using Active Directory and Centrify, controlling secure user and group access.",
+      "Collaborated on release management and CI/CD workflows using Bitbucket and Ansible Tower for version control, automation workflows, and infrastructure orchestration.",
+      "Supported hardware lifecycle management using Dell iDRAC and HP iLO for remote administration and diagnostics.",
+    ],
+  },
+
+  {
+    title: "Technical Service Linux Administrator",
+    company_name: "Sterling Brokers Insurance Ltd",
+    icon: '',
+    iconBg: "#383E56",
+    date: "03/2018 - 03/2020",
+    points: [
+      "Provided technical support for Linux servers and internal systems, assisting with troubleshooting and patching.",
+      "Assisted in deploying and maintaining software packages on Linux servers to support daily operations.",
+      "Managed Active Directory user accounts and access controls for staff.",
+      "Performed basic automation with Bash & Python scripts to streamline repetitive tasks.",
+      "Created in-depth documentation for procedures and incident resolutions to support compliance and internal use.",
     ],
   },
 ];
