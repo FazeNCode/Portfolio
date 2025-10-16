@@ -1,113 +1,88 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
-import 'react-vertical-timeline-component/style.min.css'
 import { SectionWrapper } from '../hoc'
-import { textVariant } from '../utils/motion'
+import { textVariant, fadeIn } from '../utils/motion'
+import { Tilt } from 'react-tilt'
 
 const projects = [
   {
     title: "FazeNAuto.com",
-    company_name: "Automotive Marketplace Platform",
-    icon: '', // Will use a placeholder or project icon
-    iconBg: "#383E56",
-    date: "2024 - Present",
-    points: [
-      "Developed a comprehensive automotive marketplace platform with advanced search capabilities and real-time inventory management.",
-      "Implemented user authentication system with secure login/registration and user profile management.",
-      "Built responsive frontend using React.js with modern UI/UX design principles and mobile-first approach.",
-      "Created RESTful API backend with Node.js and Express.js for efficient data handling and business logic.",
-      "Integrated MongoDB database for scalable data storage and optimized query performance.",
-      "Deployed application with modern DevOps practices ensuring high availability and performance.",
-    ],
-    technologies: ["React", "Node.js", "MongoDB", "Express", "JavaScript", "CSS3"],
+    description: "Comprehensive automotive marketplace platform with advanced search capabilities and real-time inventory management. Features user authentication, responsive design, and modern DevOps deployment.",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    technologies: ["React", "Next.js", "MongoDB", "AWS", "CSS", "Node.js"],
     status: "Live",
     link: "https://fazenauto.com",
+    github: "#",
   },
   {
     title: "WrenchsUp.com",
-    company_name: "Automotive Service Platform",
-    icon: '', // Will use a placeholder or project icon
-    iconBg: "#383E56",
-    date: "2024 - Present",
-    points: [
-      "Built comprehensive automotive service platform connecting vehicle owners with certified mechanics.",
-      "Developed appointment scheduling system with real-time availability and automated notifications.",
-      "Implemented service tracking functionality allowing users to monitor repair progress and history.",
-      "Integrated Stripe payment processing for secure transactions and subscription management.",
-      "Created admin dashboard for service providers to manage appointments, customers, and business analytics.",
-      "Utilized TypeScript for enhanced code reliability and PostgreSQL for robust data management.",
-    ],
-    technologies: ["React", "TypeScript", "PostgreSQL", "Stripe API", "Node.js", "CSS3"],
+    description: "Automotive service platform connecting vehicle owners with certified mechanics. Includes appointment scheduling, service tracking, payment processing, and admin dashboard.",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    technologies: ["React", "Next.js", "MongoDB", "AWS", "CSS", "Node.js"],
     status: "Live",
     link: "https://wrenchsup.com",
+    github: "#",
   },
 ]
 
-const ProjectCard = ({ project }) => (
-  <VerticalTimelineElement
-    contentStyle={{ background: '#1d1836', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid #232631' }}
-    date={project.date}
-    iconStyle={{ background: project.iconBg }}
-    icon={
-      <div className='flex justify-center items-center h-full w-full'>
+const ProjectCard = ({ project, index }) => (
+  <Tilt
+    options={{
+      max: 10,
+      scale: 1.02,
+      speed: 450,
+    }}
+    className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+  >
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="w-full"
+    >
+      <div className="relative w-full h-[230px]">
         <img
-          src={project.icon || '/api/placeholder/40/40'}
+          src={project.image}
           alt={project.title}
-          className="w-[60%] h-[60%] object-contain"
+          className="w-full h-full object-cover rounded-2xl"
         />
       </div>
-    }
-  >
-    <div>
-      <div className="flex justify-between items-start mb-2">
-        <div>
-          <h3 className="text-white text-[24px] font-bold">{project.title}</h3>
-          <p className='text-secondary text-[16px] font-semibold' style={{ margin: 0 }}>
-            {project.company_name}
-          </p>
+
+      <div className="mt-5">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-white font-bold text-[24px]">{project.title}</h3>
+          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+            project.status === 'Live' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-black'
+          }`}>
+            {project.status}
+          </span>
         </div>
-        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-          project.status === 'Live' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-black'
-        }`}>
-          {project.status}
-        </span>
+
+        <p className="mt-2 text-secondary text-[14px] leading-[20px]">
+          {project.description}
+        </p>
       </div>
-    </div>
 
-    <ul className='mt-5 list-disc ml-5 space-y-2'>
-      {project.points.map((point, index) => (
-        <li
-          key={`project-point-${index}`}
-          className='text-white-100 text-[14px] pl-1 tracking-wider'
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.technologies.map((tech, techIndex) => (
+          <span
+            key={`${project.title}-${tech}-${techIndex}`}
+            className="text-[12px] bg-black-200 px-2 py-1 rounded text-white"
+          >
+            #{tech}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-4 flex gap-3">
+        <button
+          onClick={() => window.open(project.link, "_blank")}
+          className="bg-gradient-to-r from-purple-500 to-pink-500 py-2 px-4 rounded-lg outline-none w-fit text-white font-medium text-[14px] shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
         >
-          {point}
-        </li>
-      ))}
-    </ul>
-
-    <div className="mt-4 flex flex-wrap gap-2">
-      {project.technologies.map((tech, index) => (
-        <span
-          key={`${project.title}-${tech}-${index}`}
-          className="text-[12px] bg-tertiary px-2 py-1 rounded text-secondary"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
-
-    <div className="mt-4 flex gap-3">
-      <button
-        onClick={() => window.open(project.link, "_blank")}
-        className="bg-tertiary py-2 px-4 rounded-lg outline-none w-fit text-white font-medium text-[14px] shadow-md shadow-primary hover:bg-[#1a1a2e] transition-colors duration-200"
-      >
-        Visit Live Site
-      </button>
-    </div>
-  </VerticalTimelineElement>
+          🚀 Live Demo
+        </button>
+      </div>
+    </motion.div>
+  </Tilt>
 )
 
 const Projects = () => {
@@ -118,12 +93,12 @@ const Projects = () => {
         <h2 className={styles.sectionHeadText}>Projects</h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </VerticalTimeline>
+
+
+      <div className="mt-20 flex flex-wrap gap-7 justify-center">
+        {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} project={project} index={index} />
+        ))}
       </div>
     </>
   )

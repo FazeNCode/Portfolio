@@ -1,16 +1,23 @@
-import flogo from "./flogo.png";
-import github from "./github.png";
-import cursor from "./cursor.png";
-import cursor_red from "./cursor_red.png";
+// Icons
+import flogo from "./icons/flogo.png";
+import github from "./icons/github.png";
+import cloud from "./icons/cloud.png";
+import react from "./icons/react.png";
+import linux from "./icons/linux.png";
+import vmware from "./icons/vmware.png";
+import youtube from "./icons/youtube.png";
+import youtube_circle from "./icons/youtube_circle.png";
 
+// Cursors
+import cursor from "./cursors/cursor.png";
+import cursor_red from "./cursors/cursor_red.png";
 
-import cloud from "./cloud.png";
-import react from "./react.png";
-import linux from "./linux.png";
-import vmware from "./vmware.png"
-import youtube from "./youtube.png";
-import youtube_circle from "./youtube_circle.png";
-import profile from "./profile.jpg";
+// Backgrounds
+import profile from "./backgrounds/profile.jpg";
+import herobg2 from "./backgrounds/herobg2.png";
+import maple_bg1 from "./backgrounds/maple_bg1.jpg";
+import maple_bg2 from "./backgrounds/maple_bg2.jpg";
+import maple_bg3 from "./backgrounds/maple_bg3.jpg";
 
 
 
@@ -28,17 +35,37 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
+// Company logos
+import ANC from "./company/ANC Soloutions.jpg";
 import Agio from "./company/Agio.png";
-import Texada from "./company/Texada.jpg";
+import Sterling from "./company/Sterling.jpg";
 
 
 
 
 export {
+  // Icons
   flogo,
   github,
+  cloud,
+  react,
+  linux,
+  vmware,
+  youtube,
+  youtube_circle,
+
+  // Cursors
   cursor,
   cursor_red,
+
+  // Backgrounds
+  profile,
+  herobg2,
+  maple_bg1,
+  maple_bg2,
+  maple_bg3,
+
+  // Tech icons
   css,
   docker,
   figma,
@@ -52,14 +79,9 @@ export {
   tailwind,
   typescript,
   threejs,
-  linux,
-  cloud,
-  react,
-  vmware,
-  youtube,
-  youtube_circle,
-  Agio,
-  Texada,
-  profile
 
+  // Company logos
+  ANC,
+  Agio,
+  Sterling,
 };

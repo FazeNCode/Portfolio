@@ -60,10 +60,9 @@ const About = () => {
         management. Adept at collaborating with teams and generating reports.
         <br/> <br/> 
 
-        Self-taught Web Developer proficient in HTML, CSS,
-        JavaScript, and various web development frameworks. such as, React |
-        Tailwindcss | Nodejs. <br/> Experienced in responsive design, cross-browser
-        compatibility, and optimizing website performance.
+        Linux Administrator with a knack for keeping systems humming smoothly — stable, secure, and fast. Experienced in managing Red Hat, CentOS, and Ubuntu environments from installation to fine-tuning, with a focus on uptime, performance, and security. Adept in user management, network services, troubleshooting, and documentation that even future-you will thank you for. Passionate about automation and scripting to turn repetitive tasks into one-click wonders. A team player who loves solving problems.
+        <br/><br/>
+        On the creative side, a self-taught Web Developer fluent in the languages of the web — HTML, CSS, JSX, and JavaScript — and well-versed in modern frameworks like React, TailwindCSS, and Node.js, Next.js.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 ">

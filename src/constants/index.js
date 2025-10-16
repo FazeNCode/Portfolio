@@ -11,10 +11,11 @@ import {
   docker,
   threejs,
   cloud,
-  react,
   linux,
-  youtube,
   vmware,
+  ANC,
+  Agio,
+  Sterling,
 
 } from "../assets";
 
@@ -49,28 +50,7 @@ export const navLinks = [
 
 
 
-const services = [
-  {
-    title: "Linux Administrator",
-    icon: linux,
-  },
-  {
-    title: "Cloud Engineer",
-    icon: cloud,
-  },
-  {
-    title: "Virtualization",
-    icon: vmware,
-  },
-  {
-    title: "Web Developer",
-    icon: react,
-  },
-  {
-    title: "Educator",
-    icon: youtube,
-  },
-];
+const services = [];
 
 const technologies = [
   {
@@ -141,7 +121,7 @@ const experiences = [
   {
     title: "Linux Administrator",
     company_name: "ANC System Solutions",
-    icon: '',
+    icon: ANC,
     iconBg: "#383E56",
     date: "06/2022 - 06/2025",
     points: [
@@ -160,7 +140,7 @@ const experiences = [
   {
     title: "Linux Administrator",
     company_name: "Agio",
-    icon: '',
+    icon: Agio,
     iconBg: "#383E56",
     date: "05/2020 - 05/2022",
     points: [
@@ -178,7 +158,7 @@ const experiences = [
   {
     title: "Technical Service Linux Administrator",
     company_name: "Sterling Brokers Insurance Ltd",
-    icon: '',
+    icon: Sterling,
     iconBg: "#383E56",
     date: "03/2018 - 03/2020",
     points: [

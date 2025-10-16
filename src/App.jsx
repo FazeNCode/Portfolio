@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, End, Resume, Projects} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Resume, Projects, StickyMusicPlayer} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 import { cursor, cursor_red } from './assets';
@@ -68,13 +68,9 @@ const App = () => {
     <Contact/>
     </div>
 
-  <div className="">
-    <End/>
-  </div>
-  
+  {/* Sticky Music Player */}
+  <StickyMusicPlayer />
 
-    
-    
    </div>
    </BrowserRouter>
   

@@ -8,9 +8,10 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Loader from './Loader';
-import End from './End';
+
 import Resume from './Resume';
 import Projects from './Projects';
+import StickyMusicPlayer from './StickyMusicPlayer';
 
 
 export {
@@ -27,9 +28,9 @@ export {
   // Linuxs,
   Bird,
   MushroomHouse,
-  End,
   Resume,
   Projects,
+  StickyMusicPlayer,
 
 
 

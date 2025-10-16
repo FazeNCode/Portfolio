@@ -26,14 +26,7 @@ const Resume = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-4xl leading-[30px]"
       >
-        <p className="mb-6">
-          Linux Administrator with 5+ years of experience managing enterprise-level Linux environments across IT
-          services and financial sectors. Skilled in automation (Ansible, Bash, Python), system hardening, and cloud
-          infrastructure (AWS, VMware vSphere). Experienced in monitoring with LogicMonitor, Datadog, and
-          Foreman, as well as identity and access management with Active Directory and Centrify. Proven track
-          record of troubleshooting complex issues, streamlining deployments, and maintaining secure, high-
-          availability systems.
-        </p>
+
 
         <div className="flex flex-col sm:flex-row gap-4 items-start mb-8">
           <button
@@ -43,12 +36,7 @@ const Resume = () => {
             Download Resume (PDF)
           </button>
 
-          <div className="text-sm text-secondary">
-            <p>• Linux Administration & Cloud Engineering</p>
-            <p>• System Architecture & Performance Optimization</p>
-            <p>• DevOps & Automation (Ansible, Docker, CI/CD)</p>
-            <p>• Identity & Access Management</p>
-          </div>
+
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -57,15 +45,15 @@ const Resume = () => {
             <div className="space-y-3 text-sm">
               <div>
                 <h4 className="text-white font-medium mb-1">Operating Systems</h4>
-                <p className="text-secondary">Ubuntu, Red Hat Enterprise Linux (RHEL), CentOS</p>
+                <p className="text-secondary">Ubuntu, Red Hat Enterprise Linux (RHEL), CentOS, Windows</p>
               </div>
               <div>
                 <h4 className="text-white font-medium mb-1">Tools & Platforms</h4>
-                <p className="text-secondary">Ansible, AWX, Ansible Tower, Git, Bitbucket, Docker, AWS (EC2, S3, Route53), VMware/vSphere, Atlassian/Jira</p>
+                <p className="text-secondary">Ansible, AWX, Ansible Tower, Git, Bitbucket, Docker, AWS (EC2, S3, Route53), AWS (IAM), Active Directory, Podman, MongoDB, SQL, MariaDB, VMware/vSphere, Atlassian/Jira</p>
               </div>
               <div>
                 <h4 className="text-white font-medium mb-1">Monitoring & Security</h4>
-                <p className="text-secondary">LogicMonitor, Datadog, Foreman, Centrify, sudosh</p>
+                <p className="text-secondary">LogicMonitor, Datadog, Foreman, Centrify, sudosh, Jenkins, Chef, Puppet</p>
               </div>
             </div>
           </div>

@@ -1,26 +1,23 @@
 import React, { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
-import { useCharacterAnimations } from './useCharacterAnimations';
-import { OrbitControls } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { useGLTF, useAnimations, OrbitControls } from '@react-three/drei';
 // import * as TWEEN from 'tween.js'; // Import TWEEN from tween.js
 
 const Bird = () => {
   const group = useRef();
   const { nodes, animations } = useGLTF('./birds_scene/birds.glb');
-  const { setAnimations, animationIndex } = useCharacterAnimations();
-  const { actions, names } = useAnimations(animations, group);
+  const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    setAnimations(names);
-  }, [names]);
-
-  useEffect(() => {
-    actions[names[animationIndex]].reset().fadeIn(1).play('Scene');
-    return () => {
-      actions[names[animationIndex]].fadeOut(0.5);
-    };
-  }, [actions, animationIndex]);
+    // Play all animations if they exist
+    if (animations && animations.length > 0) {
+      animations.forEach((clip) => {
+        const action = actions[clip.name];
+        if (action) {
+          action.reset().fadeIn(1).play();
+        }
+      });
+    }
+  }, [actions, animations]);
 
 
   // const speed = 1;
