@@ -110,10 +110,6 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Active Directory",
-    icon: figma, // Placeholder - will be replaced with proper AD icon
-  },
 
 ];
 

@@ -62,7 +62,7 @@ const MushroomHouse = () => {
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
         position={[10, 30, 0]}
-
+    
       />
     </group>
   );

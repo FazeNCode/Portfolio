@@ -1,5 +1,5 @@
 
-import { Bird, MushroomHouse } from "./canvas";
+import { MushroomHouse } from "./canvas";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 
@@ -29,11 +29,11 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-screen ${expanded ? "expanded" : ""}`}>
 
-    <div className=" absolute top-20 left-1/2 transform -translate-x-1/2 w-full h-full ">
+    {/* <div className=" absolute top-20 left-1/2 transform -translate-x-1/2 w-full h-full ">
         <Canvas className="">
           <Bird />
         </Canvas>
-      </div>
+      </div> */}
 
 
 

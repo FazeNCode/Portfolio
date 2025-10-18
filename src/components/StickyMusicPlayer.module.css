@@ -7,29 +7,29 @@
   background: rgba(13, 17, 23, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 8px;
+  padding: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  min-width: 120px;
-  max-width: 150px;
+  min-width: 90px;
+  max-width: 110px;
 }
 
 .playerControls {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 4px;
+  margin-bottom: 4px;
 }
 
 .controlBtn {
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   color: #e6edf3;
-  padding: 4px 6px;
+  padding: 2px 4px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 10px;
   transition: all 0.2s ease;
 }
 
@@ -43,10 +43,10 @@
   border: none;
   border-radius: 50%;
   color: white;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;

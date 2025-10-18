@@ -8,8 +8,8 @@ import { Sling as Hamburger } from 'hamburger-react';
 const Logo = ({ isScrolling }) => (
   <div className={`flex items-center ${isScrolling ? "opacity-0 transition-all duration-1000" : "opacity-100 transition-all duration-1000"}`}>
     <img src={flogo} alt="logo" className="w-30 h-24 object-contain" />
-    <p className="text-white text-[34px] font-bold cursor-pointer">
-      <span className="sm:block hidden mx-[-24px]">aisal</span>
+    <p className="text-white text-[34px] font-black cursor-pointer tracking-wider">
+      <span className="sm:block hidden mx-[-24px] bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent font-extrabold">aisal</span>
     </p>
   </div>
 );

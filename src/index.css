@@ -21,11 +21,11 @@ body.custom-cursor {
 /* FAISAL THIS IS FOR THE BACKGROUND IMAGE THAT IS DYNAMIC FOR PHONE AND BIG SCREEN */
 
 .bg-hero-pattern {
+  background-image: url('./assets/backgrounds/maple_bg3.jpg');
   background-repeat: no-repeat;
-  background-position: bottom ;
-  background-size: auto; 
-  /* background-attachment: fixed;  */
-  
+  background-position: bottom;
+  background-size: auto;
+  min-height: 100vh;
 }
 
 
@@ -33,10 +33,10 @@ body.custom-cursor {
 
 @media (min-width: 200px) {
   .bg-hero-pattern {
-    background-size: cover; 
+    background-size: cover;
     background-position: bottom;
   }
-}  
+}
 
 
 

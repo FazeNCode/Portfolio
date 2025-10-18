@@ -7,6 +7,25 @@ export default function StickyMusicPlayer() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const iframeRef = useRef(null);
 
+  // Listen for messages from the SoundCloud iframe to detect when track ends
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.origin === 'https://w.soundcloud.com') {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.method === 'finish') {
+            setIsPlaying(false); // Reset button when track finishes
+          }
+        } catch (e) {
+          // Ignore parsing errors
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   const currentTrack = soundcloudTracks[currentTrackIndex];
 
   const togglePlay = () => {

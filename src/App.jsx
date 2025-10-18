@@ -1,10 +1,20 @@
 import { BrowserRouter } from "react-router-dom"
 import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Resume, Projects, StickyMusicPlayer} from './components'
 import { Canvas } from "@react-three/fiber";
-import { useEffect } from "react";
-import { cursor, cursor_red } from './assets';
+import { useEffect, useState } from "react";
+import { cursor, cursor_red, maple_bg3 } from './assets';
 
 const App = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -40,8 +50,16 @@ const App = () => {
   
   return (
    <BrowserRouter>
-   <div className="relative bg-primary  ">
-    <div className=" bg-hero-pattern  ">
+   <div className="relative bg-primary">
+    <div
+      style={{
+        backgroundImage: `url(${maple_bg3})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'bottom',
+        backgroundSize: windowWidth >= 200 ? 'cover' : 'auto',
+        minHeight: '100vh',
+      }}
+    >
       <Navbar/>
       <Hero/>
     </div>
@@ -49,7 +67,7 @@ const App = () => {
     {/* <Canvas>
     <Cloud/>
     </Canvas> */}
-   
+
     <About/>
     <Experience/>
     <Projects/>
