@@ -27,7 +27,7 @@ const Resume = () => {
         className="mt-4 text-secondary text-[17px] max-w-4xl leading-[30px]"
       >
         <p className="mb-6">
-          Linux Administrator with 5+ years of experience managing enterprise-level Linux environments across IT
+          Linux Administrator with 6+ years of experience managing enterprise-level Linux environments across IT
           services and financial sectors. Skilled in automation (Ansible, Bash, Python), system hardening, and cloud
           infrastructure (AWS, VMware vSphere). Experienced in monitoring with LogicMonitor, Datadog, and
           Foreman, as well as identity and access management with Active Directory and Centrify. Proven track
@@ -75,7 +75,7 @@ const Resume = () => {
             <div className="space-y-3 text-sm">
               <div>
                 <h4 className="text-white font-medium mb-1">Professional Experience</h4>
-                <p className="text-secondary">5+ years in Linux Administration</p>
+                <p className="text-secondary">6+ years in Linux Administration</p>
                 <p className="text-secondary">Enterprise-level environments</p>
                 <p className="text-secondary">IT services and financial sectors</p>
               </div>

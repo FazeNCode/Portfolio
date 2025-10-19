@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { soundcloudTracks } from "../data/soundcloudTracks";
 import styles from "./StickyMusicPlayer.module.css";
 
@@ -13,11 +13,15 @@ export default function StickyMusicPlayer() {
       if (event.origin === 'https://w.soundcloud.com') {
         try {
           const data = JSON.parse(event.data);
-          if (data.method === 'finish') {
+          // Listen for finish event when track ends
+          if (data.method === 'finish' || (data.type && data.type === 'finish')) {
             setIsPlaying(false); // Reset button when track finishes
           }
         } catch (e) {
-          // Ignore parsing errors
+          // Handle non-JSON messages
+          if (typeof event.data === 'string' && event.data.includes('finish')) {
+            setIsPlaying(false);
+          }
         }
       }
     };
@@ -25,6 +29,17 @@ export default function StickyMusicPlayer() {
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
   }, []);
+
+  // Additional effect to enable SoundCloud Widget API events
+  useEffect(() => {
+    if (isPlaying && iframeRef.current) {
+      // Enable API events for the SoundCloud widget
+      const iframe = iframeRef.current;
+      iframe.onload = () => {
+        iframe.contentWindow.postMessage('{"method":"addEventListener","value":"finish"}', 'https://w.soundcloud.com');
+      };
+    }
+  }, [isPlaying]);
 
   const currentTrack = soundcloudTracks[currentTrackIndex];
 
