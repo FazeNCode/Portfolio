@@ -15,15 +15,15 @@ const projects = [
     link: "https://fazenauto.com",
     github: "#",
   },
-  {
-    title: "WrenchsUp.com",
-    description: "Automotive service platform connecting vehicle owners with certified mechanics. Includes appointment scheduling, service tracking, payment processing, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    technologies: ["React", "Next.js", "MongoDB", "AWS", "CSS", "Node.js"],
-    status: "Live",
-    link: "https://wrenchsup.com",
-    github: "#",
-  },
+  // {
+  //   title: "WrenchsUp.com",
+  //   description: "Automotive service platform connecting vehicle owners with certified mechanics. Includes appointment scheduling, service tracking, payment processing, and admin dashboard.",
+  //   image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+  //   technologies: ["React", "Next.js", "MongoDB", "AWS", "CSS", "Node.js"],
+  //   status: "Live",
+  //   link: "https://wrenchsup.com",
+  //   github: "#",
+  // },
 ]
 
 const ProjectCard = ({ project, index }) => (
@@ -43,18 +43,15 @@ const ProjectCard = ({ project, index }) => (
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover rounded-2xl"
+          className="w-full h-full object-cover rounded-2xl cursor-pointer hover:opacity-80 transition-opacity duration-300"
+          onClick={() => window.open(project.link, '_blank')}
+          title={`Visit ${project.title}`}
         />
       </div>
 
       <div className="mt-5">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-white font-bold text-[24px]">{project.title}</h3>
-          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-            project.status === 'Live' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-black'
-          }`}>
-            {project.status}
-          </span>
         </div>
 
         <p className="mt-2 text-secondary text-[14px] leading-[20px]">
@@ -73,14 +70,7 @@ const ProjectCard = ({ project, index }) => (
         ))}
       </div>
 
-      <div className="mt-4 flex gap-3">
-        <button
-          onClick={() => window.open(project.link, "_blank")}
-          className="bg-gradient-to-r from-purple-500 to-pink-500 py-2 px-4 rounded-lg outline-none w-fit text-white font-medium text-[14px] shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
-        >
-          🚀 Live Demo
-        </button>
-      </div>
+
     </motion.div>
   </Tilt>
 )

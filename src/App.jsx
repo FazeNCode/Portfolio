@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Resume, Projects, StickyMusicPlayer} from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Resume, Projects} from './components'
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import { cursor, cursor_red, maple_bg3 } from './assets';
@@ -98,8 +98,8 @@ const App = () => {
     <Contact/>
     </div>
 
-  {/* Sticky Music Player */}
-  <StickyMusicPlayer />
+  {/* Sticky Music Player - Temporarily Hidden */}
+  {/* <StickyMusicPlayer /> */}
 
    </div>
    </BrowserRouter>

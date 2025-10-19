@@ -4,7 +4,7 @@
   right: 20px;
   transform: translateY(-50%);
   z-index: 1000;
-  background: rgba(13, 17, 23, 0.95);
+  background: rgba(13, 17, 23, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -12,6 +12,11 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   min-width: 90px;
   max-width: 110px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto;
 }
 
 .playerControls {
@@ -20,6 +25,7 @@
   justify-content: center;
   gap: 4px;
   margin-bottom: 4px;
+  pointer-events: auto;
 }
 
 .controlBtn {
@@ -31,6 +37,8 @@
   cursor: pointer;
   font-size: 10px;
   transition: all 0.2s ease;
+  pointer-events: auto;
+  z-index: 1001;
 }
 
 .controlBtn:hover {
@@ -43,15 +51,17 @@
   border: none;
   border-radius: 50%;
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+  pointer-events: auto;
+  z-index: 1001;
 }
 
 .playBtn:hover {
@@ -64,10 +74,29 @@
   animation: pulse 2s infinite;
 }
 
+.playBtn.loading {
+  background: linear-gradient(135deg, #ffaa00, #ffcc00);
+  animation: spin 1s linear infinite;
+}
+
+.playBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 @keyframes pulse {
   0% { box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3); }
   50% { box-shadow: 0 6px 25px rgba(255, 85, 0, 0.6); }
   100% { box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3); }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .trackInfo {
@@ -92,6 +121,13 @@
   text-overflow: ellipsis;
 }
 
+.trackStatus {
+  font-size: 8px;
+  opacity: 0.6;
+  margin-top: 2px;
+  font-style: italic;
+}
+
 .hiddenPlayer {
   position: absolute;
   left: -9999px;
@@ -104,23 +140,39 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .stickyPlayer {
-    right: 10px;
-    min-width: 160px;
-    max-width: 180px;
-    padding: 8px;
+    right: 8px;
+    min-width: 70px;
+    max-width: 80px;
+    padding: 6px;
+    top: 45%;
   }
-  
+
+  .playerControls {
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .controlBtn {
+    padding: 1px 2px;
+    font-size: 8px;
+    border-radius: 2px;
+  }
+
   .playBtn {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
   }
-  
+
   .trackTitle {
-    font-size: 11px;
-  }
-  
-  .trackArtist {
     font-size: 9px;
+  }
+
+  .trackArtist {
+    font-size: 7px;
+  }
+
+  .trackStatus {
+    font-size: 6px;
   }
 }

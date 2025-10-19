@@ -93,21 +93,23 @@ const Navbar = () => {
         <div
           className={`${
             !toggle ? "hidden" : "flex"
-          } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+          } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] md:min-w-[140px] sm:min-w-[160px] z-10 rounded-xl shadow-2xl border border-gray-700/30`}
         >
-          <ul className="list-none flex justify-end items-start flex-col gap-6">
+          <ul className="list-none flex justify-end items-start flex-col gap-6 w-full">
             {navLinks.map((link) => (
               <li
                 key={link.id}
                 className={`${
-                  active === link.title ? "text-white" : "text-secondary font-poppins font-medium"
-                } hover:text-white text-[20px] cursor-pointer`}
+                  active === link.title
+                    ? "text-white bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-l-2 border-purple-400"
+                    : "text-secondary font-poppins font-medium hover:text-white hover:bg-gray-700/20"
+                } text-[20px] md:text-[20px] sm:text-[18px] cursor-pointer transition-all duration-300 ease-in-out px-3 py-2 rounded-lg w-full`}
                 onClick={() => {
                   setToggle(!toggle);
                   setActive(link.title);
                 }}
               >
-                <a href={`#${link.id}`}>{link.title}</a>
+                <a href={`#${link.id}`} className="block w-full">{link.title}</a>
               </li>
             ))}
           </ul>
