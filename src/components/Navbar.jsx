@@ -6,7 +6,7 @@ import { flogo } from "../assets";
 import { Sling as Hamburger } from 'hamburger-react';
 
 const Logo = ({ isScrolling }) => (
-  <div className={`flex items-center transition-transform duration-700 ease-in-out ${isScrolling ? "transform -translate-x-full" : "transform translate-x-0"}`}>
+  <div className={`flex items-center transition-transform duration-700 ease-in-out ${isScrolling ? "transform -translate-x-[200%]" : "transform translate-x-0"}`}>
     <img src={flogo} alt="logo" className="w-30 h-24 object-contain" />
   </div>
 );

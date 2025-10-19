@@ -17,23 +17,34 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const body = document.querySelector("body");
-
-    // Set default cursor
-    if (body) {
-      body.style.cursor = `url(${cursor}), auto`;
-    }
-
-    const handleMouseDown = () => {
-      if (body) {
-        body.style.cursor = `url(${cursor_red}), auto`;
+    // Apply cursor styles to all elements
+    const style = document.createElement('style');
+    style.textContent = `
+      * {
+        cursor: url(${cursor}) 16 16, auto !important;
       }
+      *:active {
+        cursor: url(${cursor_red}) 16 16, auto !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    const handleMouseDown = (e) => {
+      document.body.style.cursor = `url(${cursor_red}) 16 16, auto`;
+      // Apply to all elements
+      const allElements = document.querySelectorAll('*');
+      allElements.forEach(el => {
+        el.style.cursor = `url(${cursor_red}) 16 16, auto`;
+      });
     };
 
-    const handleMouseUp = () => {
-      if (body) {
-        body.style.cursor = `url(${cursor}), auto`;
-      }
+    const handleMouseUp = (e) => {
+      document.body.style.cursor = `url(${cursor}) 16 16, auto`;
+      // Apply to all elements
+      const allElements = document.querySelectorAll('*');
+      allElements.forEach(el => {
+        el.style.cursor = `url(${cursor}) 16 16, auto`;
+      });
     };
 
     // Add event listeners
@@ -44,6 +55,7 @@ const App = () => {
     return () => {
       document.removeEventListener("mousedown", handleMouseDown);
       document.removeEventListener("mouseup", handleMouseUp);
+      document.head.removeChild(style);
     };
   }, []);
 

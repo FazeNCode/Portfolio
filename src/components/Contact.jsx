@@ -4,8 +4,7 @@ import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import { profile, youtube, github, youtube_circle } from "../assets";
-import { Canvas } from "@react-three/fiber";
+import { profile, github, youtube_circle } from "../assets";
 
 const Contact = () => {
   const formRef = useRef();
@@ -141,11 +140,17 @@ const Contact = () => {
               </a>
 
               {/* ! IMPORT A NEW youtube_circle WITH A SMALLER SIZE TO MATCH GITHUB LOGO! */}
-              <img
-                src={youtube_circle}
-                alt="profile"
-                className="w-9 h-9 sm:w-[3.42em] sm:h-[3.42em] rounded-full object-cover hover:cursor-pointer"
-              />
+              <a
+                href="https://www.youtube.com/@FazeNCode"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube_circle}
+                  alt="profile"
+                  className="w-9 h-9 sm:w-[3.42em] sm:h-[3.42em] rounded-full object-cover hover:cursor-pointer"
+                />
+              </a>
             </div>
           </div>
         </form>
